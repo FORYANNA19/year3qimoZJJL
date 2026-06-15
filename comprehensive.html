@@ -1,0 +1,1152 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>详细版笔记 | 计量经济学</title>
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true}};</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Segoe UI","Microsoft YaHei",sans-serif;background:#f1f5f9;color:#1e293b}
+.navbar{position:sticky;top:0;z-index:1000;background:#1e293b;display:flex;align-items:center;padding:0 30px;height:52px;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.navbar .brand{color:#fff;font-size:16px;font-weight:700;white-space:nowrap}
+.navbar .spacer{flex:1}
+.navbar .toc-btn{background:#2563eb;color:#fff;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:14px;font-weight:600;transition:background .2s}
+.navbar .toc-btn:hover{background:#1d4ed8}
+.navbar .toc-btn.active{background:#1e40af}
+.toc-overlay{display:none;position:fixed;top:52px;left:0;right:0;bottom:0;z-index:999}
+.toc-overlay.show{display:block}
+.toc-bg{position:absolute;inset:0;background:rgba(0,0,0,.4)}
+.toc-panel{position:absolute;top:0;right:0;width:360px;max-width:90vw;background:#fff;height:100%;overflow-y:auto;box-shadow:-4px 0 20px rgba(0,0,0,.2);padding:20px}
+.toc-panel h3{font-size:16px;color:#1e293b;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #2563eb}
+.toc-panel a{display:block;padding:10px 14px;color:#334155;text-decoration:none;border-radius:6px;font-size:14px;transition:background .15s;margin-bottom:2px}
+.toc-panel a:hover{background:#eff6ff;color:#2563eb}
+.toc-panel a .cn{font-size:12px;color:#94a3b8;display:block}
+.container{max-width:1000px;margin:0 auto;padding:30px 40px}
+.chapter{margin-bottom:36px}
+.ch-title{font-size:24px;color:#0f172a;border-bottom:3px solid #2563eb;padding-bottom:8px;margin-bottom:20px}
+.ch-title .cn{font-size:15px;color:#64748b;font-weight:400}
+.sec-title{font-size:17px;color:#334155;margin:20px 0 12px;padding:8px 14px;background:#e8f0fe;border-left:4px solid #2563eb;border-radius:0 6px 6px 0}
+.sec-title .cn{font-size:13px;color:#64748b;font-weight:400}
+.kp{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:14px 18px;margin:8px 0;transition:box-shadow .15s}
+.kp:hover{box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.kp-en{font-size:15px;line-height:1.7}
+.kp-cn{font-size:14px;color:#475569;margin-top:8px;line-height:1.7;padding-left:14px;border-left:3px solid #93c5fd}
+.kp-vocab{font-size:13px;color:#7c3aed;margin-top:6px;padding:6px 12px;background:#f5f3ff;border-radius:6px}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:4px;margin-right:6px;font-weight:700;vertical-align:middle}
+.tag.must{background:#fee2e2;color:#dc2626}
+.tag.key{background:#fef3c7;color:#d97706}
+.tag.freq{background:#dbeafe;color:#2563eb}
+.tag.info{background:#f1f5f9;color:#64748b}
+.vocab-box{margin-top:24px;padding:18px;background:#fffbeb;border:1px solid #fde68a;border-radius:8px}
+.vocab-box h4{margin-bottom:12px;color:#92400e;font-size:15px}
+.vocab-box table{width:100%;border-collapse:collapse;font-size:13px}
+.vocab-box th{background:#fef3c7;padding:7px 12px;text-align:left;border:1px solid #fde68a}
+.vocab-box td{padding:6px 12px;border:1px solid #fde68a}
+.vocab-box tr:nth-child(even){background:#fff}
+.footer{text-align:center;padding:20px;color:#94a3b8;font-size:12px;border-top:1px solid #e2e8f0;margin-top:40px}
+@media(max-width:768px){.container{padding:20px 16px}}
+@media print{.navbar{display:none}.toc-overlay{display:none!important}}
+</style></head><body>
+
+<nav class="navbar">
+<span class="brand">📖 详细版笔记</span>
+<span class="spacer"></span>
+<button class="toc-btn" onclick="toggleToc()" id="tocBtn">📑 目录</button>
+</nav>
+
+<div class="toc-overlay" id="tocOverlay">
+<div class="toc-bg" onclick="closeToc()"></div>
+<div class="toc-panel">
+<h3>📑 目录 Table of Contents</h3>
+<a href="#CH01" onclick="closeToc()"><strong>Ch1:</strong> The Nature of Econometrics and Economic Data<span class="cn">计量经济学的性质与经济数据</span></a><a href="#CH02" onclick="closeToc()"><strong>Ch2:</strong> The Simple Regression Model<span class="cn">简单回归模型</span></a><a href="#CH03" onclick="closeToc()"><strong>Ch3:</strong> Multiple Regression Analysis: Estimation<span class="cn">多元回归分析：估计</span></a><a href="#CH04" onclick="closeToc()"><strong>Ch4:</strong> Multiple Regression Analysis: Inference<span class="cn">多元回归分析：推断</span></a><a href="#CH05" onclick="closeToc()"><strong>Ch5:</strong> Multiple Regression Analysis: OLS Asymptotics<span class="cn">多元回归分析：OLS渐近性</span></a><a href="#CH06" onclick="closeToc()"><strong>Ch6:</strong> Multiple Regression Analysis: Further Issues<span class="cn">多元回归分析：进一步的问题</span></a><a href="#CH07" onclick="closeToc()"><strong>Ch7:</strong> Multiple Regression Analysis with Qualitative Information<span class="cn">含有定性信息的多元回归分析</span></a><a href="#CH08" onclick="closeToc()"><strong>Ch8:</strong> Heteroskedasticity<span class="cn">异方差性</span></a><a href="#CH09" onclick="closeToc()"><strong>Ch9:</strong> More on Specification and Data Issues<span class="cn">模型设定与数据问题的进一步讨论</span></a><a href="#CH13" onclick="closeToc()"><strong>Ch13:</strong> Pooling Cross Sections across Time: Simple Panel Data Methods<span class="cn">跨时期横截面数据混合：简单面板数据方法</span></a>
+</div>
+</div>
+
+<div class="container">
+<div class="chapter" id="CH01"><h1 class="ch-title">Chapter 1: The Nature of Econometrics and Economic Data<br><span class="cn">计量经济学的性质与经济数据</span></h1><h2 class="sec-title">What is Econometrics?<span class="cn">（什么是计量经济学？）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Econometrics is the use of statistical methods to analyze economic data. Econometricians typically analyze nonexperimental (observational) data, as opposed to controlled experimental data.</div>
+<div class="kp-cn">【中文】计量经济学是运用统计方法分析经济数据的学科。计量经济学家通常分析非实验性（观测性）数据，而非受控实验数据。</div>
+<div class="kp-vocab">🔤 econometrics（计量经济学） | nonexperimental data（非实验数据） | observational data（观测数据）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Three typical goals of econometric analysis: (1) Estimating relationships between economic variables, (2) Testing economic theories and hypotheses, (3) Evaluating and implementing government and business policy.</div>
+<div class="kp-cn">【中文】计量经济分析的三个典型目标：(1) 估计经济变量之间的关系，(2) 检验经济理论和假设，(3) 评估和实施政府及商业政策。</div>
+<div class="kp-vocab">🔤 hypothesis testing（假设检验） | policy evaluation（政策评估）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Common applications include forecasting macroeconomic variables (interest rates, inflation rates, GDP) and non-macro variables.</div>
+<div class="kp-cn">【中文】常见应用包括预测宏观经济变量（利率、通货膨胀率、GDP）以及非宏观变量。</div>
+<div class="kp-vocab">🔤 forecasting（预测） | macroeconomic variables（宏观经济变量）</div>
+</div><h2 class="sec-title">Steps in Econometric Analysis<span class="cn">（计量经济分析的步骤）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Step 1: Economic Model — Establish relationships between economic variables, often using optimizing behavior and equilibrium modeling. Examples: demand equations, pricing equations. This step is sometimes skipped.</div>
+<div class="kp-cn">【中文】步骤1：经济模型——建立经济变量之间的关系，通常使用最优化行为和均衡建模。例如：需求方程、定价方程。这一步有时会被跳过。</div>
+<div class="kp-vocab">🔤 economic model（经济模型） | optimizing behavior（最优化行为） | equilibrium modeling（均衡建模）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Step 2: Econometric Model — The functional form must be specified. Variables may need to be approximated by other measurable quantities. An error term u is included to account for unobserved factors.</div>
+<div class="kp-cn">【中文】步骤2：计量经济模型——必须指定函数形式。变量可能需要用其他可测量的量来近似。包含误差项u以考虑未观测因素。</div>
+<div class="kp-vocab">🔤 econometric model（计量经济模型） | functional form（函数形式） | error term（误差项）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag info">了解</span> Becker (1968) economic model of crime: derives equation for criminal activity based on utility maximization. The econometric model specifies functional form and proxies for theoretical variables.</div>
+<div class="kp-cn">【中文】Becker (1968) 犯罪经济模型：基于效用最大化推导犯罪活动方程。计量经济模型指定函数形式并使用代理变量替代理论变量。</div>
+<div class="kp-vocab">🔤 utility maximization（效用最大化） | criminal activity（犯罪活动）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag info">了解</span> Model of job training and worker productivity: What is the effect of additional training on worker productivity? Formal economic theory is not always needed to derive the equation.</div>
+<div class="kp-cn">【中文】职业培训与工人生产率模型：额外培训对工人生产率有何影响？正式的经济理论并不总是推导方程所必需的。</div>
+<div class="kp-vocab">🔤 job training（职业培训） | worker productivity（工人生产率）</div>
+</div><h2 class="sec-title">Types of Economic Data<span class="cn">（经济数据的类型）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> There are four main types of economic data sets: (1) Cross-sectional data, (2) Time series data, (3) Pooled cross sections, (4) Panel/Longitudinal data. Econometric methods depend on the nature of the data used; inappropriate methods may lead to misleading results.</div>
+<div class="kp-cn">【中文】经济数据主要有四种类型：(1) 横截面数据，(2) 时间序列数据，(3) 混合横截面数据，(4) 面板/纵向数据。计量方法取决于所用数据的性质；使用不当方法可能导致误导性结果。</div>
+<div class="kp-vocab">🔤 cross-sectional data（横截面数据） | time series data（时间序列数据） | pooled cross sections（混合横截面数据） | panel data（面板数据） | longitudinal data（纵向数据）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Cross-sectional data: Samples of individuals, households, firms, cities, states, or countries at a given point in time or period. Observations are more or less independent (ideally from pure random sampling). Typically used in applied microeconomics.</div>
+<div class="kp-cn">【中文】横截面数据：在某一给定时间点或时期内对个体、家庭、企业、城市、州或国家的抽样。观测值之间大致独立（理想情况下来自纯随机抽样）。通常用于应用微观经济学。</div>
+<div class="kp-vocab">🔤 random sampling（随机抽样） | applied microeconomics（应用微观经济学）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Cross-sectional data caveat: Pure random sampling may be violated by non-response in surveys or clustering in sampling design.</div>
+<div class="kp-cn">【中文】横截面数据注意事项：纯随机抽样可能因调查中的无回应或抽样设计中的集群效应而被违反。</div>
+<div class="kp-vocab">🔤 non-response（无回应） | clustering（集群抽样）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Time series data: Observations of one or more variables over time. Examples: stock prices, money supply, CPI, GDP, annual homicide rates, automobile sales. Key features: (1) Observations are typically serially correlated, (2) Ordering of observations conveys important information, (3) Data frequency may be daily, weekly, monthly, quarterly, annually, etc., (4) Typical features include trends and seasonality. Typical applications: applied macroeconomics and finance.</div>
+<div class="kp-cn">【中文】时间序列数据：对一个或多个变量随时间变化的观测。例如：股票价格、货币供应量、消费价格指数(CPI)、国内生产总值(GDP)、年度凶杀率、汽车销量等。关键特征：(1) 观测值通常存在序列相关，(2) 观测值的排序传达了重要信息，(3) 数据频率可以是每日、每周、每月、每季度、每年等，(4) 典型特征包括趋势和季节性。典型应用：应用宏观经济学和金融学。</div>
+<div class="kp-vocab">🔤 serial correlation（序列相关） | trends（趋势） | seasonality（季节性） | data frequency（数据频率）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Pooled cross sections: Two or more cross sections are combined in one data set. Cross sections are drawn independently of each other. Often used to evaluate policy changes. Example: Evaluating the effect of property tax reform on house prices by comparing a 1993 random sample (before reform) with a 1995 random sample (after reform).</div>
+<div class="kp-cn">【中文】混合横截面数据：将两个或多个横截面合并为一个数据集。各横截面相互独立抽取。通常用于评估政策变化。例如：通过比较1993年（改革前）和1995年（改革后）的随机样本来评估房产税改革对房价的影响。</div>
+<div class="kp-vocab">🔤 pooled cross sections（混合横截面数据） | policy change（政策变化） | before/after comparison（前后对比）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Panel/Longitudinal data: The same cross-sectional units are followed over time. Has both a cross-sectional and a time series dimension. Advantages: (1) Can account for time-invariant unobservables, (2) Can model lagged responses. Example: City crime statistics observed over two years — time-invariant unobserved city characteristics can be modeled.</div>
+<div class="kp-cn">【中文】面板/纵向数据：相同的横截面单元随时间被追踪观测。同时具有横截面和时间序列两个维度。优势：(1) 可以考虑时不变不可观测因素，(2) 可以建模滞后响应。例如：两个年份的城市犯罪统计数据——可以建模时不变的城市不可观测特征。</div>
+<div class="kp-vocab">🔤 panel data（面板数据） | longitudinal data（纵向数据） | time-invariant unobservables（时不变不可观测因素） | lagged responses（滞后响应）</div>
+</div><h2 class="sec-title">Causality and Ceteris Paribus<span class="cn">（因果关系与「其他条件不变」）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Ceteris paribus means "other relevant factors being equal." Most economic questions are ceteris paribus questions. It is crucial to define the causal effect of interest and describe how an ideal experiment would be designed to infer it.</div>
+<div class="kp-cn">【中文】Ceteris paribus（其他条件不变）指「其他相关因素保持不变」。大多数经济问题都是ceteris paribus问题。关键在于定义所关心的因果效应，并描述如何设计理想实验来推断该效应。</div>
+<div class="kp-vocab">🔤 ceteris paribus（其他条件不变） | causal effect（因果效应）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Causal effect of fertilizer on crop yield: By how much will soybean production increase if fertilizer is increased, holding land quality, rainfall, parasites, etc. fixed? Experiment is feasible — randomly assign different amounts of fertilizer to plots and compare yields.</div>
+<div class="kp-cn">【中文】肥料对作物产量的因果效应：在其他条件（土地质量、降雨量、病虫害等）不变的情况下，增加肥料会使大豆产量增加多少？实验可行——随机分配不同量的肥料到不同地块并比较产量。</div>
+<div class="kp-vocab">🔤 crop yield（作物产量） | random assignment（随机分配）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Measuring the return to education: If a person is given another year of education, by how much will wages increase, holding experience, family background, intelligence, etc. fixed? Experiment is infeasible — we cannot randomly assign different education levels to people. Without random assignment, education is correlated with other wage determinants (e.g., intelligence).</div>
+<div class="kp-cn">【中文】衡量教育回报率：在其他条件（经验、家庭背景、智力等）不变的情况下，多接受一年教育会使工资增加多少？实验不可行——我们无法随机分配不同的教育水平给人的。没有随机分配的情况下，教育与工资的其他决定因素（如智力）存在相关性。</div>
+<div class="kp-vocab">🔤 return to education（教育回报率） | intelligence（智力） | infeasible experiment（不可行实验）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Effect of law enforcement on city crime level: If a city is randomly chosen and given ten additional police officers, by how much would its crime rate fall? Experiment is infeasible — the number of police officers is determined contemporaneously with the crime rate (simultaneity problem).</div>
+<div class="kp-cn">【中文】执法对城市犯罪水平的影响：如果随机选择一座城市并增加十名警察，犯罪率会下降多少？实验不可行——警察数量与犯罪率是同时决定的（联立性问题）。</div>
+<div class="kp-vocab">🔤 law enforcement（执法） | simultaneity（联立性/同时性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Effect of minimum wage on unemployment: By how much will unemployment increase if the minimum wage is increased, ceteris paribus? Experiment would theoretically work but is infeasible — in reality, minimum wage levels depend on political and economic factors that also influence unemployment.</div>
+<div class="kp-cn">【中文】最低工资对失业的影响：在其他条件不变的情况下，最低工资提高一定幅度会使失业增加多少？实验在理论上可行，但实际操作不可行——现实中最低工资水平依赖于同样影响失业的政治和经济因素。</div>
+<div class="kp-vocab">🔤 minimum wage（最低工资） | unemployment（失业）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Economic theories are not always stated in terms of causal effects. Example: The expectations hypothesis states that long-term interest rates equal compounded expected short-term interest rates — this can be tested using econometric methods without invoking causality.</div>
+<div class="kp-cn">【中文】经济理论并非总是以因果效应形式表述。例如：预期假说声称长期利率等于复利计算的预期短期利率——这可以通过计量方法检验，不需要诉诸因果关系。</div>
+<div class="kp-vocab">🔤 expectations hypothesis（预期假说） | interest rates（利率）</div>
+</div><div class="vocab-box"><h4>📚 Ch1 核心词汇汇总</h4><table><tr><th>English</th><th>中文</th></tr><tr><td>econometrics</td><td>计量经济学</td></tr><tr><td>nonexperimental data</td><td>非实验数据</td></tr><tr><td>cross-sectional data</td><td>横截面数据</td></tr><tr><td>time series data</td><td>时间序列数据</td></tr><tr><td>pooled cross sections</td><td>混合横截面数据</td></tr><tr><td>panel data</td><td>面板数据</td></tr><tr><td>longitudinal data</td><td>纵向数据</td></tr><tr><td>ceteris paribus</td><td>其他条件不变</td></tr><tr><td>causal effect</td><td>因果效应</td></tr><tr><td>random sampling</td><td>随机抽样</td></tr><tr><td>error term</td><td>误差项</td></tr><tr><td>functional form</td><td>函数形式</td></tr><tr><td>serial correlation</td><td>序列相关</td></tr><tr><td>trends</td><td>趋势</td></tr><tr><td>seasonality</td><td>季节性</td></tr><tr><td>random assignment</td><td>随机分配</td></tr><tr><td>return to education</td><td>教育回报率</td></tr><tr><td>forecasting</td><td>预测</td></tr><tr><td>hypothesis testing</td><td>假设检验</td></tr><tr><td>policy evaluation</td><td>政策评估</td></tr></table></div></div><div class="chapter" id="CH02"><h1 class="ch-title">Chapter 2: The Simple Regression Model<br><span class="cn">简单回归模型</span></h1><h2 class="sec-title">Definition and Interpretation of the Simple Regression Model<span class="cn">（简单回归模型的定义与解释）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The simple linear regression model explains variable y (dependent variable) in terms of variable x (independent/explanatory variable): $$y = \beta_0 + \beta_1 x + u$$ where $\beta_0$ is the intercept, $\beta_1$ is the slope parameter, and $u$ is the error term (disturbance).</div>
+<div class="kp-cn">【中文】简单线性回归模型用变量x（自变量/解释变量）来解释变量y（因变量）：$$y = \beta_0 + \beta_1 x + u$$ 其中$\beta_0$是截距，$\beta_1$是斜率参数，$u$是误差项（扰动项）。</div>
+<div class="kp-vocab">🔤 dependent variable（因变量） | independent variable（自变量） | explanatory variable（解释变量） | intercept（截距） | slope（斜率） | error term（误差项） | disturbance（扰动项）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag info">了解</span> The simple regression model is rarely applicable in practice but its discussion is useful for pedagogical reasons — it helps build intuition for the multiple regression model.</div>
+<div class="kp-cn">【中文】简单回归模型在实践中很少适用，但讨论它有助于教学——帮助建立对多元回归模型的直觉理解。</div>
+<div class="kp-vocab">🔤 pedagogical（教学的）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Causal interpretation requires the conditional mean independence assumption: $$E(u|x) = E(u)$$ This means the average value of u does not depend on the value of x. When this holds, $E(y|x) = \beta_0 + \beta_1 x$.</div>
+<div class="kp-cn">【中文】因果解释要求条件均值独立假设：$$E(u|x) = E(u)$$ 即u的均值不依赖于x的取值。当此假设成立时，$$E(y|x) = \beta_0 + \beta_1 x$$。</div>
+<div class="kp-vocab">🔤 conditional mean independence（条件均值独立） | zero conditional mean（零条件均值）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Population regression function (PRF): Under the conditional mean independence assumption, the average value of the dependent variable can be expressed as a linear function of the explanatory variable: $$E(y|x) = \beta_0 + \beta_1 x$$</div>
+<div class="kp-cn">【中文】总体回归函数（PRF）：在条件均值独立假设下，因变量的平均值可以表示为解释变量的线性函数：$$E(y|x) = \beta_0 + \beta_1 x$$。</div>
+<div class="kp-vocab">🔤 population regression function (PRF)（总体回归函数）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example: A simple wage equation: $$wage = \beta_0 + \beta_1 educ + u$$ $\beta_1$ measures the change in hourly wage given one more year of education, holding all other factors fixed.</div>
+<div class="kp-cn">【中文】示例：简单工资方程：$$wage = \beta_0 + \beta_1 educ + u$$ $\beta_1$衡量在其他所有因素不变的情况下，多接受一年教育带来的小时工资变化。</div>
+<div class="kp-vocab">🔤 wage equation（工资方程）</div>
+</div><h2 class="sec-title">Deriving Ordinary Least Squares (OLS) Estimates<span class="cn">（普通最小二乘法（OLS）估计的推导）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> To estimate the regression model, we need a random sample of n observations: $$\{(x_i, y_i): i = 1, 2, \ldots, n\}$$ from the population.</div>
+<div class="kp-cn">【中文】为估计回归模型，需要从总体中抽取n个观测值的随机样本：$$\{(x_i, y_i): i = 1, 2, \ldots, n\}$$。</div>
+<div class="kp-vocab">🔤 random sample（随机样本） | observations（观测值）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Regression residuals are defined as the difference between actual and fitted values: $$\hat{u}_i = y_i - \hat{y}_i = y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i$$</div>
+<div class="kp-cn">【中文】回归残差定义为实际值与拟合值之差：$$\hat{u}_i = y_i - \hat{y}_i = y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i$$</div>
+<div class="kp-vocab">🔤 residuals（残差） | fitted values（拟合值） | actual values（实际值）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> OLS estimators are obtained by minimizing the sum of squared residuals (SSR): $$\min_{\hat{\beta}_0, \hat{\beta}_1} \sum_{i=1}^{n} \hat{u}_i^2 = \sum_{i=1}^{n} (y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i)^2$$</div>
+<div class="kp-cn">【中文】OLS估计量通过最小化残差平方和（SSR）获得：$$\min_{\hat{\beta}_0, \hat{\beta}_1} \sum_{i=1}^{n} \hat{u}_i^2 = \sum_{i=1}^{n} (y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i)^2$$</div>
+<div class="kp-vocab">🔤 ordinary least squares (OLS)（普通最小二乘法） | sum of squared residuals (SSR)（残差平方和）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> The OLS estimators (formulas): $$\hat{\beta}_1 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n} (x_i - \bar{x})^2}$$ and $$\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}$$</div>
+<div class="kp-cn">【中文】OLS估计量公式：$$\hat{\beta}_1 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n} (x_i - \bar{x})^2}$$ 且 $$\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}$$</div>
+<div class="kp-vocab">🔤 sample covariance（样本协方差） | sample variance（样本方差）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The OLS regression line (sample regression function): $$\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x$$ This line fits as well as possible through the data points.</div>
+<div class="kp-cn">【中文】OLS回归线（样本回归函数）：$$\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x$$ 这条线尽可能好地穿过数据点。</div>
+<div class="kp-vocab">🔤 sample regression function (SRF)（样本回归函数） | regression line（回归线）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example: CEO salary and return on equity — $$\widehat{salary} = 963.191 + 18.501 \cdot roe$$ Each percentage point increase in ROE is associated with an $18,501 increase in predicted CEO salary.</div>
+<div class="kp-cn">【中文】示例：CEO薪酬与净资产收益率——$$\widehat{salary} = 963.191 + 18.501 \cdot roe$$ ROE每增加一个百分点，预测CEO薪酬增加$18,501。</div>
+<div class="kp-vocab">🔤 return on equity (ROE)（净资产收益率） | CEO salary（CEO薪酬）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example: Wage and education — $$\widehat{wage} = -0.90 + 0.54 \cdot educ$$ Each additional year of education is associated with a $0.54 increase in hourly wage.</div>
+<div class="kp-cn">【中文】示例：工资与教育——$$\widehat{wage} = -0.90 + 0.54 \cdot educ$$ 每多接受一年教育，小时工资增加$0.54。</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example: Voting outcomes and campaign expenditures — $$\widehat{voteA} = 26.81 + 0.464 \cdot shareA$$ If candidate A's share of campaign spending increases by one percentage point, candidate A's vote share is predicted to increase by 0.464 percentage points.</div>
+<div class="kp-cn">【中文】示例：投票结果与竞选支出——$$\widehat{voteA} = 26.81 + 0.464 \cdot shareA$$ 如果候选人A的竞选支出份额增加一个百分点，其得票份额预测增加0.464个百分点。</div>
+<div class="kp-vocab">🔤 campaign expenditures（竞选支出） | vote share（得票份额）</div>
+</div><h2 class="sec-title">Algebraic Properties of OLS<span class="cn">（OLS的代数性质）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Property 1: The sum of OLS residuals is zero: $$\sum_{i=1}^{n} \hat{u}_i = 0$$ (as long as the model includes an intercept).</div>
+<div class="kp-cn">【中文】性质1：OLS残差之和为零：$$\sum_{i=1}^{n} \hat{u}_i = 0$$（只要模型包含截距项）。</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Property 2: The sample covariance (and correlation) between the explanatory variable and the residuals is zero: $$\sum_{i=1}^{n} x_i \hat{u}_i = 0$$</div>
+<div class="kp-cn">【中文】性质2：解释变量与残差之间的样本协方差（和相关性）为零：$$\sum_{i=1}^{n} x_i \hat{u}_i = 0$$</div>
+<div class="kp-vocab">🔤 orthogonality（正交性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Property 3: The point $(\bar{x}, \bar{y})$ always lies on the OLS regression line.</div>
+<div class="kp-cn">【中文】性质3：点$(\bar{x}, \bar{y})$始终在OLS回归线上。</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Property 4: The sample average of the fitted values equals the sample average of the actual y's: $$\bar{\hat{y}} = \bar{y}$$</div>
+<div class="kp-cn">【中文】性质4：拟合值的样本均值等于y的实际样本均值：$$\bar{\hat{y}} = \bar{y}$$</div>
+</div><h2 class="sec-title">Goodness of Fit: R-squared<span class="cn">（拟合优度：R方）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Total Sum of Squares (SST): $$SST = \sum_{i=1}^{n} (y_i - \bar{y})^2$$ measures total sample variation in y.</div>
+<div class="kp-cn">【中文】总平方和（SST）：$$SST = \sum_{i=1}^{n} (y_i - \bar{y})^2$$ 衡量y的总样本变异。</div>
+<div class="kp-vocab">🔤 total sum of squares (SST)（总平方和） | total variation（总变异）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Explained Sum of Squares (SSE): $$SSE = \sum_{i=1}^{n} (\hat{y}_i - \bar{y})^2$$ measures sample variation in fitted values.</div>
+<div class="kp-cn">【中文】解释平方和（SSE）：$$SSE = \sum_{i=1}^{n} (\hat{y}_i - \bar{y})^2$$ 衡量拟合值的样本变异。</div>
+<div class="kp-vocab">🔤 explained sum of squares (SSE)（解释平方和）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Residual Sum of Squares (SSR): $$SSR = \sum_{i=1}^{n} \hat{u}_i^2$$ measures sample variation in the residuals.</div>
+<div class="kp-cn">【中文】残差平方和（SSR）：$$SSR = \sum_{i=1}^{n} \hat{u}_i^2$$ 衡量残差的样本变异。</div>
+<div class="kp-vocab">🔤 residual sum of squares (SSR)（残差平方和）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Decomposition of total variation: $$SST = SSE + SSR$$ Total variation = explained variation + unexplained variation.</div>
+<div class="kp-cn">【中文】总变异分解：$$SST = SSE + SSR$$ 总变异 = 被解释的变异 + 未被解释的变异。</div>
+<div class="kp-vocab">🔤 decomposition of variation（变异分解）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> R-squared (coefficient of determination): $$R^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}$$ measures the proportion of total variation in y that is explained by x. $$0 \leq R^2 \leq 1$$</div>
+<div class="kp-cn">【中文】R方（判定系数）：$$R^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}$$ 衡量y的总变异中被x解释的比例。$$0 \leq R^2 \leq 1$$</div>
+<div class="kp-vocab">🔤 R-squared（R方/判定系数） | coefficient of determination（判定系数）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Caution: A high R-squared does NOT necessarily mean the regression has a causal interpretation. R-squared measures correlation, not causation.</div>
+<div class="kp-cn">【中文】注意：高R方并不一定意味着回归具有因果解释。R方衡量相关性，而非因果性。</div>
+<div class="kp-vocab">🔤 correlation vs. causation（相关性与因果性）</div>
+</div><h2 class="sec-title">Incorporating Nonlinearities: Functional Forms<span class="cn">（引入非线性：函数形式）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Semi-logarithmic form (log-level): $$\log(y) = \beta_0 + \beta_1 x + u$$ Interpretation of $\beta_1$: A one-unit increase in x is associated with approximately $100 \cdot \beta_1\%$ change in y. This is a semi-elasticity model.</div>
+<div class="kp-cn">【中文】半对数形式（对数-水平）：$$\log(y) = \beta_0 + \beta_1 x + u$$ $\beta_1$的解释：x每增加一个单位，y约变化$100 \cdot \beta_1\%$。这是一个半弹性模型。</div>
+<div class="kp-vocab">🔤 semi-logarithmic form（半对数形式） | semi-elasticity（半弹性） | log-level model（对数-水平模型）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example: Regression of log wages on education — $$\widehat{\log(wage)} = 0.584 + 0.083 \cdot educ$$ Each additional year of education increases wages by approximately 8.3%.</div>
+<div class="kp-cn">【中文】示例：对数工资对教育的回归——$$\widehat{\log(wage)} = 0.584 + 0.083 \cdot educ$$ 每多一年教育，工资约增加8.3%。</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Log-logarithmic form: $$\log(y) = \beta_0 + \beta_1 \log(x) + u$$ Interpretation of $\beta_1$: A 1% increase in x is associated with a $\beta_1\%$ change in y. $\beta_1$ is the elasticity of y with respect to x (constant elasticity model).</div>
+<div class="kp-cn">【中文】双对数形式：$$\log(y) = \beta_0 + \beta_1 \log(x) + u$$ $\beta_1$的解释：x每增加1%，y变化$\beta_1\%$。$\beta_1$是y对x的弹性（常数弹性模型）。</div>
+<div class="kp-vocab">🔤 log-log form（双对数形式） | elasticity（弹性） | constant elasticity model（常数弹性模型）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example: CEO salary and firm sales (log-log) — $$\widehat{\log(salary)} = 4.822 + 0.257 \cdot \log(sales)$$ A 1% increase in firm sales is associated with a 0.257% increase in CEO salary. This is the elasticity of CEO salary with respect to firm sales.</div>
+<div class="kp-cn">【中文】示例：CEO薪酬与公司销售额（双对数）——$$\widehat{\log(salary)} = 4.822 + 0.257 \cdot \log(sales)$$ 公司销售额每增加1%，CEO薪酬增加0.257%。这是CEO薪酬对公司销售额的弹性。</div>
+</div><h2 class="sec-title">Expected Values of OLS Estimators: SLR Assumptions and Unbiasedness<span class="cn">（OLS估计量的期望值：SLR假设与无偏性）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The estimated regression coefficients are random variables because they are calculated from a random sample. We analyze what the estimators will estimate on average (expected value) and their sampling variability.</div>
+<div class="kp-cn">【中文】估计的回归系数是随机变量，因为它们是由随机样本计算得到的。我们分析估计量平均估计的是什么（期望值）以及它们的抽样变异性。</div>
+<div class="kp-vocab">🔤 random variables（随机变量） | sampling variability（抽样变异性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Assumption SLR.1 (Linear in Parameters): The population model is linear in the parameters: $$y = \beta_0 + \beta_1 x + u$$</div>
+<div class="kp-cn">【中文】假设SLR.1（参数线性）：总体模型在参数上是线性的：$$y = \beta_0 + \beta_1 x + u$$</div>
+<div class="kp-vocab">🔤 linear in parameters（参数线性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Assumption SLR.2 (Random Sampling): We have a random sample of n observations $$\{(x_i, y_i): i = 1, \ldots, n\}$$ from the population.</div>
+<div class="kp-cn">【中文】假设SLR.2（随机抽样）：我们有来自总体的n个观测值的随机样本 $$\{(x_i, y_i): i = 1, \ldots, n\}$$。</div>
+<div class="kp-vocab">🔤 random sampling（随机抽样）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Assumption SLR.3 (Sample Variation in x): The x_i are not all the same value. There must be variation in the explanatory variable to estimate its effect.</div>
+<div class="kp-cn">【中文】假设SLR.3（x的样本变异）：$x_i$不能全部相同。解释变量必须有变异才能估计其效应。</div>
+<div class="kp-vocab">🔤 sample variation（样本变异）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Assumption SLR.4 (Zero Conditional Mean): $$E(u|x) = 0$$ The error term u has an expected value of zero for any value of x. This is the key assumption for unbiasedness.</div>
+<div class="kp-cn">【中文】假设SLR.4（零条件均值）：$$E(u|x) = 0$$ 对于任何x值，误差项u的期望值为零。这是无偏性的关键假设。</div>
+<div class="kp-vocab">🔤 zero conditional mean（零条件均值）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Theorem 2.1 (Unbiasedness of OLS): Under assumptions SLR.1–SLR.4, $$E(\hat{\beta}_0) = \beta_0$$ and $$E(\hat{\beta}_1) = \beta_1$$ On average, OLS estimates equal the true population values.</div>
+<div class="kp-cn">【中文】定理2.1（OLS的无偏性）：在假设SLR.1-SLR.4下，$$E(\hat{\beta}_0) = \beta_0$$ 且 $$E(\hat{\beta}_1) = \beta_1$$。平均而言，OLS估计值等于真实的总体值。</div>
+<div class="kp-vocab">🔤 unbiasedness（无偏性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Interpretation of unbiasedness: In a given sample, estimates may differ considerably from true values. However, on average (if sampling and estimation were repeated many times), they equal the true population parameters.</div>
+<div class="kp-cn">【中文】无偏性的解释：在某个给定样本中，估计值可能与真实值相差很大。但平均而言（如果重复抽样和估计多次），它们等于真实的总体参数。</div>
+<div class="kp-vocab">🔤 repeated sampling（重复抽样）</div>
+</div><h2 class="sec-title">Variances of OLS Estimators: SLR.5 and Precision<span class="cn">（OLS估计量的方差：SLR.5与精确度）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Assumption SLR.5 (Homoskedasticity): $$Var(u|x) = \sigma^2$$ The variance of the error term, conditional on x, is constant. The spread of the distribution of y given x is the same for all values of x.</div>
+<div class="kp-cn">【中文】假设SLR.5（同方差性）：$$Var(u|x) = \sigma^2$$ 误差项在给定x条件下的方差是常数。对于所有x值，给定x时y的分布散布程度相同。</div>
+<div class="kp-vocab">🔤 homoskedasticity（同方差性） | heteroskedasticity（异方差性） | constant variance（常数方差）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Heteroskedasticity example (wage and education): It is likely that people with more education have a wider variety of job opportunities and interests, leading to more wage variability at higher education levels. This violates SLR.5.</div>
+<div class="kp-cn">【中文】异方差性示例（工资与教育）：受教育程度较高的人可能拥有更广泛的工作机会和兴趣，导致在较高教育水平上工资变异性更大。这违反了SLR.5。</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Theorem 2.2 (Variances of OLS estimators): Under SLR.1–SLR.5, $$Var(\hat{\beta}_1) = \frac{\sigma^2}{\sum_{i=1}^{n} (x_i - \bar{x})^2} = \frac{\sigma^2}{SST_x}$$ and $$Var(\hat{\beta}_0) = \frac{\sigma^2 \sum_{i=1}^{n} x_i^2}{n \cdot SST_x}$$</div>
+<div class="kp-cn">【中文】定理2.2（OLS估计量的方差）：在SLR.1-SLR.5下，$$Var(\hat{\beta}_1) = \frac{\sigma^2}{\sum_{i=1}^{n} (x_i - \bar{x})^2} = \frac{\sigma^2}{SST_x}$$ 以及 $$Var(\hat{\beta}_0) = \frac{\sigma^2 \sum_{i=1}^{n} x_i^2}{n \cdot SST_x}$$</div>
+<div class="kp-vocab">🔤 sampling variance（抽样方差）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Key insight on sampling variability: (1) The larger the error variance $\sigma^2$, the larger the sampling variance; (2) The larger the total variation in x $(SST_x)$, the smaller the sampling variance. More variation in the explanatory variable leads to more precise estimates.</div>
+<div class="kp-cn">【中文】抽样变异性的关键洞见：(1) 误差方差$\sigma^2$越大，抽样方差越大；(2) x的总变异$(SST_x)$越大，抽样方差越小。解释变量的变异越大，估计越精确。</div>
+<div class="kp-vocab">🔤 precision（精确度） | error variance（误差方差）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Theorem 2.3 (Unbiased estimator of the error variance): $$\hat{\sigma}^2 = \frac{1}{n-2} \sum_{i=1}^{n} \hat{u}_i^2 = \frac{SSR}{n-2}$$ The divisor is n-2 because two parameters ($\beta_0, \beta_1$) have been estimated (degrees of freedom correction). $E(\hat{\sigma}^2) = \sigma^2$.</div>
+<div class="kp-cn">【中文】定理2.3（误差方差的无偏估计量）：$$\hat{\sigma}^2 = \frac{1}{n-2} \sum_{i=1}^{n} \hat{u}_i^2 = \frac{SSR}{n-2}$$ 除数是n-2，因为两个参数($\beta_0, \beta_1$)已被估计（自由度校正）。$E(\hat{\sigma}^2) = \sigma^2$。</div>
+<div class="kp-vocab">🔤 degrees of freedom（自由度） | unbiased estimator（无偏估计量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Standard errors: The estimated standard deviations of regression coefficients are called standard errors. They measure how precisely the regression coefficients are estimated. $$se(\hat{\beta}_1) = \frac{\hat{\sigma}}{\sqrt{SST_x}}$$</div>
+<div class="kp-cn">【中文】标准误：回归系数估计的标准差称为标准误（standard errors）。它们衡量回归系数估计的精确程度。$$se(\hat{\beta}_1) = \frac{\hat{\sigma}}{\sqrt{SST_x}}$$</div>
+<div class="kp-vocab">🔤 standard error（标准误） | standard deviation（标准差）</div>
+</div><h2 class="sec-title">Binary Explanatory Variable and Policy Analysis<span class="cn">（二元解释变量与政策分析）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Regression on a binary explanatory variable: If x is either 0 or 1 (a dummy variable), then $$y = \beta_0 + \beta_1 x + u$$ $\beta_0$ is the average y when x=0, and $\beta_0 + \beta_1$ is the average y when x=1. $\beta_1$ is the difference in means between the two groups. The statistical properties of OLS are unchanged when x is binary.</div>
+<div class="kp-cn">【中文】二元解释变量的回归：如果x只取0或1（虚拟变量），则$$y = \beta_0 + \beta_1 x + u$$ $\beta_0$是x=0时y的均值，$\beta_0 + \beta_1$是x=1时y的均值。$\beta_1$是两组均值之差。x为二元时OLS的统计性质不变。</div>
+<div class="kp-vocab">🔤 binary variable（二元变量） | dummy variable（虚拟变量） | difference in means（均值之差）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Counterfactual outcomes and treatment effects: For individual i, let $y_i(1)$ be the outcome with treatment and $y_i(0)$ be the outcome without treatment. The treatment effect is $y_i(1) - y_i(0)$. We never observe both outcomes for the same individual.</div>
+<div class="kp-cn">【中文】反事实结果与处理效应：对个体i，令$y_i(1)$为接受处理的结果，$y_i(0)$为未接受处理的结果。处理效应为$y_i(1) - y_i(0)$。我们永远无法同时观察到同一个体的两个结果。</div>
+<div class="kp-vocab">🔤 counterfactual outcomes（反事实结果） | treatment effect（处理效应） | potential outcomes（潜在结果）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Average Treatment Effect (ATE): $$\tau = E[y_i(1) - y_i(0)]$$ Under random assignment, regressing y on the binary treatment indicator x yields an unbiased estimator of the average treatment effect $\tau$.</div>
+<div class="kp-cn">【中文】平均处理效应（ATE）：$$\tau = E[y_i(1) - y_i(0)]$$ 在随机分配下，将y对二元处理指标x进行回归，可以得到平均处理效应$\tau$的无偏估计量。</div>
+<div class="kp-vocab">🔤 average treatment effect (ATE)（平均处理效应） | treatment indicator（处理指标）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Randomized control trials (RCTs): Subjects are randomly assigned to treatment and control groups so there are no systematic differences between groups other than the treatment. In practice, RCTs are expensive and may raise ethical issues. However, thinking about the ideal experiment helps identify potential confounders that could be controlled for in a multivariate regression.</div>
+<div class="kp-cn">【中文】随机对照试验（RCT）：受试者被随机分配到处理组和对照组，使两组之间除处理外没有系统性差异。实践中RCT成本高且可能涉及伦理问题。但思考理想实验有助于识别可在多元回归中控制的潜在混杂因素。</div>
+<div class="kp-vocab">🔤 randomized control trial (RCT)（随机对照试验） | confounders（混杂因素）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example: Effects of a job training program on earnings — Regressing real earnings on a binary indicator for participation in a job training program shows participants earn $1,790 more (a 39.3% increase over the $4,550 average for non-participants).</div>
+<div class="kp-cn">【中文】示例：职业培训项目对收入的影响——将实际收入对参与培训的二元指标进行回归，显示参与者收入高出$1,790（比非参与者平均$4,550高出39.3%）。</div>
+<div class="kp-vocab">🔤 job training program（职业培训项目）</div>
+</div><div class="vocab-box"><h4>📚 Ch2 核心词汇汇总</h4><table><tr><th>English</th><th>中文</th></tr><tr><td>simple linear regression</td><td>简单线性回归</td></tr><tr><td>dependent variable</td><td>因变量</td></tr><tr><td>independent/explanatory variable</td><td>自变量/解释变量</td></tr><tr><td>intercept</td><td>截距</td></tr><tr><td>slope</td><td>斜率</td></tr><tr><td>error term (disturbance)</td><td>误差项（扰动项）</td></tr><tr><td>ordinary least squares (OLS)</td><td>普通最小二乘法</td></tr><tr><td>residuals</td><td>残差</td></tr><tr><td>fitted values</td><td>拟合值</td></tr><tr><td>sum of squared residuals (SSR)</td><td>残差平方和</td></tr><tr><td>total sum of squares (SST)</td><td>总平方和</td></tr><tr><td>explained sum of squares (SSE)</td><td>解释平方和</td></tr><tr><td>R-squared</td><td>R方/判定系数</td></tr><tr><td>goodness of fit</td><td>拟合优度</td></tr><tr><td>semi-logarithmic form</td><td>半对数形式</td></tr><tr><td>log-log form</td><td>双对数形式</td></tr><tr><td>elasticity</td><td>弹性</td></tr><tr><td>semi-elasticity</td><td>半弹性</td></tr><tr><td>homoskedasticity</td><td>同方差性</td></tr><tr><td>heteroskedasticity</td><td>异方差性</td></tr><tr><td>unbiasedness</td><td>无偏性</td></tr><tr><td>standard error</td><td>标准误</td></tr><tr><td>degrees of freedom</td><td>自由度</td></tr><tr><td>binary/dummy variable</td><td>二元/虚拟变量</td></tr><tr><td>counterfactual outcomes</td><td>反事实结果</td></tr><tr><td>treatment effect</td><td>处理效应</td></tr><tr><td>average treatment effect (ATE)</td><td>平均处理效应</td></tr><tr><td>randomized control trial (RCT)</td><td>随机对照试验</td></tr><tr><td>random assignment</td><td>随机分配</td></tr><tr><td>population regression function (PRF)</td><td>总体回归函数</td></tr><tr><td>sample regression function (SRF)</td><td>样本回归函数</td></tr><tr><td>zero conditional mean</td><td>零条件均值</td></tr></table></div></div><div class="chapter" id="CH03"><h1 class="ch-title">Chapter 3: Multiple Regression Analysis: Estimation<br><span class="cn">多元回归分析：估计</span></h1><h2 class="sec-title">Definition and Motivation for Multiple Regression<span class="cn">（多元回归的定义与动机）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The multiple linear regression model explains variable y in terms of k explanatory variables: $$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_k x_k + u$$ where $\beta_j$ is the partial effect of $x_j$ on y, holding all other explanatory variables fixed.</div>
+<div class="kp-cn">【中文】多元线性回归模型用k个解释变量来解释变量y：$$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_k x_k + u$$ 其中$\beta_j$是$x_j$对y的偏效应，控制所有其他解释变量不变。</div>
+<div class="kp-vocab">🔤 multiple regression（多元回归） | partial effect（偏效应） | explanatory variables（解释变量） | regressors（回归元）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Three motivations for multiple regression: (1) Incorporate more explanatory factors into the model, (2) Explicitly hold fixed other factors that otherwise would be in the error term (reducing omitted variable bias), (3) Allow for more flexible functional forms (e.g., quadratic terms).</div>
+<div class="kp-cn">【中文】多元回归的三个动机：(1) 在模型中纳入更多解释因素，(2) 明确控制否则会进入误差项的其他因素（减少遗漏变量偏误），(3) 允许更灵活的函数形式（如二次项）。</div>
+<div class="kp-vocab">🔤 omitted variable bias（遗漏变量偏误） | functional form（函数形式） | quadratic terms（二次项）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example: Average test scores and per student spending — Per student spending is likely correlated with average family income (due to school financing). Omitting family income would lead to a biased estimate of the spending effect because the simple regression would partly attribute the income effect to spending.</div>
+<div class="kp-cn">【中文】示例：平均考试成绩与生均支出——生均支出可能与平均家庭收入相关（由于学校融资方式）。遗漏家庭收入会导致支出效应的估计有偏，因为简单回归会部分地将收入效应归因于支出。</div>
+<div class="kp-vocab">🔤 per student spending（生均支出） | biased estimate（有偏估计）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example: Family income and consumption (quadratic model) — $$consumption = \beta_0 + \beta_1 \cdot income + \beta_2 \cdot income^2 + u$$ This allows the marginal propensity to consume to change with income. The model is still linear in parameters, which is what "linear regression" requires.</div>
+<div class="kp-cn">【中文】示例：家庭收入与消费（二次模型）——$$consumption = \beta_0 + \beta_1 \cdot income + \beta_2 \cdot income^2 + u$$ 这允许边际消费倾向随收入变化。模型在参数上仍然是线性的，这正是一元回归「线性」的含义。</div>
+<div class="kp-vocab">🔤 marginal propensity to consume（边际消费倾向） | linear in parameters（参数线性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Example: CEO salary, sales, and tenure — $$\log(salary) = \beta_0 + \beta_1 \log(sales) + \beta_2 \cdot tenure + \beta_3 \cdot tenure^2 + u$$ This combines constant elasticity (sales) with quadratic relationship (tenure). "Linear" regression means linear in parameters, not in variables.</div>
+<div class="kp-cn">【中文】示例：CEO薪酬、销售额与任期——$$\log(salary) = \beta_0 + \beta_1 \log(sales) + \beta_2 \cdot tenure + \beta_3 \cdot tenure^2 + u$$ 这结合了常数弹性（销售额）和二次关系（任期）。「线性」回归指参数线性，而非变量线性。</div>
+<div class="kp-vocab">🔤 constant elasticity（常数弹性）</div>
+</div><h2 class="sec-title">OLS Estimation of the Multiple Regression Model<span class="cn">（多元回归模型的OLS估计）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> OLS chooses estimates $\hat{\beta}_0, \hat{\beta}_1, \ldots, \hat{\beta}_k$ to minimize the sum of squared residuals: $$\min \sum_{i=1}^{n} (y_i - \hat{\beta}_0 - \hat{\beta}_1 x_{i1} - \ldots - \hat{\beta}_k x_{ik})^2$$ Residuals: $$\hat{u}_i = y_i - \hat{y}_i = y_i - \hat{\beta}_0 - \hat{\beta}_1 x_{i1} - \ldots - \hat{\beta}_k x_{ik}$$</div>
+<div class="kp-cn">【中文】OLS选择估计值$\hat{\beta}_0, \hat{\beta}_1, \ldots, \hat{\beta}_k$最小化残差平方和：$$\min \sum_{i=1}^{n} (y_i - \hat{\beta}_0 - \hat{\beta}_1 x_{i1} - \ldots - \hat{\beta}_k x_{ik})^2$$ 残差：$$\hat{u}_i = y_i - \hat{y}_i = y_i - \hat{\beta}_0 - \hat{\beta}_1 x_{i1} - \ldots - \hat{\beta}_k x_{ik}$$</div>
+<div class="kp-vocab">🔤 sum of squared residuals（残差平方和） | minimization（最小化）</div>
+</div><h2 class="sec-title">Interpretation of the Multiple Regression Model<span class="cn">（多元回归模型的解释）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Ceteris paribus interpretation: $\beta_j$ measures the effect of a one-unit change in $x_j$ on y, holding all other explanatory variables fixed. The multiple regression model manages to hold the values of other explanatory variables fixed even if, in reality, they are correlated with $x_j$.</div>
+<div class="kp-cn">【中文】其他条件不变的解释：$\beta_j$衡量在控制所有其他解释变量不变的情况下，$x_j$变化一个单位对y的效应。多元回归模型能够在现实中$x_j$与其他变量相关的情况下，仍然保持其他解释变量不变。</div>
+<div class="kp-vocab">🔤 ceteris paribus（其他条件不变） | holding fixed（控制不变）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> It still must be assumed that unobserved factors (in u) do not change when the explanatory variables are changed. The ceteris paribus interpretation is valid only under the zero conditional mean assumption.</div>
+<div class="kp-cn">【中文】仍需假设当解释变量变化时，不可观测因素（u中）不变。ceteris paribus解释仅在零条件均值假设下有效。</div>
+<div class="kp-vocab">🔤 unobserved factors（不可观测因素）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example: Determinants of college GPA — $$\widehat{colGPA} = 1.29 + 0.453 \cdot hsGPA + 0.0094 \cdot ACT$$ Holding ACT fixed, a one-point higher hsGPA is associated with a 0.453 higher colGPA. Holding hsGPA fixed, a 10-point increase in ACT is associated with less than 0.1 point on colGPA.</div>
+<div class="kp-cn">【中文】示例：大学GPA的决定因素——$$\widehat{colGPA} = 1.29 + 0.453 \cdot hsGPA + 0.0094 \cdot ACT$$ 控制ACT不变，高中GPA每高一分，大学GPA高0.453。控制高中GPA不变，ACT每高10分，大学GPA增加不到0.1分。</div>
+<div class="kp-vocab">🔤 college GPA（大学GPA） | high school GPA（高中GPA） | ACT score（ACT成绩）</div>
+</div><h2 class="sec-title">Algebraic Properties of OLS and Residuals<span class="cn">（OLS的代数性质与残差）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Property 1: The sample average of residuals is zero: $$\frac{1}{n} \sum_{i=1}^{n} \hat{u}_i = 0$$ (if the model includes an intercept).</div>
+<div class="kp-cn">【中文】性质1：残差的样本均值为零：$$\frac{1}{n} \sum_{i=1}^{n} \hat{u}_i = 0$$（如果模型包含截距项）。</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Property 2: The sample covariance between each explanatory variable and the residuals is zero: $$\sum_{i=1}^{n} x_{ij} \hat{u}_i = 0$$ for all j. The residuals are orthogonal to all regressors.</div>
+<div class="kp-cn">【中文】性质2：每个解释变量与残差之间的样本协方差为零：$$\sum_{i=1}^{n} x_{ij} \hat{u}_i = 0$$（对所有j成立）。残差与所有回归元正交。</div>
+<div class="kp-vocab">🔤 orthogonal（正交的）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Property 3: The sample average of fitted values equals the sample average of y: $$\bar{\hat{y}} = \bar{y}$$</div>
+<div class="kp-cn">【中文】性质3：拟合值的样本均值等于y的样本均值：$$\bar{\hat{y}} = \bar{y}$$</div>
+<div class="kp-vocab">🔤 fitted values（拟合值）</div>
+</div><h2 class="sec-title">"Partialling Out" Interpretation of Multiple Regression<span class="cn">（多元回归的「排除」（Partialling Out）解释）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The estimated coefficient $\hat{\beta}_j$ can be obtained in two steps: (1) Regress $x_j$ on all other explanatory variables and obtain residuals $\hat{r}_{ij}$ (the part of $x_j$ uncorrelated with other x's). (2) Regress y on the residuals $\hat{r}_{ij}$. The slope coefficient from step 2 equals $\hat{\beta}_j$ from the full multiple regression.</div>
+<div class="kp-cn">【中文】估计系数$\hat{\beta}_j$可以通过两步获得：(1) 将$x_j$对所有其他解释变量回归，得到残差$\hat{r}_{ij}$（$x_j$中与其他x不相关的部分）；(2) 将y对残差$\hat{r}_{ij}$回归。第二步的斜率系数等于完整多元回归中的$\hat{\beta}_j$。</div>
+<div class="kp-vocab">🔤 partialling out（排除/分离） | Frisch-Waugh-Lovell theorem（Frisch-Waugh-Lovell定理）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Why this works: The residuals from the first regression represent the variation in $x_j$ that is uncorrelated with all other explanatory variables. The slope coefficient from the second regression therefore represents the isolated (partial) effect of $x_j$ on y.</div>
+<div class="kp-cn">【中文】为什么有效：第一步回归的残差代表了$x_j$中与所有其他解释变量不相关的变异。因此第二步回归的斜率系数代表了$x_j$对y的独立（偏）效应。</div>
+<div class="kp-vocab">🔤 isolated effect（独立效应）</div>
+</div><h2 class="sec-title">Goodness of Fit: R-squared in Multiple Regression<span class="cn">（拟合优度：多元回归中的R方）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The decomposition of total variation still holds: $$SST = SSE + SSR$$ where $$SST = \sum (y_i - \bar{y})^2$$, $$SSE = \sum (\hat{y}_i - \bar{y})^2$$, $$SSR = \sum \hat{u}_i^2$$.</div>
+<div class="kp-cn">【中文】总变异分解仍然成立：$$SST = SSE + SSR$$ 其中 $$SST = \sum (y_i - \bar{y})^2$$，$$SSE = \sum (\hat{y}_i - \bar{y})^2$$，$$SSR = \sum \hat{u}_i^2$$。</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> R-squared: $$R^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}$$ measures the proportion of variation in y explained by all explanatory variables jointly. Adding more variables never decreases R-squared (but can lead to overfitting).</div>
+<div class="kp-cn">【中文】R方：$$R^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}$$ 衡量y的变异中被所有解释变量联合解释的比例。增加更多变量永远不会降低R方（但可能导致过拟合）。</div>
+<div class="kp-vocab">🔤 overfitting（过拟合） | joint explanation（联合解释）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Key insight on R-squared: Even if R-squared is small, the regression may still provide good estimates of ceteris paribus effects. R-squared does not measure causal validity.</div>
+<div class="kp-cn">【中文】关于R方的关键见解：即使R方很小，回归仍可能提供良好的ceteris paribus效应估计。R方不衡量因果有效性。</div>
+<div class="kp-vocab">🔤 causal validity（因果有效性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example: Explaining arrest records — $$\widehat{narr86} = 0.712 - 0.150 \cdot pcnv - 0.034 \cdot avgsen - 0.104 \cdot qemp86$$ Each variable has the expected sign. Adding avgsen (average prior sentence) increases R-squared only slightly, suggesting limited additional explanatory power.</div>
+<div class="kp-cn">【中文】示例：解释逮捕记录——$$\widehat{narr86} = 0.712 - 0.150 \cdot pcnv - 0.034 \cdot avgsen - 0.104 \cdot qemp86$$ 各变量符号符合预期。加入avgsen（平均先前刑期）仅略微增加R方，表明额外解释力有限。</div>
+<div class="kp-vocab">🔤 arrest records（逮捕记录） | explanatory power（解释力）</div>
+</div><h2 class="sec-title">Standard Assumptions for Multiple Regression (MLR.1-MLR.5)<span class="cn">（多元回归的标准假设（MLR.1-MLR.5））</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Assumption MLR.1 (Linear in Parameters): The population model is linear in the parameters: $$y = \beta_0 + \beta_1 x_1 + \ldots + \beta_k x_k + u$$</div>
+<div class="kp-cn">【中文】假设MLR.1（参数线性）：总体模型在参数上是线性的：$$y = \beta_0 + \beta_1 x_1 + \ldots + \beta_k x_k + u$$</div>
+<div class="kp-vocab">🔤 linear in parameters（参数线性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Assumption MLR.2 (Random Sampling): We have a random sample of n observations from the population.</div>
+<div class="kp-cn">【中文】假设MLR.2（随机抽样）：我们有来自总体的n个观测值的随机样本。</div>
+<div class="kp-vocab">🔤 random sample（随机样本）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Assumption MLR.3 (No Perfect Collinearity): In the sample, none of the independent variables is constant and there are no exact linear relationships among the independent variables. Imperfect correlation is allowed. If one variable is a perfect linear combination of others, it is superfluous and should be eliminated.</div>
+<div class="kp-cn">【中文】假设MLR.3（无完全共线性）：在样本中，没有一个自变量是常数，且自变量之间不存在精确的线性关系。不完全相关是允许的。如果某个变量是其他变量的完全线性组合，则它是多余的，应被剔除。</div>
+<div class="kp-vocab">🔤 perfect collinearity（完全共线性） | multicollinearity（多重共线性） | linear combination（线性组合）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Examples of perfect collinearity: (1) Including a dummy variable for every category plus the intercept (dummy variable trap), (2) Including both income and log(income) if they are exactly related, (3) Small sample size where an exact linear relationship happens to hold.</div>
+<div class="kp-cn">【中文】完全共线性的例子：(1) 包含每个类别的虚拟变量和截距项（虚拟变量陷阱），(2) 同时包含income和log(income)若它们精确相关，(3) 小样本中恰好存在精确线性关系。</div>
+<div class="kp-vocab">🔤 dummy variable trap（虚拟变量陷阱）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Assumption MLR.4 (Zero Conditional Mean): $$E(u|x_1, x_2, \ldots, x_k) = 0$$ The error term has an expected value of zero for any combination of the explanatory variables. In a multiple regression model, this assumption is more likely to hold because fewer relevant factors end up in the error term.</div>
+<div class="kp-cn">【中文】假设MLR.4（零条件均值）：$$E(u|x_1, x_2, \ldots, x_k) = 0$$ 对于解释变量的任何组合，误差项的期望值为零。在多元回归模型中，此假设更可能成立，因为更少的相关因素会进入误差项。</div>
+<div class="kp-vocab">🔤 zero conditional mean（零条件均值）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Assumption MLR.5 (Homoskedasticity): $$Var(u|x_1, x_2, \ldots, x_k) = \sigma^2$$ The variance of the error term is constant conditional on all explanatory variables.</div>
+<div class="kp-cn">【中文】假设MLR.5（同方差性）：$$Var(u|x_1, x_2, \ldots, x_k) = \sigma^2$$ 给定所有解释变量，误差项的方差是常数。</div>
+<div class="kp-vocab">🔤 homoskedasticity（同方差性）</div>
+</div><h2 class="sec-title">Unbiasedness of OLS and Specification Issues<span class="cn">（OLS的无偏性与设定问题）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Theorem 3.1 (Unbiasedness of OLS): Under assumptions MLR.1–MLR.4, $$E(\hat{\beta}_j) = \beta_j$$ for all j = 0, 1, ..., k. The OLS estimators are unbiased estimators of the population parameters.</div>
+<div class="kp-cn">【中文】定理3.1（OLS的无偏性）：在假设MLR.1-MLR.4下，对所有j = 0, 1, ..., k有$$E(\hat{\beta}_j) = \beta_j$$。OLS估计量是总体参数的无偏估计量。</div>
+<div class="kp-vocab">🔤 unbiasedness（无偏性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Including irrelevant variables (overspecification): Including variables that have zero population coefficients does not cause bias — the estimates remain unbiased. However, it increases the sampling variances of the other coefficient estimates, making them less precise.</div>
+<div class="kp-cn">【中文】包含无关变量（过度设定）：包含总体系数为零的变量不会导致偏误——估计量仍然无偏。但会增加其他系数估计的抽样方差，使其精确度降低。</div>
+<div class="kp-vocab">🔤 irrelevant variables（无关变量） | overspecification（过度设定）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Omitting relevant variables (omitted variable bias): If a relevant variable (correlated with included regressors) is omitted, all estimated coefficients will generally be biased. The direction of bias depends on the correlation between the omitted variable and the included regressors.</div>
+<div class="kp-cn">【中文】遗漏相关变量（遗漏变量偏误）：如果遗漏了一个与所包含回归元相关的相关变量，所有估计系数一般都会有偏。偏误方向取决于遗漏变量与所包含回归元之间的相关性。</div>
+<div class="kp-vocab">🔤 omitted variable bias（遗漏变量偏误） | underspecification（不足设定）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> When is there NO omitted variable bias? If the omitted variable is irrelevant (its true coefficient is zero) or if it is uncorrelated with all included explanatory variables.</div>
+<div class="kp-cn">【中文】何时没有遗漏变量偏误？如果遗漏变量是无相关的（其真实系数为零），或者它与所有包含的解释变量都不相关。</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Example: Omitting ability in a wage equation — If ability is positively correlated with education and positively affects wages, omitting ability will overstate the return to education (positive bias in $\hat{\beta}_{educ}$).</div>
+<div class="kp-cn">【中文】示例：在工资方程中遗漏能力——如果能力与教育正相关且正向影响工资，遗漏能力会夸大教育回报率（$\hat{\beta}_{educ}$有正偏误）。</div>
+<div class="kp-vocab">🔤 ability bias（能力偏误）</div>
+</div><h2 class="sec-title">Sampling Variances of OLS Estimators<span class="cn">（OLS估计量的抽样方差）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Theorem 3.2 (Sampling variances of OLS slope estimators): Under MLR.1–MLR.5, $$Var(\hat{\beta}_j) = \frac{\sigma^2}{SST_j \cdot (1 - R_j^2)}$$ where $$SST_j = \sum (x_{ij} - \bar{x}_j)^2$$ is the total sample variation in $x_j$, and $R_j^2$ is the R-squared from regressing $x_j$ on all other independent variables.</div>
+<div class="kp-cn">【中文】定理3.2（OLS斜率估计量的抽样方差）：在MLR.1-MLR.5下，$$Var(\hat{\beta}_j) = \frac{\sigma^2}{SST_j \cdot (1 - R_j^2)}$$ 其中$$SST_j = \sum (x_{ij} - \bar{x}_j)^2$$是$x_j$的总样本变异，$R_j^2$是将$x_j$对所有其他自变量回归得到的R方。</div>
+<div class="kp-vocab">🔤 sampling variance（抽样方差）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Component 1 — Error variance $\sigma^2$: Higher error variance (more "noise") increases sampling variance. The error variance does NOT decrease with sample size.</div>
+<div class="kp-cn">【中文】组成部分1——误差方差$\sigma^2$：更高的误差方差（更多「噪音」）增加抽样方差。误差方差不随样本量增加而降低。</div>
+<div class="kp-vocab">🔤 error variance（误差方差） | noise（噪音）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Component 2 — Total sample variation in $x_j$ ($SST_j$): More sample variation in the explanatory variable leads to more precise estimates (smaller variance). $SST_j$ automatically increases with sample size, so increasing n is a way to get more precise estimates.</div>
+<div class="kp-cn">【中文】组成部分2——$x_j$的总样本变异($SST_j$)：解释变量的样本变异越大，估计越精确（方差越小）。$SST_j$随样本量自动增加，因此增加n是获得更精确估计的一种方法。</div>
+<div class="kp-vocab">🔤 sample variation（样本变异） | precision（精确度）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Component 3 — Linear relationships among independent variables ($R_j^2$): The more $x_j$ can be explained by other independent variables (higher $R_j^2$), the larger the sampling variance of $\hat{\beta}_j$. Under perfect multicollinearity ($R_j^2 = 1$), the variance would be infinite.</div>
+<div class="kp-cn">【中文】组成部分3——自变量间的线性关系($R_j^2$)：$x_j$能被其他自变量解释的程度越高（$R_j^2$越大），$\hat{\beta}_j$的抽样方差越大。在完全多重共线性下($R_j^2 = 1$)，方差将为无穷大。</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Multicollinearity: Occurs when independent variables are highly (but not perfectly) correlated. Only the sampling variances of the variables involved are inflated; estimates of other effects may be very precise. Multicollinearity is NOT a violation of MLR.3. It can be detected through Variance Inflation Factors (VIF): $$VIF_j = \frac{1}{1 - R_j^2}$$</div>
+<div class="kp-cn">【中文】多重共线性：当自变量之间高度（但不完全）相关时出现。仅涉及共线性的变量的抽样方差被膨胀；其他效应的估计可能非常精确。多重共线性并不违反MLR.3。可通过方差膨胀因子（VIF）检测：$$VIF_j = \frac{1}{1 - R_j^2}$$</div>
+<div class="kp-vocab">🔤 multicollinearity（多重共线性） | variance inflation factor (VIF)（方差膨胀因子） | sample variation（样本变异）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Multicollinearity example: Different categories of school expenditure are strongly correlated — if a school has a lot of resources it will spend a lot on everything. It will be hard to estimate differential effects because all expenditures move together. Solution: Combine (aggregate) expenditure categories or drop some variables (but dropping may cause omitted variable bias).</div>
+<div class="kp-cn">【中文】多重共线性示例：学校不同类别的支出高度相关——如果一所学校资源丰富，它在所有方面都会支出很多。很难估计差异化效应，因为所有支出同向变动。解决方案：合并（加总）支出类别或删除一些变量（但删除可能导致遗漏变量偏误）。</div>
+<div class="kp-vocab">🔤 aggregation（加总） | differential effects（差异化效应）</div>
+</div><h2 class="sec-title">Bias-Variance Tradeoff in Misspecified Models<span class="cn">（误设模型中的偏误-方差权衡）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The choice of whether to include a particular variable can be made by analyzing the tradeoff between bias and variance. Including a relevant but highly collinear variable may increase variance more than it reduces bias.</div>
+<div class="kp-cn">【中文】是否包含某个特定变量的选择，可以通过分析偏误与方差之间的权衡来决定。包含一个相关但高度共线的变量，其增加方差可能超过减少偏误的收益。</div>
+<div class="kp-vocab">🔤 bias-variance tradeoff（偏误-方差权衡）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Case 1: Overspecification (including irrelevant variables) — estimates are unbiased but variances increase. Case 2: Underspecification (omitting relevant variables) — estimates are biased but variances may be smaller. The optimal choice depends on the specific magnitudes of bias and variance.</div>
+<div class="kp-cn">【中文】情况1：过度设定（包含无关变量）——估计量无偏但方差增大。情况2：不足设定（遗漏相关变量）——估计量有偏但方差可能更小。最优选择取决于偏误和方差的具体大小。</div>
+</div><h2 class="sec-title">Estimating the Error Variance and Standard Errors<span class="cn">（误差方差的估计与标准误）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Theorem 3.3 (Unbiased estimator of the error variance): $$\hat{\sigma}^2 = \frac{1}{n - k - 1} \sum_{i=1}^{n} \hat{u}_i^2 = \frac{SSR}{n - k - 1} = \frac{SSR}{df}$$ where $df = n - k - 1$ is the degrees of freedom (n observations minus k+1 estimated parameters).</div>
+<div class="kp-cn">【中文】定理3.3（误差方差的无偏估计量）：$$\hat{\sigma}^2 = \frac{1}{n - k - 1} \sum_{i=1}^{n} \hat{u}_i^2 = \frac{SSR}{n - k - 1} = \frac{SSR}{df}$$ 其中$df = n - k - 1$为自由度（n个观测值减去k+1个估计参数）。</div>
+<div class="kp-vocab">🔤 degrees of freedom（自由度） | unbiased estimator（无偏估计量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Standard error of $\hat{\beta}_j$: $$se(\hat{\beta}_j) = \frac{\hat{\sigma}}{\sqrt{SST_j (1 - R_j^2)}}$$ Note: These formulas are only valid under MLR.1–MLR.5 (in particular, homoskedasticity must hold).</div>
+<div class="kp-cn">【中文】$\hat{\beta}_j$的标准误：$$se(\hat{\beta}_j) = \frac{\hat{\sigma}}{\sqrt{SST_j (1 - R_j^2)}}$$ 注意：这些公式仅在MLR.1-MLR.5下有效（特别是必须满足同方差性）。</div>
+<div class="kp-vocab">🔤 standard error（标准误）</div>
+</div><h2 class="sec-title">Efficiency of OLS: The Gauss-Markov Theorem<span class="cn">（OLS的有效性：高斯-马尔可夫定理）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Under MLR.1–MLR.5, OLS is unbiased. But many other estimators may also be unbiased. Which one has the smallest variance? The answer is usually restricted to linear estimators (i.e., estimators that are linear functions of the dependent variable y).</div>
+<div class="kp-cn">【中文】在MLR.1-MLR.5下，OLS是无偏的。但许多其他估计量也可能是无偏的。哪个无偏估计量方差最小？答案通常限于线性估计量（即因变量y的线性函数）。</div>
+<div class="kp-vocab">🔤 linear estimator（线性估计量） | best estimator（最优估计量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Theorem 3.4 (Gauss-Markov Theorem): Under assumptions MLR.1–MLR.5, the OLS estimators are the Best Linear Unbiased Estimators (BLUEs). That is, among all linear unbiased estimators, OLS has the smallest variance. OLS is BLUE.</div>
+<div class="kp-cn">【中文】定理3.4（高斯-马尔可夫定理）：在假设MLR.1-MLR.5下，OLS估计量是最优线性无偏估计量（BLUE）。即在所有线性无偏估计量中，OLS的方差最小。OLS是BLUE。</div>
+<div class="kp-vocab">🔤 Gauss-Markov Theorem（高斯-马尔可夫定理） | BLUE（最优线性无偏估计量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Important caveat: OLS is only BLUE if MLR.1–MLR.5 all hold. If there is heteroskedasticity, for example, there are better estimators than OLS (e.g., weighted least squares, covered in later chapters).</div>
+<div class="kp-cn">【中文】重要警示：OLS仅在MLR.1-MLR.5全部成立时才是BLUE。如果存在异方差性，则有比OLS更好的估计量（如加权最小二乘法，将在后续章节介绍）。</div>
+<div class="kp-vocab">🔤 weighted least squares (WLS)（加权最小二乘法） | heteroskedasticity（异方差性）</div>
+</div><h2 class="sec-title">Applications of Multiple Regression<span class="cn">（多元回归的应用场景）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Scenario 1 — Prediction: The best prediction of y given the explanatory variables is its conditional expectation $$E(y|x_1, \ldots, x_k)$$. The OLS fitted values provide this conditional mean prediction. Example: In efficient markets theory, a single variable may act as a sufficient statistic — once known, additional information does not improve prediction.</div>
+<div class="kp-cn">【中文】场景1——预测：y在给定解释变量下的最佳预测是其条件期望$$E(y|x_1, \ldots, x_k)$$。OLS拟合值提供了这一条件均值预测。例如：在有效市场理论中，单一变量可能作为充分统计量——一旦已知，额外信息不会改善预测。</div>
+<div class="kp-vocab">🔤 prediction（预测） | conditional expectation（条件期望） | efficient markets（有效市场） | sufficient statistic（充分统计量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Scenario 2 — Testing for ceteris paribus group differences: Differences in outcomes between groups can be evaluated using dummy variables while controlling for other factors. This allows comparison of groups holding other relevant characteristics fixed.</div>
+<div class="kp-cn">【中文】场景2——检验ceteris paribus下的群体差异：使用虚拟变量可以在控制其他因素的同时评估群体间结果差异。这允许在控制其他相关特征不变的情况下进行群体比较。</div>
+<div class="kp-vocab">🔤 group differences（群体差异） | dummy variables（虚拟变量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag info">了解</span> Scenario 3 — Measuring the tradeoff between two variables: For example, regressing salary on pension compensation (controlling for other factors) measures how much salary is traded off for pension benefits in compensation packages.</div>
+<div class="kp-cn">【中文】场景3——衡量两个变量之间的权衡：例如，将工资对养老金补偿回归（控制其他因素），衡量薪酬包中工资与养老金福利之间的替代关系。</div>
+<div class="kp-vocab">🔤 tradeoff（权衡/替代） | compensation（薪酬）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Scenario 4 — Potential outcomes, treatment effects, and policy analysis: With multiple regression, we can get closer to random assignment by conditioning on observables. By including control variables x that are likely related to both the outcome (y) and the treatment (w), we reduce selection bias. Example: If y is earnings and w is participation in a job training program, x would include all variables related to both earnings and program participation.</div>
+<div class="kp-cn">【中文】场景4——潜在结果、处理效应与政策分析：通过多元回归，我们可以借助控制可观测量来更接近随机分配。通过包含可能与结果(y)和处理(w)都相关的控制变量x，我们减少选择偏误。例如：如果y是收入，w是参与职业培训项目，x将包含所有与收入和项目参与都相关的变量。</div>
+<div class="kp-vocab">🔤 selection bias（选择偏误） | conditioning on observables（控制可观测量） | control variables（控制变量） | potential outcomes（潜在结果）</div>
+</div><div class="vocab-box"><h4>📚 Ch3 核心词汇汇总</h4><table><tr><th>English</th><th>中文</th></tr><tr><td>multiple regression</td><td>多元回归</td></tr><tr><td>partial effect</td><td>偏效应</td></tr><tr><td>ceteris paribus</td><td>其他条件不变</td></tr><tr><td>ordinary least squares (OLS)</td><td>普通最小二乘法</td></tr><tr><td>residuals</td><td>残差</td></tr><tr><td>fitted values</td><td>拟合值</td></tr><tr><td>sum of squared residuals (SSR)</td><td>残差平方和</td></tr><tr><td>total sum of squares (SST)</td><td>总平方和</td></tr><tr><td>explained sum of squares (SSE)</td><td>解释平方和</td></tr><tr><td>R-squared</td><td>R方/判定系数</td></tr><tr><td>partialling out</td><td>排除/分离</td></tr><tr><td>perfect collinearity</td><td>完全共线性</td></tr><tr><td>multicollinearity</td><td>多重共线性</td></tr><tr><td>variance inflation factor (VIF)</td><td>方差膨胀因子</td></tr><tr><td>omitted variable bias</td><td>遗漏变量偏误</td></tr><tr><td>irrelevant variable</td><td>无关变量</td></tr><tr><td>overspecification</td><td>过度设定</td></tr><tr><td>underspecification</td><td>不足设定</td></tr><tr><td>zero conditional mean</td><td>零条件均值</td></tr><tr><td>homoskedasticity</td><td>同方差性</td></tr><tr><td>heteroskedasticity</td><td>异方差性</td></tr><tr><td>unbiasedness</td><td>无偏性</td></tr><tr><td>standard error</td><td>标准误</td></tr><tr><td>degrees of freedom</td><td>自由度</td></tr><tr><td>Gauss-Markov Theorem</td><td>高斯-马尔可夫定理</td></tr><tr><td>BLUE (Best Linear Unbiased Estimator)</td><td>最优线性无偏估计量</td></tr><tr><td>sampling variance</td><td>抽样方差</td></tr><tr><td>error variance</td><td>误差方差</td></tr><tr><td>bias-variance tradeoff</td><td>偏误-方差权衡</td></tr><tr><td>control variables</td><td>控制变量</td></tr><tr><td>selection bias</td><td>选择偏误</td></tr><tr><td>treatment effect</td><td>处理效应</td></tr><tr><td>dummy variable</td><td>虚拟变量</td></tr><tr><td>dummy variable trap</td><td>虚拟变量陷阱</td></tr><tr><td>linear in parameters</td><td>参数线性</td></tr><tr><td>conditional expectation</td><td>条件期望</td></tr><tr><td>prediction</td><td>预测</td></tr></table></div></div><div class="chapter" id="CH04"><h1 class="ch-title">Chapter 4: Multiple Regression Analysis: Inference<br><span class="cn">多元回归分析：推断</span></h1><h2 class="sec-title">Sampling Distributions of OLS Estimators<span class="cn">（OLS估计量的抽样分布）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The OLS estimators are random variables. We know their expected values and variances under MLR.1-MLR.5, but to conduct hypothesis tests we need their full distribution. This requires an additional assumption about the distribution of errors.</div>
+<div class="kp-cn">【中文】OLS估计量是随机变量。在MLR.1-MLR.5假设下，我们已知其期望值和方差，但要进行假设检验，需要它们的完整分布，这需要对误差项的分布做出额外假设。</div>
+<div class="kp-vocab">🔤 sampling distribution（抽样分布） | random variable（随机变量） | hypothesis test（假设检验）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Assumption MLR.6 (Normality of error terms): The error term $u$ is independent of $x_1, x_2, \dots, x_k$ and is normally distributed with zero mean and variance $\sigma^2$: $u \sim \text{Normal}(0, \sigma^2)$.</div>
+<div class="kp-cn">【中文】假设MLR.6（误差项正态性）：误差项 $u$ 独立于 $x_1, x_2, \dots, x_k$，且服从均值为零、方差为 $\sigma^2$ 的正态分布：$u \sim \text{Normal}(0, \sigma^2)$。</div>
+<div class="kp-vocab">🔤 normality assumption（正态性假设） | error term（误差项） | independently distributed（独立分布）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Justification for normality: the error term is the sum of many unobserved factors. By the Central Limit Theorem (CLT), sums of independent factors tend to be normally distributed. However, in practice normality can be questionable for variables like wages (nonnegative), number of arrests (small integers), or unemployment (indicator variable). Transformations such as $\log(\text{wage})$ can help achieve normality.</div>
+<div class="kp-cn">【中文】正态性的理由：误差项是许多不可观测因素之和。根据中心极限定理(CLT)，独立因素之和趋于正态分布。但实践中正态性可能不成立，如工资（非负）、逮捕次数（小整数）、失业（二值指示变量）。可使用对数变换（如 $\log(\text{wage})$）来帮助实现正态性。</div>
+<div class="kp-vocab">🔤 Central Limit Theorem（中心极限定理） | log transformation（对数变换） | indicator variable（指示变量/虚拟变量） | unobserved factors（不可观测因素）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Theorem 4.1 (Normal Sampling Distributions): Under MLR.1-MLR.6, the OLS estimators are normally distributed conditional on the sample values of the explanatory variables: $\hat{\beta}_j \sim \text{Normal}(\beta_j, \text{Var}(\hat{\beta}_j))$. Moreover, any linear combination of the OLS estimators is also normally distributed, and the standardized estimator $(\hat{\beta}_j - \beta_j) / \text{sd}(\hat{\beta}_j) \sim \text{Normal}(0, 1)$.</div>
+<div class="kp-cn">【中文】定理4.1（正态抽样分布）：在MLR.1-MLR.6假设下，OLS估计量条件于解释变量样本值服从正态分布：$\hat{\beta}_j \sim \text{Normal}(\beta_j, \text{Var}(\hat{\beta}_j))$。此外，OLS估计量的任意线性组合也服从正态分布，标准化估计量 $(\hat{\beta}_j - \beta_j) / \text{sd}(\hat{\beta}_j) \sim \text{Normal}(0, 1)$。</div>
+<div class="kp-vocab">🔤 standardized estimator（标准化估计量） | conditional distribution（条件分布）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Theorem 4.2 (t-Distribution for Standardized Estimators): Under MLR.1-MLR.6, $(\hat{\beta}_j - \beta_j) / \text{se}(\hat{\beta}_j) \sim t_{n-k-1}$, where $n-k-1$ is the degrees of freedom. Here $\text{se}(\hat{\beta}_j)$ replaces the unknown $\sigma$ with the standard error.</div>
+<div class="kp-cn">【中文】定理4.2（标准化估计量的t分布）：在MLR.1-MLR.6假设下，$(\hat{\beta}_j - \beta_j) / \text{se}(\hat{\beta}_j) \sim t_{n-k-1}$，其中 $n-k-1$ 为自由度。这里用标准误 $\text{se}(\hat{\beta}_j)$ 替代了未知的 $\sigma$。</div>
+<div class="kp-vocab">🔤 t-distribution（t分布） | degrees of freedom（自由度） | standard error（标准误）</div>
+</div><h2 class="sec-title">Testing Hypotheses About a Single Population Parameter: The t-Test<span class="cn">（单个总体参数的检验：t检验）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The t-statistic (or t-ratio) for testing $H_0: \beta_j = 0$ is defined as $t_{\hat{\beta}_j} \equiv \frac{\hat{\beta}_j}{\text{se}(\hat{\beta}_j)}$. Under the null hypothesis, $t_{\hat{\beta}_j} \sim t_{n-k-1}$.</div>
+<div class="kp-cn">【中文】检验 $H_0: \beta_j = 0$ 的t统计量（或t比率）定义为 $t_{\hat{\beta}_j} \equiv \frac{\hat{\beta}_j}{\text{se}(\hat{\beta}_j)}$。在原假设下，$t_{\hat{\beta}_j} \sim t_{n-k-1}$。</div>
+<div class="kp-vocab">🔤 t-statistic（t统计量） | t-ratio（t比率） | null hypothesis（原假设/零假设） | alternative hypothesis（备择假设）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Testing against one-sided alternative (right-tailed): $H_0: \beta_j = 0$ vs $H_1: \beta_j > 0$. Reject $H_0$ if $t_{\hat{\beta}_j} > c$, where $c$ is the critical value at the chosen significance level $\alpha$ (e.g., $t_{28, 0.05} = 1.701$).</div>
+<div class="kp-cn">【中文】单侧备择检验（右侧）：$H_0: \beta_j = 0$ vs $H_1: \beta_j > 0$。若 $t_{\hat{\beta}_j} > c$，则拒绝 $H_0$，其中 $c$ 为所选显著性水平 $\alpha$ 下的临界值（如 $t_{28, 0.05} = 1.701$）。</div>
+<div class="kp-vocab">🔤 one-sided test（单侧检验） | critical value（临界值） | significance level（显著性水平） | rejection region（拒绝域）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Testing against one-sided alternative (left-tailed): $H_0: \beta_j = 0$ vs $H_1: \beta_j < 0$. Reject $H_0$ if $t_{\hat{\beta}_j} < -c$, where $c$ is the critical value (e.g., $t_{18, 0.05} = 1.734$, reject if $t < -1.734$).</div>
+<div class="kp-cn">【中文】单侧备择检验（左侧）：$H_0: \beta_j = 0$ vs $H_1: \beta_j < 0$。若 $t_{\hat{\beta}_j} < -c$，则拒绝 $H_0$（如 $t_{18, 0.05} = 1.734$，当 $t < -1.734$ 时拒绝）。</div>
+<div class="kp-vocab">🔤 left-tailed test（左侧检验） | right-tailed test（右侧检验）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Testing against two-sided alternative: $H_0: \beta_j = 0$ vs $H_1: \beta_j \neq 0$. Reject $H_0$ if $|t_{\hat{\beta}_j}| > c$. For example, with $t_{25, 0.025}$, reject if $|t| > 2.06$.</div>
+<div class="kp-cn">【中文】双侧备择检验：$H_0: \beta_j = 0$ vs $H_1: \beta_j \neq 0$。若 $|t_{\hat{\beta}_j}| > c$，则拒绝 $H_0$。例如，$t_{25, 0.025}$ 下，当 $|t| > 2.06$ 时拒绝。</div>
+<div class="kp-vocab">🔤 two-sided test（双侧检验） | absolute value（绝对值） | two tails（双尾）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> For testing a general hypothesized value: $H_0: \beta_j = a_j$. The t-statistic becomes $t = \frac{\hat{\beta}_j - a_j}{\text{se}(\hat{\beta}_j)}$, and the test procedure is the same as before.</div>
+<div class="kp-cn">【中文】检验一般假设值：$H_0: \beta_j = a_j$。t统计量为 $t = \frac{\hat{\beta}_j - a_j}{\text{se}(\hat{\beta}_j)}$，检验步骤与前述相同。</div>
+<div class="kp-vocab">🔤 hypothesized value（假设值）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Rule of thumb for statistical significance: when degrees of freedom are large (normal approximation applies), a variable is 'statistically significant' if $|t| > 1.96$ at $\alpha = 5\%$ (two-sided), $|t| > 2.58$ at $\alpha = 1\%$.</div>
+<div class="kp-cn">【中文】统计显著性的经验法则：当自由度足够大（正态近似适用）时，双侧检验中 $|t| > 1.96$ 表示在 $\alpha = 5\%$ 下显著，$|t| > 2.58$ 表示在 $\alpha = 1\%$ 下显著。</div>
+<div class="kp-vocab">🔤 statistically significant（统计显著） | normal approximation（正态近似）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example (Wage equation): $\log(\text{wage}) = \beta_0 + \beta_1 \text{educ} + \beta_2 \text{tenure} + \beta_3 \text{exper} + u$. Test $H_0: \beta_3 = 0$ vs $H_1: \beta_3 > 0$. With $t = 2.41 > 1.701$, reject $H_0$ at the 5% level. Experience has a statistically positive effect on wages.</div>
+<div class="kp-cn">【中文】例（工资方程）：$\log(\text{wage}) = \beta_0 + \beta_1 \text{educ} + \beta_2 \text{tenure} + \beta_3 \text{exper} + u$。检验 $H_0: \beta_3 = 0$ vs $H_1: \beta_3 > 0$。$t = 2.41 > 1.701$，在5%水平上拒绝原假设，工作经验对工资有统计上显著的正向影响。</div>
+<div class="kp-vocab">🔤 wage equation（工资方程） | education（教育） | tenure（任期/工龄） | experience（工作经验）</div>
+</div><h2 class="sec-title">p-Values<span class="cn">（p值）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The p-value is the smallest significance level at which the null hypothesis can still be rejected. A small p-value is evidence against the null hypothesis; a large p-value supports the null. p-values are more informative than tests at fixed significance levels.</div>
+<div class="kp-cn">【中文】p值是仍能拒绝原假设的最小显著性水平。小的p值提供反对原假设的证据，大的p值支持原假设。p值比固定显著性水平的检验包含更多信息。</div>
+<div class="kp-vocab">🔤 p-value（p值） | evidence against the null（反对原假设的证据）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> For a two-sided test: $p\text{-value} = P(|T| > |t|)$, where $T \sim t_{n-k-1}$ and $t$ is the realized test statistic. For example, $P(|t| > 1.85) = 2 \times 0.0359 = 0.0718$. The null is rejected if and only if p-value $<$ significance level $\alpha$.</div>
+<div class="kp-cn">【中文】双侧检验的p值：$p\text{-value} = P(|T| > |t|)$，其中 $T \sim t_{n-k-1}$，$t$ 为实际检验统计量。例如 $P(|t| > 1.85) = 2 \times 0.0359 = 0.0718$。当且仅当 p值 $<$ 显著性水平 $\alpha$ 时拒绝原假设。</div>
+<div class="kp-vocab">🔤 probability（概率）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> A null hypothesis is rejected if and only if the corresponding p-value is smaller than the significance level. E.g., p-value of 0.0718 would not reject at $\alpha = 0.05$.</div>
+<div class="kp-cn">【中文】当且仅当p值小于显著性水平时拒绝原假设。如p值为0.0718，则在 $\alpha = 0.05$ 下不能拒绝原假设。</div>
+</div><h2 class="sec-title">Economic vs. Statistical Significance<span class="cn">（经济显著性与统计显著性）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Statistical significance does NOT imply economic or practical significance. A coefficient can be statistically significant but have a negligible magnitude. Always discuss the magnitude of the coefficient to assess economic importance.</div>
+<div class="kp-cn">【中文】统计显著性不等同于经济或实际显著性。系数可能统计显著但数值微不足道。必须讨论系数大小来评估经济重要性。</div>
+<div class="kp-vocab">🔤 economic significance（经济显著性） | practical significance（实际显著性） | magnitude of coefficient（系数大小）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Guidelines: (1) Discuss magnitude if the variable is statistically significant. (2) If statistically and economically important but with 'wrong' sign, the model may be misspecified. (3) If statistically insignificant at usual levels, consider dropping it. (4) With small samples, effects may be imprecisely estimated; dropping insignificant variables is less justified.</div>
+<div class="kp-cn">【中文】准则：(1) 若变量统计显著，讨论其系数大小；(2) 若统计和经济上都重要但符号'错了'，模型可能误设；(3) 若在常规水平上统计不显著，可考虑剔除；(4) 小样本下效应可能估计不精确，剔除不显著变量的理由较弱。</div>
+<div class="kp-vocab">🔤 misspecification（误设） | imprecisely estimated（估计不精确）</div>
+</div><h2 class="sec-title">Confidence Intervals<span class="cn">（置信区间）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> A $100(1-\alpha)\%$ confidence interval for $\beta_j$ is given by: $\hat{\beta}_j \pm c \cdot \text{se}(\hat{\beta}_j)$, where $c$ is the $(1 - \alpha/2)$ percentile of $t_{n-k-1}$. For a 95% CI with large df, $c \approx 1.96$.</div>
+<div class="kp-cn">【中文】$\beta_j$ 的 $100(1-\alpha)\%$ 置信区间为：$\hat{\beta}_j \pm c \cdot \text{se}(\hat{\beta}_j)$，其中 $c$ 是 $t_{n-k-1}$ 分布的 $(1 - \alpha/2)$ 分位数。大样本下95%置信区间 $c \approx 1.96$。</div>
+<div class="kp-vocab">🔤 confidence interval（置信区间） | percentile（分位数） | confidence level（置信水平）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Interpretation: The bounds are random. In repeated samples, the constructed interval will cover the true population parameter $\beta_j$ in $100(1-\alpha)\%$ of the cases. There is a direct relationship: $H_0: \beta_j = 0$ is rejected at significance level $\alpha$ against a two-sided alternative if and only if the $100(1-\alpha)\%$ confidence interval does NOT contain 0.</div>
+<div class="kp-cn">【中文】解释：置信区间的边界是随机的。在重复抽样中，构造的区间有 $100(1-\alpha)\%$ 的概率包含真实总体参数 $\beta_j$。置信区间与假设检验存在直接关系：在显著性水平 $\alpha$ 下拒绝 $H_0: \beta_j = 0$（双侧）当且仅当 $100(1-\alpha)\%$ 置信区间不包含0。</div>
+<div class="kp-vocab">🔤 repeated samples（重复抽样）</div>
+</div><h2 class="sec-title">Testing Linear Combinations of Parameters<span class="cn">（检验参数的线性组合）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> To test a linear combination $H_0: \beta_1 - \beta_2 = 0$ (e.g., difference in returns between two-year and four-year colleges), the t-statistic is $t = \frac{\hat{\beta}_1 - \hat{\beta}_2}{\text{se}(\hat{\beta}_1 - \hat{\beta}_2)}$. The standard error of the difference is NOT directly available from standard regression output.</div>
+<div class="kp-cn">【中文】检验线性组合 $H_0: \beta_1 - \beta_2 = 0$（如两年制与四年制大学的回报差异），t统计量为 $t = \frac{\hat{\beta}_1 - \hat{\beta}_2}{\text{se}(\hat{\beta}_1 - \hat{\beta}_2)}$。差值的标准误无法直接从标准回归输出中获得。</div>
+<div class="kp-vocab">🔤 linear combination（线性组合） | return to education（教育回报）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Alternative approach via reparametrization: substitute parameters to directly estimate the difference. For example, redefine $\theta = \beta_1 - \beta_2$ and rewrite the model so that $\theta$ appears as a coefficient. This method always works for single linear hypotheses.</div>
+<div class="kp-cn">【中文】通过重新参数化替代：代换参数直接估计差值。如定义 $\theta = \beta_1 - \beta_2$，将模型重写使 $\theta$ 作为一个系数出现。此方法适用于所有单个线性假设。</div>
+<div class="kp-vocab">🔤 reparametrization（重新参数化） | substitution（代换）</div>
+</div><h2 class="sec-title">Testing Multiple Linear Restrictions: The F-Test<span class="cn">（检验多个线性约束：F检验）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> The F-test is used to test joint hypotheses involving multiple parameters (exclusion restrictions). For testing that $q$ variables are jointly insignificant: $H_0: \beta_{k-q+1} = \cdots = \beta_k = 0$ vs $H_1:$ at least one is not zero.</div>
+<div class="kp-cn">【中文】F检验用于检验涉及多个参数的联合假设（排除性约束）。检验 $q$ 个变量联合不显著：$H_0: \beta_{k-q+1} = \cdots = \beta_k = 0$ vs $H_1:$ 至少有一个不为零。</div>
+<div class="kp-vocab">🔤 F-test（F检验） | exclusion restrictions（排除性约束） | jointly significant（联合显著） | joint hypothesis（联合假设）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The F-statistic is: $F = \frac{(\text{SSR}_r - \text{SSR}_{ur}) / q}{\text{SSR}_{ur} / (n - k - 1)} = \frac{(R^2_{ur} - R^2_r) / q}{(1 - R^2_{ur}) / (n - k - 1)}$, where $\text{SSR}_r$ is the sum of squared residuals from the restricted model (imposing $H_0$), $\text{SSR}_{ur}$ from the unrestricted model, $q$ is the number of restrictions (numerator df), and $n-k-1$ is the denominator df.</div>
+<div class="kp-cn">【中文】F统计量为：$F = \frac{(\text{SSR}_r - \text{SSR}_{ur}) / q}{\text{SSR}_{ur} / (n - k - 1)} = \frac{(R^2_{ur} - R^2_r) / q}{(1 - R^2_{ur}) / (n - k - 1)}$，其中 $\text{SSR}_r$ 是受约束模型（施加 $H_0$）的残差平方和，$\text{SSR}_{ur}$ 是无约束模型的残差平方和，$q$ 为约束个数（分子自由度），$n-k-1$ 为分母自由度。</div>
+<div class="kp-vocab">🔤 F-statistic（F统计量） | restricted model（受约束模型） | unrestricted model（无约束模型） | sum of squared residuals（残差平方和） | numerator（分子） | denominator（分母）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Under $H_0$, $F \sim F_{q, n-k-1}$. Reject $H_0$ if $F > c$, where $c$ is the critical value from the F-distribution. The F-distribution only takes positive values, corresponding to the fact that $\text{SSR}_r \geq \text{SSR}_{ur}$ always.</div>
+<div class="kp-cn">【中文】在 $H_0$ 下，$F \sim F_{q, n-k-1}$。若 $F > c$ 则拒绝 $H_0$，$c$ 为F分布的临界值。F分布只取正值，对应于 $\text{SSR}_r \geq \text{SSR}_{ur}$ 总是成立。</div>
+<div class="kp-vocab">🔤 F-distribution（F分布）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Joint significance vs. individual significance: Variables can be 'jointly significant' even if individually insignificant on t-tests. This often occurs due to multicollinearity among the variables.</div>
+<div class="kp-cn">【中文】联合显著与个体显著：变量可能'联合显著'即使在单个t检验中不显著。这通常是由变量间的多重共线性造成的。</div>
+<div class="kp-vocab">🔤 multicollinearity（多重共线性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Test of overall significance of a regression: $H_0: \beta_1 = \beta_2 = \cdots = \beta_k = 0$ (all slope parameters are zero). The F-statistic is $F = \frac{R^2 / k}{(1 - R^2) / (n - k - 1)}$. Under $H_0$, $F \sim F_{k, n-k-1}$. This tests whether the explanatory variables as a group explain the dependent variable.</div>
+<div class="kp-cn">【中文】回归整体显著性检验：$H_0: \beta_1 = \beta_2 = \cdots = \beta_k = 0$（所有斜率参数为零）。F统计量为 $F = \frac{R^2 / k}{(1 - R^2) / (n - k - 1)}$。在 $H_0$ 下，$F \sim F_{k, n-k-1}$。这检验解释变量作为一个整体是否能解释因变量。</div>
+<div class="kp-vocab">🔤 overall significance（整体显著性） | slope parameters（斜率参数）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Testing general linear restrictions: The F-test can handle any $q$ linear restrictions of the form $H_0: \boldsymbol{R}\boldsymbol{\beta} = \boldsymbol{r}$. Compute the restricted regression by imposing the restrictions, then use the same F-statistic formula with appropriate $\text{SSR}_r$ and $\text{SSR}_{ur}$.</div>
+<div class="kp-cn">【中文】检验一般线性约束：F检验可以处理任意 $q$ 个形如 $H_0: \boldsymbol{R}\boldsymbol{\beta} = \boldsymbol{r}$ 的线性约束。通过施加约束计算受约束回归，然后使用相同F统计量公式配合适当的 $\text{SSR}_r$ 和 $\text{SSR}_{ur}$。</div>
+<div class="kp-vocab">🔤 general linear restrictions（一般线性约束）</div>
+</div><div class="vocab-box"><h4>📚 Ch4 核心词汇汇总</h4><table><tr><th>English</th><th>中文</th></tr><tr><td>null hypothesis ($H_0$)</td><td>原假设/零假设</td></tr><tr><td>alternative hypothesis ($H_1$)</td><td>备择假设</td></tr><tr><td>t-test</td><td>t检验</td></tr><tr><td>F-test</td><td>F检验</td></tr><tr><td>p-value</td><td>p值</td></tr><tr><td>confidence interval</td><td>置信区间</td></tr><tr><td>significance level</td><td>显著性水平</td></tr><tr><td>critical value</td><td>临界值</td></tr><tr><td>rejection rule</td><td>拒绝规则</td></tr><tr><td>degrees of freedom (df)</td><td>自由度</td></tr><tr><td>standard error</td><td>标准误</td></tr><tr><td>sampling distribution</td><td>抽样分布</td></tr><tr><td>normality assumption (MLR.6)</td><td>正态性假设(MLR.6)</td></tr><tr><td>exclusion restrictions</td><td>排除性约束</td></tr><tr><td>restricted model</td><td>受约束模型</td></tr><tr><td>unrestricted model</td><td>无约束模型</td></tr><tr><td>sum of squared residuals (SSR)</td><td>残差平方和</td></tr><tr><td>statistical significance</td><td>统计显著性</td></tr><tr><td>economic significance</td><td>经济显著性</td></tr><tr><td>multicollinearity</td><td>多重共线性</td></tr><tr><td>joint hypothesis test</td><td>联合假设检验</td></tr><tr><td>one-sided test</td><td>单侧检验</td></tr><tr><td>two-sided test</td><td>双侧检验</td></tr><tr><td>linear combination of parameters</td><td>参数的线性组合</td></tr><tr><td>reparametrization</td><td>重新参数化</td></tr><tr><td>overall significance of regression</td><td>回归整体显著性</td></tr><tr><td>central limit theorem (CLT)</td><td>中心极限定理</td></tr><tr><td>log transformation</td><td>对数变换</td></tr><tr><td>model misspecification</td><td>模型误设</td></tr></table></div></div><div class="chapter" id="CH05"><h1 class="ch-title">Chapter 5: Multiple Regression Analysis: OLS Asymptotics<br><span class="cn">多元回归分析：OLS渐近性</span></h1><h2 class="sec-title">Finite Sample vs. Large Sample Properties of OLS<span class="cn">（OLS的有限样本性质与大样本性质）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Finite sample properties (hold for any sample size): (1) Unbiasedness under MLR.1-MLR.4; (2) Variance formulas under MLR.1-MLR.5; (3) Gauss-Markov Theorem (OLS is BLUE) under MLR.1-MLR.5; (4) Exact sampling distributions and t/F tests under MLR.1-MLR.6.</div>
+<div class="kp-cn">【中文】有限样本性质（对任意样本量成立）：(1) MLR.1-MLR.4下的无偏性；(2) MLR.1-MLR.5下的方差公式；(3) Gauss-Markov定理（OLS是最佳线性无偏估计量）在MLR.1-MLR.5下；(4) MLR.1-MLR.6下的精确抽样分布和t/F检验。</div>
+<div class="kp-vocab">🔤 finite sample properties（有限样本性质） | unbiasedness（无偏性） | BLUE (Best Linear Unbiased Estimator)（最佳线性无偏估计量） | Gauss-Markov Theorem（Gauss-Markov定理）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Large sample (asymptotic) properties: (1) Consistency under MLR.1-MLR.4 (weaker version MLR.4'); (2) Asymptotic normality and valid t/F tests under MLR.1-MLR.5 (dropping MLR.6!). Key insight: for large samples, we no longer need the normality assumption MLR.6.</div>
+<div class="kp-cn">【中文】大样本（渐近）性质：(1) MLR.1-MLR.4（更弱版本MLR.4'）下的一致性；(2) MLR.1-MLR.5下的渐近正态性及有效的t/F检验（无需MLR.6!）。核心洞见：大样本下不再需要正态性假设MLR.6。</div>
+<div class="kp-vocab">🔤 large sample properties（大样本性质） | asymptotic properties（渐近性质） | consistency（一致性） | asymptotic normality（渐近正态性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag info">了解</span> Quote by Clive W.J. Granger (Nobel laureate): 'If you can't get it right as n goes to infinity, you shouldn't be in this business.' This emphasizes the fundamental importance of asymptotic properties in econometrics.</div>
+<div class="kp-cn">【中文】诺贝尔奖得主Clive W.J. Granger的名言：'如果你不能把n趋向无穷时的事情搞对，你就不该干这一行。'这强调了渐近性质在计量经济学中的根本重要性。</div>
+<div class="kp-vocab">🔤 asymptotics（渐近理论） | Granger（格兰杰）</div>
+</div><h2 class="sec-title">Consistency of OLS<span class="cn">（OLS的一致性）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Definition of consistency: An estimator is consistent if its probability limit (plim) equals the true parameter value as the sample size $n \to \infty$. Formally, $\text{plim}(\hat{\beta}_j) = \beta_j$. Consistency means that the probability that the estimate is arbitrarily close to the true value can be made arbitrarily high by increasing $n$.</div>
+<div class="kp-cn">【中文】一致性的定义：如果当样本量 $n \to \infty$ 时，估计量的概率极限(plim)等于真实参数值，则该估计量是一致的。形式化为 $\text{plim}(\hat{\beta}_j) = \beta_j$。一致性意味着通过增大样本量，可以使估计值任意接近真实值的概率任意高。</div>
+<div class="kp-vocab">🔤 probability limit (plim)（概率极限） | consistent estimator（一致估计量） | convergence in probability（依概率收敛）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Assumption MLR.4' (Zero Mean and Zero Correlation): $E(u) = 0$ and $\text{Cov}(x_j, u) = 0$ for $j = 1, 2, \dots, k$. This is weaker than MLR.4 which required zero conditional mean $E(u | x_1, \dots, x_k) = 0$. For consistency, only MLR.4' is needed instead of MLR.4.</div>
+<div class="kp-cn">【中文】假设MLR.4'（零均值和零相关）：$E(u) = 0$ 且 $\text{Cov}(x_j, u) = 0$，$j = 1, 2, \dots, k$。这比MLR.4（要求零条件均值 $E(u | x_1, \dots, x_k) = 0$）更弱。为获得一致性，仅需要MLR.4'而非MLR.4。</div>
+<div class="kp-vocab">🔤 zero conditional mean（零条件均值） | zero correlation（零相关） | covariance（协方差）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Theorem 5.1 (Consistency of OLS): Under assumptions MLR.1-MLR.4, the OLS estimators $\hat{\beta}_j$ are consistent for $\beta_j$, $j = 0, 1, \dots, k$. In the simple regression case with $\text{Cov}(x, u) = 0$, $\text{plim}(\hat{\beta}_1) = \beta_1 + \text{Cov}(x, u) / \text{Var}(x)$.</div>
+<div class="kp-cn">【中文】定理5.1（OLS的一致性）：在MLR.1-MLR.4假设下，OLS估计量 $\hat{\beta}_j$ 是 $\beta_j$ 的一致估计量，$j = 0, 1, \dots, k$。在简单回归中，若 $\text{Cov}(x, u) = 0$，则 $\text{plim}(\hat{\beta}_1) = \beta_1 + \text{Cov}(x, u) / \text{Var}(x)$。</div>
+<div class="kp-vocab">🔤 simple regression（简单回归）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Asymptotic analog of omitted variable bias: If $\text{Cov}(x_j, u) \neq 0$, then $\hat{\beta}_j$ is inconsistent. In large samples, omitted variable bias does NOT disappear — the estimator converges to the wrong value. This is the asymptotic version of the omitted variable bias discussed in earlier chapters.</div>
+<div class="kp-cn">【中文】遗漏变量偏误的渐近对应：若 $\text{Cov}(x_j, u) \neq 0$，则 $\hat{\beta}_j$ 不一致。在大样本中，遗漏变量偏误不会消失——估计量收敛到错误的值。这是前面章节讨论的遗漏变量偏误的渐近版本。</div>
+<div class="kp-vocab">🔤 omitted variable bias（遗漏变量偏误） | inconsistent estimator（非一致估计量） | asymptotic bias（渐近偏误）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Consistency is a minimum requirement for any sensible estimator. If an estimator is not consistent, increasing the sample size will not help — the estimates will still be systematically wrong.</div>
+<div class="kp-cn">【中文】一致性是任何合理估计量的最低要求。如果估计量不一致，增大样本量也于事无补——估计值将仍会有系统性的偏差。</div>
+<div class="kp-vocab">🔤 minimum requirement（最低要求） | sensible estimator（合理估计量）</div>
+</div><h2 class="sec-title">Asymptotic Normality and Large Sample Inference<span class="cn">（渐近正态性与大样本推断）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Theorem 5.2 (Asymptotic Normality of OLS): Under MLR.1-MLR.5, the standardized OLS estimator converges in distribution to a standard normal: $\frac{\hat{\beta}_j - \beta_j}{\text{sd}(\hat{\beta}_j)} \xrightarrow{d} \text{Normal}(0, 1)$ as $n \to \infty$. Equivalently, $\hat{\beta}_j \stackrel{a}{\sim} \text{Normal}(\beta_j, \text{Var}(\hat{\beta}_j))$.</div>
+<div class="kp-cn">【中文】定理5.2（OLS的渐近正态性）：在MLR.1-MLR.5下，标准化OLS估计量依分布收敛到标准正态：当 $n \to \infty$ 时，$\frac{\hat{\beta}_j - \beta_j}{\text{sd}(\hat{\beta}_j)} \xrightarrow{d} \text{Normal}(0, 1)$。等价地，$\hat{\beta}_j \stackrel{a}{\sim} \text{Normal}(\beta_j, \text{Var}(\hat{\beta}_j))$。</div>
+<div class="kp-vocab">🔤 convergence in distribution（依分布收敛） | asymptotically normal（渐近正态） | standard normal distribution（标准正态分布）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Practical consequence: In large samples, the t-distribution is close to the standard Normal(0,1) distribution. Therefore, t-tests are valid in large samples without the normality assumption MLR.6. The same holds for confidence intervals and F-tests.</div>
+<div class="kp-cn">【中文】实际推论：在大样本中，t分布接近标准正态分布 Normal(0,1)。因此，即使没有正态性假设MLR.6，t检验在大样本下也是有效的。置信区间和F检验同样成立。</div>
+<div class="kp-vocab">🔤 large sample inference（大样本推断） | validity of tests（检验的有效性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Important caveat: MLR.1-MLR.5 are still necessary for asymptotic validity, especially the homoskedasticity assumption (MLR.5). The normality assumption MLR.6 is the ONLY assumption that can be replaced by a large sample size.</div>
+<div class="kp-cn">【中文】重要警告：MLR.1-MLR.5仍然是渐近有效性所必需的，尤其是同方差性假设(MLR.5)。正态性假设MLR.6是唯一可以被大样本量替代的假设。</div>
+<div class="kp-vocab">🔤 homoskedasticity（同方差性） | asymptotic validity（渐近有效性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Relationship between sample size and standard errors: As the sample size grows, standard errors decrease, making estimates more precise. In the asymptotic variance formula, $\text{Var}(\hat{\beta}_j) \approx \frac{\sigma^2}{n \cdot \text{Var}(x_j)(1 - R_j^2)}$, the $n$ in the denominator explains why larger samples yield smaller standard errors.</div>
+<div class="kp-cn">【中文】样本量与标准误的关系：随着样本量增大，标准误减小，估计变得更精确。在渐近方差公式 $\text{Var}(\hat{\beta}_j) \approx \frac{\sigma^2}{n \cdot \text{Var}(x_j)(1 - R_j^2)}$ 中，分母中的 $n$ 解释了为什么大样本产生更小的标准误。</div>
+<div class="kp-vocab">🔤 asymptotic variance（渐近方差） | precision（精确度）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example (Birth weight equation): Comparing standard errors from two samples with different sizes: Sample 1 ($n = 694$) yields $\text{se}(\hat{\beta}_{\text{cigs}}) = 0.0012$, while Sample 2 ($n = 1,388$) yields $\text{se} = 0.00086$. Doubling the sample size reduces the standard error, confirming asymptotic theory.</div>
+<div class="kp-cn">【中文】例（出生体重方程）：比较两个不同样本量的标准误：样本1（$n = 694$）的 $\text{se}(\hat{\beta}_{\text{cigs}}) = 0.0012$，样本2（$n = 1,388$）的 $\text{se} = 0.00086$。样本量加倍使标准误减小，验证了渐近理论。</div>
+<div class="kp-vocab">🔤 birth weight（出生体重） | cigarettes smoked（吸烟量）</div>
+</div><h2 class="sec-title">LM (Lagrange Multiplier) Statistic<span class="cn">（LM（拉格朗日乘数）统计量）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The LM (Lagrange Multiplier) statistic is an alternative to the F-test for testing multiple exclusion restrictions in large samples. Under $H_0$, $\text{LM} \xrightarrow{d} \chi^2_q$, where $q$ is the number of restrictions. The LM test requires only estimation of the restricted model.</div>
+<div class="kp-cn">【中文】LM（拉格朗日乘数）统计量是F检验的替代方法，用于大样本中检验多个排除性约束。在 $H_0$ 下，$\text{LM} \xrightarrow{d} \chi^2_q$，其中 $q$ 为约束个数。LM检验仅需估计受约束模型。</div>
+<div class="kp-vocab">🔤 Lagrange Multiplier (LM) statistic（拉格朗日乘数统计量） | chi-squared distribution（卡方分布）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> LM test procedure: (1) Regress $y$ on the restricted set of variables, obtain residuals $\tilde{u}$. (2) Regress $\tilde{u}$ on ALL explanatory variables (restricted + excluded). (3) Compute $\text{LM} = n \cdot R^2_{\tilde{u}}$, where $R^2_{\tilde{u}}$ is from the auxiliary regression. (4) Reject $H_0$ if $\text{LM} > \chi^2_{q, \alpha}$.</div>
+<div class="kp-cn">【中文】LM检验步骤：(1) 将 $y$ 对受约束变量集回归，得到残差 $\tilde{u}$。(2) 将 $\tilde{u}$ 对所有解释变量（受约束的+被排除的）回归。(3) 计算 $\text{LM} = n \cdot R^2_{\tilde{u}}$，其中 $R^2_{\tilde{u}}$ 来自辅助回归。(4) 若 $\text{LM} > \chi^2_{q, \alpha}$，则拒绝 $H_0$。</div>
+<div class="kp-vocab">🔤 auxiliary regression（辅助回归） | residuals（残差）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Relationship with F-test: In large samples, $F \cdot q \xrightarrow{d} \chi^2_q$, so the LM and F tests are asymptotically equivalent. The F-test is exact under normality (MLR.6); the LM test is valid in large samples without MLR.6.</div>
+<div class="kp-cn">【中文】与F检验的关系：在大样本中，$F \cdot q \xrightarrow{d} \chi^2_q$，因此LM检验和F检验在渐近意义下是等价的。F检验在正态性(MLR.6)下是精确的；LM检验在大样本下无需MLR.6也有效。</div>
+<div class="kp-vocab">🔤 asymptotically equivalent（渐近等价） | exact test（精确检验）</div>
+</div><div class="vocab-box"><h4>📚 Ch5 核心词汇汇总</h4><table><tr><th>English</th><th>中文</th></tr><tr><td>asymptotics</td><td>渐近理论</td></tr><tr><td>consistency</td><td>一致性</td></tr><tr><td>probability limit (plim)</td><td>概率极限</td></tr><tr><td>convergence in probability</td><td>依概率收敛</td></tr><tr><td>convergence in distribution</td><td>依分布收敛</td></tr><tr><td>asymptotic normality</td><td>渐近正态性</td></tr><tr><td>asymptotic variance</td><td>渐近方差</td></tr><tr><td>large sample inference</td><td>大样本推断</td></tr><tr><td>finite sample properties</td><td>有限样本性质</td></tr><tr><td>unbiasedness</td><td>无偏性</td></tr><tr><td>inconsistent estimator</td><td>非一致估计量</td></tr><tr><td>omitted variable bias (asymptotic)</td><td>遗漏变量偏误（渐近）</td></tr><tr><td>MLR.4' (zero mean and zero correlation)</td><td>MLR.4'（零均值和零相关）</td></tr><tr><td>homoskedasticity (MLR.5)</td><td>同方差性(MLR.5)</td></tr><tr><td>Lagrange Multiplier (LM) test</td><td>拉格朗日乘数检验</td></tr><tr><td>chi-squared distribution</td><td>卡方分布</td></tr><tr><td>auxiliary regression</td><td>辅助回归</td></tr><tr><td>standard normal distribution</td><td>标准正态分布</td></tr><tr><td>Gauss-Markov Theorem</td><td>Gauss-Markov定理</td></tr><tr><td>BLUE (Best Linear Unbiased Estimator)</td><td>最佳线性无偏估计量</td></tr><tr><td>standard error</td><td>标准误</td></tr><tr><td>Granger</td><td>格兰杰</td></tr></table></div></div><div class="chapter" id="CH06"><h1 class="ch-title">Chapter 6: Multiple Regression Analysis: Further Issues<br><span class="cn">多元回归分析：进一步的问题</span></h1><h2 class="sec-title">Effects of Data Scaling on OLS Statistics<span class="cn">（数据尺度对OLS统计量的影响）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Rescaling the dependent variable: If $y$ is multiplied by a constant $c$, all OLS coefficients and standard errors are also multiplied by $c$, but $R^2$, t-statistics, F-statistics, and p-values remain unchanged.</div>
+<div class="kp-cn">【中文】因变量尺度变换：若 $y$ 乘以常数 $c$，则所有OLS系数和标准误也乘以 $c$，但 $R^2$、t统计量、F统计量和p值保持不变。</div>
+<div class="kp-vocab">🔤 rescaling（尺度变换） | dependent variable（因变量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Rescaling an independent variable: If $x_j$ is multiplied by a constant $c$, the corresponding coefficient $\hat{\beta}_j$ is divided by $c$, and its standard error is also divided by $c$. The t-statistic, $R^2$, and other coefficients are unaffected.</div>
+<div class="kp-cn">【中文】自变量尺度变换：若 $x_j$ 乘以常数 $c$，则对应系数 $\hat{\beta}_j$ 除以 $c$，其标准误也除以 $c$。t统计量、$R^2$ 和其他系数不受影响。</div>
+<div class="kp-vocab">🔤 independent variable（自变量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Beta coefficients (standardized coefficients): Compute z-scores for all variables (subtract sample mean, divide by sample standard deviation), then run OLS. The resulting coefficients $\hat{b}_j$ measure the effect of a one-standard-deviation increase in $x_j$ on $y$ in standard deviation units. Useful for comparing the relative importance of variables measured in different units.</div>
+<div class="kp-cn">【中文】Beta系数（标准化系数）：对所有变量计算z-score（减样本均值，除样本标准差），然后进行OLS回归。得到的系数 $\hat{b}_j$ 度量 $x_j$ 增加一个标准差对 $y$ 的影响（以标准差为单位）。适用于比较不同度量单位变量的相对重要性。</div>
+<div class="kp-vocab">🔤 beta coefficients（Beta系数/标准化系数） | z-score（z分数/标准化值） | relative importance（相对重要性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example 6.1 (Housing prices and pollution): level-level model. After standardizing all variables, beta coefficients show that a one-standard-deviation increase in nox (air pollution) reduces housing price by a certain number of standard deviations, allowing comparison with the effect of rooms.</div>
+<div class="kp-cn">【中文】例6.1（房价与污染）：水平-水平模型。标准化所有变量后，beta系数显示 nox（空气污染）每增加一个标准差使房价下降多少个标准差，可与 rooms（房间数）的效应进行比较。</div>
+<div class="kp-vocab">🔤 level-level model（水平-水平模型） | housing price（房价） | air pollution (nox)（空气污染）</div>
+</div><h2 class="sec-title">More on Functional Form<span class="cn">（函数形式的进一步讨论）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Logarithmic functional forms: Benefits include: (1) convenient percentage/elasticity interpretation; (2) slope coefficients of logged variables are invariant to rescaling; (3) often eliminates/mitigates outlier problems; (4) often helps achieve normality and homoskedasticity. Do NOT log variables measured in years, percentage points, or those taking zero/negative values.</div>
+<div class="kp-cn">【中文】对数函数形式：优点包括：(1) 方便的百分比/弹性解释；(2) 取对数变量的斜率系数不受尺度变换影响；(3) 通常消除/减轻异常值问题；(4) 通常有助于实现正态性和同方差性。不应取对数的变量：以年为单位的变量、百分比变量、取零或负值的变量。</div>
+<div class="kp-vocab">🔤 logarithmic functional form（对数函数形式） | elasticity（弹性） | outlier（异常值） | normality（正态性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Example: When nox increases by 1%, price falls by 0.718%, holding rooms fixed. When rooms increases by one, price increases by approximately $100 \times 0.306 = 30.6\%$. The exact percentage change for a discrete change $\Delta x$ is $\%\Delta \hat{y} = 100 \cdot [\exp(\hat{\beta} \Delta x) - 1]$.</div>
+<div class="kp-cn">【中文】例：当 nox 增加1%时，在控制 rooms 不变的条件下，price 下降0.718%。当 rooms 增加1个单位时，price 大约增加 $100 \times 0.306 = 30.6\%$。离散变化 $\Delta x$ 的精确百分比变化为 $\%\Delta \hat{y} = 100 \cdot [\exp(\hat{\beta} \Delta x) - 1]$。</div>
+<div class="kp-vocab">🔤 percentage change（百分比变化） | exact percentage change（精确百分比变化） | approximation（近似）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Quadratic functional forms: Model $y = \beta_0 + \beta_1 x + \beta_2 x^2 + u$. The marginal effect of $x$ on $y$ is $\frac{\Delta y}{\Delta x} \approx \hat{\beta}_1 + 2\hat{\beta}_2 x$, which depends on the value of $x$. This allows for diminishing or increasing returns.</div>
+<div class="kp-cn">【中文】二次函数形式：模型 $y = \beta_0 + \beta_1 x + \beta_2 x^2 + u$。$x$ 对 $y$ 的边际效应为 $\frac{\Delta y}{\Delta x} \approx \hat{\beta}_1 + 2\hat{\beta}_2 x$，取决于 $x$ 的值。这允许递减或递增的边际回报。</div>
+<div class="kp-vocab">🔤 quadratic functional form（二次函数形式） | marginal effect（边际效应） | diminishing returns（递减回报）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Turnaround (turning) point: When $\hat{\beta}_1 > 0$ and $\hat{\beta}_2 < 0$, the quadratic reaches a maximum at $x^* = |\hat{\beta}_1 / (2\hat{\beta}_2)|$. Example (wage equation): $\log(\text{wage}) = \beta_0 + \beta_1 \text{exper} + \beta_2 \text{exper}^2 + u$, the return to experience peaks at $\text{exper}^* = |\hat{\beta}_1 / (2\hat{\beta}_2)|$ years.</div>
+<div class="kp-cn">【中文】转折点：当 $\hat{\beta}_1 > 0$ 且 $\hat{\beta}_2 < 0$ 时，二次项在 $x^* = |\hat{\beta}_1 / (2\hat{\beta}_2)|$ 处达到最大值。例（工资方程）：$\log(\text{wage}) = \beta_0 + \beta_1 \text{exper} + \beta_2 \text{exper}^2 + u$，工作经验回报在 $\text{exper}^* = |\hat{\beta}_1 / (2\hat{\beta}_2)|$ 年处达到峰值。</div>
+<div class="kp-vocab">🔤 turnaround point（转折点） | turning point（拐点） | maximum（最大值） | minimum（最小值）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag info">了解</span> Higher-order polynomials: A polynomial of degree $d$ includes terms $x, x^2, \dots, x^d$. Higher-order terms add flexibility but can lead to overfitting and imprecise estimates. A cubic model: $y = \beta_0 + \beta_1 x + \beta_2 x^2 + \beta_3 x^3 + u$.</div>
+<div class="kp-cn">【中文】更高阶多项式：$d$ 次多项式包含 $x, x^2, \dots, x^d$ 项。高阶项增加灵活性但可能导致过拟合和估计不精确。三次模型：$y = \beta_0 + \beta_1 x + \beta_2 x^2 + \beta_3 x^3 + u$。</div>
+<div class="kp-vocab">🔤 higher-order polynomial（高阶多项式） | overfitting（过拟合） | cubic model（三次模型）</div>
+</div><h2 class="sec-title">Interaction Terms<span class="cn">（交互项）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Models with interaction terms: $y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_1 x_2 + u$. The partial effect of $x_1$ depends on $x_2$: $\frac{\Delta y}{\Delta x_1} = \beta_1 + \beta_3 x_2$. Interaction effects complicate the interpretation of parameters because the partial effect is not constant.</div>
+<div class="kp-cn">【中文】含交互项的模型：$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_1 x_2 + u$。$x_1$ 的偏效应取决于 $x_2$：$\frac{\Delta y}{\Delta x_1} = \beta_1 + \beta_3 x_2$。交互效应使参数解释变得复杂，因为偏效应不是常数。</div>
+<div class="kp-vocab">🔤 interaction term（交互项） | partial effect（偏效应） | marginal effect（边际效应）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Reparametrization of interaction effects: Centering variables at their means (or other interesting values) simplifies interpretation. E.g., redefine as $(x_1 - \bar{x}_1)(x_2 - \bar{x}_2)$. This yields easy interpretation of all parameters and standard errors for partial effects at the mean values.</div>
+<div class="kp-cn">【中文】交互效应的重新参数化：将变量中心化到其均值（或其他有意义的数值处）简化解释。如重新定义为 $(x_1 - \bar{x}_1)(x_2 - \bar{x}_2)$。这使所有参数的解释变得容易，并给出均值处偏效应的标准误。</div>
+<div class="kp-vocab">🔤 centering（中心化） | mean values（均值）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example 6.3 (Attendance and exam performance): $\text{stndfnl} = \beta_0 + \beta_1 \text{atndrte} + \beta_2 \text{priGPA} + \beta_3 \text{ACT} + \beta_4 \text{priGPA}^2 + \beta_5 \text{ACT}^2 + \beta_6 \text{atndrte} \cdot \text{priGPA} + u$. Individual t-tests on $\beta_1$ and $\beta_6$ were insignificant, but an F-test of $H_0: \beta_1 = \beta_6 = 0$ had p-value 0.014, rejecting at the 5% level. At mean priGPA = 2.59, the partial effect is $-0.0067 + 0.0056 \times 2.59 \approx 0.0078$.</div>
+<div class="kp-cn">【中文】例6.3（出勤与考试成绩）：$\text{stndfnl} = \beta_0 + \beta_1 \text{atndrte} + \beta_2 \text{priGPA} + \beta_3 \text{ACT} + \dots$。对 $\beta_1$ 和 $\beta_6$ 的单独t检验不显著，但对 $H_0: \beta_1 = \beta_6 = 0$ 的F检验p值为0.014，在5%水平拒绝。在均值 priGPA = 2.59 处，偏效应为 $-0.0067 + 0.0056 \times 2.59 \approx 0.0078$。</div>
+<div class="kp-vocab">🔤 attendance rate（出勤率） | joint hypothesis（联合假设）</div>
+</div><h2 class="sec-title">Average Partial Effects (APE)<span class="cn">（平均偏效应）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> In models with quadratics, interactions, and other nonlinear functional forms, partial effects depend on the values of explanatory variables. Rather than reporting partial effects for each observation, compute the Average Partial Effect (APE), also called Average Marginal Effect (AME).</div>
+<div class="kp-cn">【中文】在含有二次项、交互项和其他非线性函数形式的模型中，偏效应取决于解释变量的值。与其为每个观测值报告偏效应，不如计算平均偏效应(APE)，也称平均边际效应(AME)。</div>
+<div class="kp-vocab">🔤 Average Partial Effect (APE)（平均偏效应） | Average Marginal Effect (AME)（平均边际效应） | summary measure（汇总度量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Computing APE: (1) For each observation $i$, compute the partial effect $\frac{\Delta \hat{y}_i}{\Delta x_{ji}} = f(\hat{\boldsymbol{\beta}}, \mathbf{x}_i)$. (2) Average these partial effects across all observations: $\text{APE}_j = \frac{1}{n} \sum_{i=1}^{n} \frac{\Delta \hat{y}_i}{\Delta x_{ji}}$. This gives a single summary number describing the relationship.</div>
+<div class="kp-cn">【中文】计算APE：(1) 对每个观测值 $i$，计算偏效应 $\frac{\Delta \hat{y}_i}{\Delta x_{ji}} = f(\hat{\boldsymbol{\beta}}, \mathbf{x}_i)$。(2) 对所有观测值取平均：$\text{APE}_j = \frac{1}{n} \sum_{i=1}^{n} \frac{\Delta \hat{y}_i}{\Delta x_{ji}}$。这给出描述变量关系的一个汇总数字。</div>
+<div class="kp-vocab">🔤 partial effect formula（偏效应公式）</div>
+</div><h2 class="sec-title">Goodness-of-Fit and Selection of Regressors<span class="cn">（拟合优度与回归元选择）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> $R^2$ interpretation cautions: (1) A high $R^2$ does NOT imply a causal interpretation of the model. (2) A low $R^2$ does NOT preclude precise estimation of partial effects. $R^2$ measures the proportion of sample variation in $y$ explained by the regressors, NOT the correctness of the model.</div>
+<div class="kp-cn">【中文】$R^2$ 解释的注意事项：(1) 高 $R^2$ 不意味着模型有因果解释；(2) 低 $R^2$ 不排除偏效应的精确估计。$R^2$ 度量的是回归元所解释的 $y$ 的样本变异比例，而非模型的正确性。</div>
+<div class="kp-vocab">🔤 R-squared ($R^2$)（R方/判定系数） | goodness-of-fit（拟合优度） | sample variation（样本变异）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Adjusted $R^2$: $\bar{R}^2 = 1 - \frac{\text{SSR}/(n-k-1)}{\text{SST}/(n-1)} = 1 - (1-R^2)\frac{n-1}{n-k-1}$. It imposes a penalty for adding new regressors. $\bar{R}^2$ increases if and only if the t-statistic of a newly added regressor is greater than 1 in absolute value.</div>
+<div class="kp-cn">【中文】调整 $R^2$：$\bar{R}^2 = 1 - \frac{\text{SSR}/(n-k-1)}{\text{SST}/(n-1)} = 1 - (1-R^2)\frac{n-1}{n-k-1}$。它对增加新回归元施加惩罚。当且仅当新加入回归元的t统计量绝对值大于1时，$\bar{R}^2$ 才会增大。</div>
+<div class="kp-vocab">🔤 adjusted R-squared ($\bar{R}^2$)（调整R方） | penalty term（惩罚项） | total sum of squares (SST)（总平方和）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Using adjusted $R^2$ to choose between nonnested models: Models are nonnested if neither is a special case of the other. $\bar{R}^2$ provides a fair comparison because it accounts for different numbers of parameters. Example: a quadratic model with higher $\bar{R}^2$ is preferred over a linear model.</div>
+<div class="kp-cn">【中文】使用调整 $R^2$ 在非嵌套模型间选择：如果两个模型都不是对方的特例，则它们是非嵌套的。$\bar{R}^2$ 因考虑了不同参数个数而提供公平比较。例：二次模型因 $\bar{R}^2$ 更高而被优先选择。</div>
+<div class="kp-vocab">🔤 nonnested models（非嵌套模型） | model selection（模型选择）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> IMPORTANT: $R^2$ or $\bar{R}^2$ must NOT be used to compare models with different definitions of the dependent variable (e.g., comparing $\log(y)$ vs $y$ as dependent variables). The total sum of squares differs.</div>
+<div class="kp-cn">【中文】重要：$R^2$ 或 $\bar{R}^2$ 不能用于比较因变量定义不同的模型（如比较以 $\log(y)$ 和 $y$ 为因变量的模型），因为总平方和不同。</div>
+<div class="kp-vocab">🔤 dependent variable transformation（因变量变换） | incomparable（不可比较）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Controlling for too many factors: Some variables should NOT be held fixed. Example: in a regression of traffic fatalities on beer taxes, one should NOT directly control for beer consumption (it's the mechanism). In a regression of health expenditures on pesticide, one should NOT control for doctor visits (it's an outcome variable).</div>
+<div class="kp-cn">【中文】控制过多因素：某些变量不应被固定。例：在交通事故死亡对啤酒税的回归中，不应直接控制啤酒消费（它是机制/渠道变量）。在医疗支出对农药的回归中，不应控制看医生次数（它是结果变量）。</div>
+<div class="kp-vocab">🔤 overcontrolling（过度控制） | mechanism variable（机制变量/渠道变量） | outcome variable（结果变量） | bad controls（坏的控制变量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Adding regressors to reduce error variance: Adding variables that are uncorrelated with existing regressors reduces error variance without increasing multicollinearity, leading to more precise estimates. However, such uncorrelated variables may be hard to find.</div>
+<div class="kp-cn">【中文】增加回归元以减小误差方差：增加与现有回归元不相关的变量减小误差方差而不增加多重共线性，使估计更精确。然而这种不相关的变量可能很难找到。</div>
+<div class="kp-vocab">🔤 error variance（误差方差） | precision of estimates（估计精确度） | uncorrelated variables（不相关变量）</div>
+</div><h2 class="sec-title">Prediction and Residual Analysis<span class="cn">（预测与残差分析）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Confidence interval for the predicted mean (expected value): For given values $c_1, c_2, \dots, c_k$ of the independent variables, the predicted value is $\hat{\theta} = \hat{\beta}_0 + \hat{\beta}_1 c_1 + \cdots + \hat{\beta}_k c_k$. A $95\%$ CI for $E(y | \mathbf{x} = \mathbf{c})$ is $\hat{\theta} \pm t_{n-k-1, 0.025} \cdot \text{se}(\hat{\theta})$.</div>
+<div class="kp-cn">【中文】预测均值（期望值）的置信区间：对于自变量的给定值 $c_1, c_2, \dots, c_k$，预测值为 $\hat{\theta} = \hat{\beta}_0 + \hat{\beta}_1 c_1 + \cdots + \hat{\beta}_k c_k$。$E(y | \mathbf{x} = \mathbf{c})$ 的95%置信区间为 $\hat{\theta} \pm t_{n-k-1, 0.025} \cdot \text{se}(\hat{\theta})$。</div>
+<div class="kp-vocab">🔤 predicted value（预测值） | fitted value（拟合值） | expected value（期望值）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Reparametrization trick for CI of predicted mean: Define new variables as deviations from the target values: $x_{j}^0 = x_j - c_j$. Then the intercept in the regression using $x_j^0$ directly gives $\hat{\theta}$ and its standard error. Example 6.5: For predicting college GPA at SAT = 1200, define $\text{sat0} = \text{sat} - 1200$.</div>
+<div class="kp-cn">【中文】预测均值CI的重新参数化技巧：定义新变量为偏离目标值的差值：$x_{j}^0 = x_j - c_j$。则使用 $x_j^0$ 回归的截距直接给出 $\hat{\theta}$ 及其标准误。例6.5：预测SAT=1200时的大学GPA，定义 $\text{sat0} = \text{sat} - 1200$。</div>
+<div class="kp-vocab">🔤 reparametrization trick（重新参数化技巧） | deviation（偏离/差值）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Prediction interval for an individual outcome $y^0$: The prediction error is $\hat{y}^0 - y^0 = (\hat{\theta} - \theta) - u^0$. The variance of the prediction error is $\text{Var}(\hat{\theta}) + \sigma^2$ (sum of estimation uncertainty and the irreducible error variance). Thus the standard error of prediction is $\text{se}(\hat{y}^0) = \sqrt{[\text{se}(\hat{\theta})]^2 + \hat{\sigma}^2}$. Prediction intervals are wider than confidence intervals for the mean.</div>
+<div class="kp-cn">【中文】个体结果 $y^0$ 的预测区间：预测误差为 $\hat{y}^0 - y^0 = (\hat{\theta} - \theta) - u^0$。预测误差的方差为 $\text{Var}(\hat{\theta}) + \sigma^2$（估计不确定性与不可约误差方差之和）。因此预测标准误为 $\text{se}(\hat{y}^0) = \sqrt{[\text{se}(\hat{\theta})]^2 + \hat{\sigma}^2}$。预测区间比均值置信区间更宽。</div>
+<div class="kp-vocab">🔤 prediction interval（预测区间） | prediction error（预测误差） | irreducible error（不可约误差）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The $(1-\alpha)$ prediction interval is $\hat{y}^0 \pm t_{n-k-1, \alpha/2} \cdot \text{se}(\hat{y}^0)$. This interval is wider than the CI for $E(y^0)$ because it must account for the unknown $u^0$.</div>
+<div class="kp-cn">【中文】$(1-\alpha)$ 预测区间为 $\hat{y}^0 \pm t_{n-k-1, \alpha/2} \cdot \text{se}(\hat{y}^0)$。该区间比 $E(y^0)$ 的CI更宽，因为它必须考虑未知的 $u^0$。</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Predicting $y$ when $\log(y)$ is the dependent variable: The naive predictor $\hat{y} = \exp(\widehat{\log y})$ is biased because $E[\exp(u)] \neq 1$ even if $E(u) = 0$. Under the assumption that $u$ is independent of $\mathbf{x}$ and $u \sim N(0, \sigma^2)$, we have $E(y | \mathbf{x}) = \exp(\sigma^2/2) \cdot \exp(\beta_0 + \beta_1 x_1 + \cdots)$. A consistent predictor is $\hat{y} = \exp(\hat{\sigma}^2/2) \cdot \exp(\widehat{\log y})$.</div>
+<div class="kp-cn">【中文】因变量为 $\log(y)$ 时预测 $y$：朴素预测 $\hat{y} = \exp(\widehat{\log y})$ 是有偏的，因为即使 $E(u) = 0$，$E[\exp(u)] \neq 1$。在 $u$ 独立于 $\mathbf{x}$ 且 $u \sim N(0, \sigma^2)$ 的假设下，$E(y | \mathbf{x}) = \exp(\sigma^2/2) \cdot \exp(\beta_0 + \beta_1 x_1 + \cdots)$。一致预测为 $\hat{y} = \exp(\hat{\sigma}^2/2) \cdot \exp(\widehat{\log y})$。</div>
+<div class="kp-vocab">🔤 retransformation bias（逆变换偏误） | naive predictor（朴素预测） | log-dependent variable（对数因变量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Duan's smearing estimator: A nonparametric alternative when normality of $u$ is questionable. The prediction is $\hat{y}_i = \hat{\alpha}_0 \cdot \exp(\widehat{\log y}_i)$, where $\hat{\alpha}_0 = \frac{1}{n} \sum_{i=1}^{n} \exp(\hat{u}_i)$ is the method of moments estimator. This estimator is consistent but not unbiased in finite samples.</div>
+<div class="kp-cn">【中文】Duan涂抹估计量：当 $u$ 的正态性存疑时的非参数替代方法。预测为 $\hat{y}_i = \hat{\alpha}_0 \cdot \exp(\widehat{\log y}_i)$，其中 $\hat{\alpha}_0 = \frac{1}{n} \sum_{i=1}^{n} \exp(\hat{u}_i)$ 是矩法估计量。该估计量一致但在有限样本下非无偏。</div>
+<div class="kp-vocab">🔤 Duan's smearing estimator（Duan涂抹估计量） | nonparametric method（非参数方法） | method of moments（矩法）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Example 6.7 (Predicting CEO salaries): The log model $\log(\text{salary}) = \beta_0 + \beta_1 \log(\text{sales}) + \beta_2 \log(\text{mktval}) + u$ is estimated. The Duan smearing estimate $\hat{\alpha}_0$ provides the adjustment factor for predicting salary in levels from the log model.</div>
+<div class="kp-cn">【中文】例6.7（预测CEO薪水）：估计对数模型 $\log(\text{salary}) = \beta_0 + \beta_1 \log(\text{sales}) + \beta_2 \log(\text{mktval}) + u$。Duan涂抹估计量 $\hat{\alpha}_0$ 提供了从对数模型预测水平值薪水的调整因子。</div>
+<div class="kp-vocab">🔤 CEO salary（CEO薪水） | market value（市值） | adjustment factor（调整因子）</div>
+</div><div class="vocab-box"><h4>📚 Ch6 核心词汇汇总</h4><table><tr><th>English</th><th>中文</th></tr><tr><td>data scaling</td><td>数据尺度变换</td></tr><tr><td>beta coefficients (standardized coefficients)</td><td>Beta系数/标准化系数</td></tr><tr><td>z-score</td><td>z分数/标准化值</td></tr><tr><td>functional form</td><td>函数形式</td></tr><tr><td>logarithmic form</td><td>对数形式</td></tr><tr><td>elasticity</td><td>弹性</td></tr><tr><td>quadratic form</td><td>二次形式</td></tr><tr><td>marginal effect</td><td>边际效应</td></tr><tr><td>partial effect</td><td>偏效应</td></tr><tr><td>turnaround point</td><td>转折点</td></tr><tr><td>diminishing returns</td><td>递减回报</td></tr><tr><td>interaction term</td><td>交互项</td></tr><tr><td>centering</td><td>中心化</td></tr><tr><td>Average Partial Effect (APE)</td><td>平均偏效应</td></tr><tr><td>Average Marginal Effect (AME)</td><td>平均边际效应</td></tr><tr><td>R-squared ($R^2$)</td><td>R方/判定系数</td></tr><tr><td>adjusted R-squared ($\bar{R}^2$)</td><td>调整R方</td></tr><tr><td>goodness-of-fit</td><td>拟合优度</td></tr><tr><td>nonnested models</td><td>非嵌套模型</td></tr><tr><td>overcontrolling</td><td>过度控制</td></tr><tr><td>bad controls</td><td>坏的控制变量</td></tr><tr><td>prediction</td><td>预测</td></tr><tr><td>prediction interval</td><td>预测区间</td></tr><tr><td>confidence interval for prediction</td><td>预测置信区间</td></tr><tr><td>prediction error</td><td>预测误差</td></tr><tr><td>retransformation bias</td><td>逆变换偏误</td></tr><tr><td>Duan's smearing estimator</td><td>Duan涂抹估计量</td></tr><tr><td>outlier</td><td>异常值</td></tr><tr><td>homoskedasticity</td><td>同方差性</td></tr><tr><td>multicollinearity</td><td>多重共线性</td></tr><tr><td>error variance</td><td>误差方差</td></tr><tr><td>polynomial regression</td><td>多项式回归</td></tr></table></div></div><div class="chapter" id="CH07"><h1 class="ch-title">Chapter 7: Multiple Regression Analysis with Qualitative Information<br><span class="cn">含有定性信息的多元回归分析</span></h1><h2 class="sec-title">Dummy Variables: Basic Concepts<span class="cn">（虚拟变量：基本概念）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Qualitative information (gender, race, industry, region, rating grade) can be incorporated into regression models using dummy variables (also called binary or indicator variables). A dummy variable takes the value 1 if a certain characteristic is present and 0 otherwise.</div>
+<div class="kp-cn">【中文】定性信息（如性别、种族、行业、地区、评级等级）可以通过虚拟变量（也称二值变量或指示变量）纳入回归模型。虚拟变量在具备某一特征时取值为1，否则为0。</div>
+<div class="kp-vocab">🔤 qualitative information（定性信息） | dummy variable（虚拟变量） | binary variable（二值变量） | indicator variable（指示变量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Dummy variables may appear as either the dependent variable or as independent variables in a regression model.</div>
+<div class="kp-cn">【中文】虚拟变量既可以作为因变量也可以作为自变量出现在回归模型中。</div>
+<div class="kp-vocab">🔤 dependent variable（因变量） | independent variable（自变量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> When using dummy variables, one category must always be omitted to avoid perfect collinearity with the intercept. This is known as the dummy variable trap. The omitted category serves as the base (reference) category.</div>
+<div class="kp-cn">【中文】使用虚拟变量时，必须始终省略一个类别，以避免与截距项完全共线。这被称为虚拟变量陷阱。被省略的类别作为基准（参照）类别。</div>
+<div class="kp-vocab">🔤 dummy variable trap（虚拟变量陷阱） | perfect collinearity（完全共线性） | base category（基准类别） | reference category（参照类别）</div>
+</div><h2 class="sec-title">Simple Dummy Variable Regression: Intercept Shift<span class="cn">（简单虚拟变量回归：截距平移）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> A regression with a single dummy variable captures an intercept shift. For example, the wage equation: $$wage = \beta_0 + \delta_0 female + \beta_1 educ + \beta_2 exper + \beta_3 tenure + u$$ where $female=1$ for women and $female=0$ for men. The coefficient $\delta_0$ measures the difference in average wages between women and men, holding all other factors constant.</div>
+<div class="kp-cn">【中文】含有一个虚拟变量的回归模型捕捉截距的平移。例如，工资方程：$$wage = \beta_0 + \delta_0 female + \beta_1 educ + \beta_2 exper + \beta_3 tenure + u$$ 其中 $female=1$ 表示女性，$female=0$ 表示男性。系数 $\delta_0$ 衡量在控制其他因素不变的情况下，女性与男性平均工资的差异。</div>
+<div class="kp-vocab">🔤 intercept shift（截距平移） | wage equation（工资方程） | coefficient（系数）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> The significance of the dummy variable coefficient can be tested using a standard t-test. A significant negative $\delta_0$ does not necessarily imply discrimination, as being female may be correlated with other unobserved productivity characteristics not controlled for in the model.</div>
+<div class="kp-cn">【中文】虚拟变量系数的显著性可以通过标准t检验来检验。显著的负$\delta_0$不一定意味着存在歧视，因为女性这一特征可能与模型中未控制的其他不可观测生产率特征相关。</div>
+<div class="kp-vocab">🔤 t-test（t检验） | discrimination（歧视） | t-statistic（t统计量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> The wage difference between men and women is larger when no other factors are controlled for. Part of the raw difference is attributable to differences in education, experience, and tenure between men and women. Including controls reduces the unexplained gap.</div>
+<div class="kp-cn">【中文】当不控制其他因素时，男女工资差异会更大。原始差异的一部分可归因于男女之间在教育、经验和工作年限上的差异。加入控制变量可以缩小无法解释的差距。</div>
+<div class="kp-vocab">🔤 raw difference（原始差异） | unexplained gap（无法解释的差距）</div>
+</div><h2 class="sec-title">Dummy Variables for Log-Dependent Variable<span class="cn">（对数因变量的虚拟变量）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> When the dependent variable is log(y), the coefficient on a dummy variable gives the approximate percentage difference (after multiplying by 100). The exact percentage difference is: $$\%\Delta \hat{y} = 100 \cdot [\exp(\hat{\delta}) - 1]$$ For small $\hat{\delta}$, $100 \cdot \hat{\delta}$ is a reasonable approximation.</div>
+<div class="kp-cn">【中文】当因变量为 $\log(y)$ 时，虚拟变量的系数（乘以100后）给出近似的百分比差异。精确的百分比差异为：$$\%\Delta \hat{y} = 100 \cdot [\exp(\hat{\delta}) - 1]$$ 当 $\hat{\delta}$ 较小时，$100 \cdot \hat{\delta}$ 是一个合理的近似。</div>
+<div class="kp-vocab">🔤 log-dependent variable（对数因变量） | percentage difference（百分比差异） | log-level model（对数-水平模型）</div>
+</div><h2 class="sec-title">Dummy Variables for Multiple Categories<span class="cn">（多类别虚拟变量）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> For a qualitative variable with g categories (e.g., city credit ratings), we include (g-1) dummy variables in the model, leaving one category as the base group. The coefficient on each dummy measures the difference between that category and the base category.</div>
+<div class="kp-cn">【中文】对于一个有g个类别的定性变量（如城市信用评级），我们在模型中纳入 (g-1) 个虚拟变量，保留一个类别作为基准组。每个虚拟变量的系数衡量该类别与基准类别之间的差异。</div>
+<div class="kp-vocab">🔤 multiple categories（多类别） | base group（基准组） | g-1 rule（g-1规则）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Ordinal information (e.g., credit ratings: A, B, C) can also be incorporated using dummy variables. Each rating level gets its own dummy, and the coefficients should show a monotonic pattern if the ordinal variable truly has a monotonic relationship with the dependent variable.</div>
+<div class="kp-cn">【中文】有序信息（如信用评级：A、B、C）也可以使用虚拟变量来纳入。每个评级水平获得各自的虚拟变量，如果有序变量确实与因变量存在单调关系，系数应表现出单调模式。</div>
+<div class="kp-vocab">🔤 ordinal variable（有序变量） | credit rating（信用评级） | municipal bond（市政债券）</div>
+</div><h2 class="sec-title">Interactions Involving Dummy Variables<span class="cn">（包含虚拟变量的交互项）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Interacting dummy variables with continuous variables allows for different slopes across groups. Model: $$y = \beta_0 + \delta_0 female + \beta_1 educ + \delta_1 (female \times educ) + u$$ Here, $\beta_1$ is the return to education for men, and $\beta_1 + \delta_1$ is the return to education for women.</div>
+<div class="kp-cn">【中文】将虚拟变量与连续变量交互，允许不同组别有不同的斜率。模型：$$y = \beta_0 + \delta_0 female + \beta_1 educ + \delta_1 (female \times educ) + u$$ 其中，$\beta_1$ 是男性的教育回报，$\beta_1 + \delta_1$ 是女性的教育回报。</div>
+<div class="kp-vocab">🔤 interaction term（交互项） | return to education（教育回报） | slope dummy（斜率虚拟变量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Interacting both the intercept and the slope with the female dummy enables estimation of completely independent wage equations for men and women. Graphically, this produces two separate regression lines with potentially different intercepts and slopes.</div>
+<div class="kp-cn">【中文】将截距和斜率都与女性虚拟变量交互，可以估计男性和女性完全独立的工资方程。从图形上看，这产生两条可能具有不同截距和斜率的回归线。</div>
+<div class="kp-vocab">🔤 full interaction model（完全交互模型） | separate regressions（分别回归）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> When testing for differences in slopes, the significance of an interaction term depends on where the continuous variable is centered. To test whether the return to education differs at the mean education level (e.g., educ=12.5), one should recenter the interaction term around the mean: $(female \times (educ - \overline{educ}))$.</div>
+<div class="kp-cn">【中文】检验斜率差异时，交互项是否显著取决于连续变量以何为中心。要检验在平均教育水平（如 educ=12.5）上教育回报是否存在差异，应将交互项围绕均值中心化：$(female \times (educ - \overline{educ}))$。</div>
+<div class="kp-vocab">🔤 centering（中心化） | mean-centered interaction（均值中心化交互项）</div>
+</div><h2 class="sec-title">Testing for Differences Across Groups: The Chow Test<span class="cn">（跨组别差异检验：邹至庄检验）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> To test whether a regression function differs across two groups, compare the restricted model (same regression for both groups) with the unrestricted model (full set of interactions with the group dummy). The null hypothesis is that all interaction coefficients equal zero.</div>
+<div class="kp-cn">【中文】为检验回归函数在两个组别之间是否存在差异，比较受约束模型（两组共用同一回归）和无约束模型（与组别虚拟变量的全套交互项）。原假设是所有交互项系数均为零。</div>
+<div class="kp-vocab">🔤 restricted model（受约束模型） | unrestricted model（无约束模型）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The F-statistic for testing differences across groups: $$F = \frac{(SSR_r - SSR_{ur})/q}{SSR_{ur}/(n - k - 1)}$$ where $SSR_r$ is the restricted SSR, $SSR_{ur}$ is the unrestricted SSR, $q$ is the number of restrictions (typically k+1), $n$ is sample size, and $k$ is the number of parameters in the unrestricted model.</div>
+<div class="kp-cn">【中文】检验跨组差异的F统计量：$$F = \frac{(SSR_r - SSR_{ur})/q}{SSR_{ur}/(n - k - 1)}$$ 其中 $SSR_r$ 为受约束SSR，$SSR_{ur}$ 为无约束SSR，$q$ 为约束条件个数（通常为k+1），$n$ 为样本量，$k$ 为无约束模型中的参数个数。</div>
+<div class="kp-vocab">🔤 F-statistic（F统计量） | SSR (Sum of Squared Residuals)（残差平方和） | degrees of freedom（自由度）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> The Chow Test is an alternative way to compute the F-statistic: (1) Run separate regressions for each group; the unrestricted SSR equals the sum of the two SSRs. (2) Run the pooled regression (restricted model) and store its SSR. (3) Compute the F-statistic. Important assumption: constant error variance across groups.</div>
+<div class="kp-cn">【中文】邹至庄检验是计算F统计量的另一种方法：(1) 分别对每组进行回归，无约束SSR等于两个回归SSR之和。(2) 运行混合回归（受约束模型）并存储其SSR。(3) 计算F统计量。重要假设：各组误差方差相同。</div>
+<div class="kp-vocab">🔤 Chow test（邹至庄检验） | pooled regression（混合回归） | constant error variance（恒定误差方差）</div>
+</div><h2 class="sec-title">Binary Dependent Variable: The Linear Probability Model (LPM)<span class="cn">（二值因变量：线性概率模型）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> The Linear Probability Model (LPM) is OLS applied to a binary dependent variable: $$y = \beta_0 + \beta_1 x_1 + ... + \beta_k x_k + u$$ where y takes values 0 or 1. The predicted value $\hat{y}$ is interpreted as the predicted probability that y=1 given the values of x. A coefficient $\beta_j$ measures the change in the predicted probability for a one-unit increase in $x_j$.</div>
+<div class="kp-cn">【中文】线性概率模型（LPM）是将OLS应用于二值因变量：$$y = \beta_0 + \beta_1 x_1 + ... + \beta_k x_k + u$$ 其中 y 取值为0或1。预测值 $\hat{y}$ 被解释为给定x值下 y=1 的预测概率。系数 $\beta_j$ 衡量 $x_j$ 增加一个单位时预测概率的变化。</div>
+<div class="kp-vocab">🔤 Linear Probability Model (LPM)（线性概率模型） | binary dependent variable（二值因变量） | predicted probability（预测概率）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Advantages of LPM: (1) Easy estimation and straightforward interpretation; (2) Estimated effects and predictions are often reasonably good in practice. Disadvantages: (1) Predicted probabilities may lie outside [0,1]; (2) Marginal probability effects are constant, which may be logically impossible; (3) LPM is necessarily heteroskedastic, so heteroskedasticity-robust standard errors must be used.</div>
+<div class="kp-cn">【中文】LPM的优点：(1) 估计简便，解释直观；(2) 实践中估计效应和预测通常相当不错。缺点：(1) 预测概率可能超出 [0,1] 范围；(2) 边际概率效应恒为常数，这在逻辑上可能不成立；(3) LPM必然存在异方差性，因此必须使用异方差稳健标准误。</div>
+<div class="kp-vocab">🔤 heteroskedasticity-robust standard errors（异方差稳健标准误） | marginal effect（边际效应） | predicted probability bounds（预测概率边界）</div>
+</div><h2 class="sec-title">Program Evaluation and Self-Selection<span class="cn">（政策评估与自选择问题）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Program evaluation compares treatment and control groups. However, treatment assignment is often non-random (e.g., first-come, first-served grants). This creates a self-selection problem: firms with less productive workers may have applied first, biasing the estimated treatment effect.</div>
+<div class="kp-cn">【中文】政策评估比较处理组和对照组。然而，处理分配通常不是随机的（例如，先到先得的拨款）。这产生了自选择问题：生产率较低工人的企业可能首先申请，从而使得估计的处理效应产生偏误。</div>
+<div class="kp-vocab">🔤 program evaluation（政策评估） | treatment group（处理组） | control group（对照组） | self-selection（自选择）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> To address self-selection, include control variables $x_1$ through $x_j$ to account for the possibility that treatment assignment is not random. This is regression adjustment: we assume treatment w is independent of potential outcomes [y(0), y(1)] conditional on covariates x (conditional independence assumption).</div>
+<div class="kp-cn">【中文】为解决自选择问题，纳入控制变量 $x_1$ 至 $x_j$，以考虑处理分配的非随机性。这就是回归调整方法：我们假设在给定协变量x的条件下，处理w独立于潜在结果 [y(0), y(1)]（条件独立假设）。</div>
+<div class="kp-vocab">🔤 regression adjustment（回归调整） | conditional independence assumption（条件独立假设） | potential outcomes（潜在结果） | covariates（协变量）</div>
+</div><h2 class="sec-title">Average Treatment Effect and Heterogeneous Effects<span class="cn">（平均处理效应与异质性效应）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> When treatment effects vary across individuals, we can estimate the Average Treatment Effect (ATE). The unrestricted regression adjustment (URA) allows individual treatment effects to vary, while the restricted regression adjustment (RRA) forces the treatment effect to be identical across individuals.</div>
+<div class="kp-cn">【中文】当处理效应因人而异时，我们可以估计平均处理效应（ATE）。无约束回归调整（URA）允许个体处理效应变化，而受约束回归调整（RRA）强制处理效应在个体间相同。</div>
+<div class="kp-vocab">🔤 Average Treatment Effect (ATE)（平均处理效应） | URA (Unrestricted Regression Adjustment)（无约束回归调整） | RRA (Restricted Regression Adjustment)（受约束回归调整） | heterogeneous treatment effects（异质性处理效应）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag info">了解</span> An alternative method for obtaining the URA ATE: (1) Predict y_i(0) and y_i(1) for every unit regardless of actual group assignment; (2) Compute ATE as the average of predicted differences: $$ATE = \frac{1}{n}\sum_{i=1}^{n}[\hat{y}_i(1) - \hat{y}_i(0)]$$.</div>
+<div class="kp-cn">【中文】获得URA ATE的另一种方法：(1) 对每个单位预测 y_i(0) 和 y_i(1)，无论其实际属于哪个组；(2) 计算ATE为预测差异的平均值：$$ATE = \frac{1}{n}\sum_{i=1}^{n}[\hat{y}_i(1) - \hat{y}_i(0)]$$。</div>
+<div class="kp-vocab">🔤 predicted counterfactual（预测反事实） | ATE estimator（ATE估计量）</div>
+</div><div class="vocab-box"><h4>📚 Ch7 核心词汇汇总</h4><table><tr><th>English</th><th>中文</th></tr><tr><td>qualitative information</td><td>定性信息</td></tr><tr><td>dummy variable</td><td>虚拟变量</td></tr><tr><td>dummy variable trap</td><td>虚拟变量陷阱</td></tr><tr><td>perfect collinearity</td><td>完全共线性</td></tr><tr><td>base/reference category</td><td>基准类别/参照类别</td></tr><tr><td>intercept shift</td><td>截距平移</td></tr><tr><td>interaction term</td><td>交互项</td></tr><tr><td>slope dummy</td><td>斜率虚拟变量</td></tr><tr><td>Chow test</td><td>邹至庄检验</td></tr><tr><td>pooled regression</td><td>混合回归</td></tr><tr><td>Linear Probability Model (LPM)</td><td>线性概率模型</td></tr><tr><td>binary dependent variable</td><td>二值因变量</td></tr><tr><td>heteroskedasticity-robust standard errors</td><td>异方差稳健标准误</td></tr><tr><td>program evaluation</td><td>政策评估</td></tr><tr><td>treatment group / control group</td><td>处理组/对照组</td></tr><tr><td>self-selection</td><td>自选择</td></tr><tr><td>regression adjustment</td><td>回归调整</td></tr><tr><td>Average Treatment Effect (ATE)</td><td>平均处理效应</td></tr><tr><td>conditional independence assumption</td><td>条件独立假设</td></tr><tr><td>potential outcomes</td><td>潜在结果</td></tr><tr><td>URA / RRA</td><td>无约束/受约束回归调整</td></tr><tr><td>centering</td><td>中心化</td></tr><tr><td>ordinal variable</td><td>有序变量</td></tr><tr><td>g-1 rule</td><td>g-1规则</td></tr></table></div></div><div class="chapter" id="CH08"><h1 class="ch-title">Chapter 8: Heteroskedasticity<br><span class="cn">异方差性</span></h1><h2 class="sec-title">Consequences of Heteroskedasticity for OLS<span class="cn">（异方差性对OLS的影响）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Heteroskedasticity occurs when the variance of the error term $u$ is not constant across observations: $$Var(u|x_1, x_2, ..., x_k) = \sigma^2_i \neq constant$$ This violates the homoskedasticity assumption (MLR.5) of the Gauss-Markov theorem.</div>
+<div class="kp-cn">【中文】当误差项 $u$ 的方差在不同观测中不恒定时，即存在异方差性：$$Var(u|x_1, x_2, ..., x_k) = \sigma^2_i \neq constant$$ 这违反了高斯-马尔可夫定理的同方差假设（MLR.5）。</div>
+<div class="kp-vocab">🔤 heteroskedasticity（异方差性） | homoskedasticity（同方差性） | Gauss-Markov theorem（高斯-马尔可夫定理） | MLR.5（多元线性回归假设5（同方差））</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Under heteroskedasticity, OLS is still unbiased and consistent. However: (1) The usual variance formulas for OLS estimators are invalid, so standard t-tests and F-tests are not valid; (2) OLS is no longer BLUE (Best Linear Unbiased Estimator) — there exist more efficient linear estimators; (3) Interpretation of R-squared is NOT affected by heteroskedasticity.</div>
+<div class="kp-cn">【中文】在异方差性下，OLS仍然是无偏且一致的。但是：(1) OLS估计量的常规方差公式不再有效，因此标准的t检验和F检验无效；(2) OLS不再是最优线性无偏估计量（BLUE）——存在更有效的线性估计量；(3) R-squared的解释不受异方差性影响。</div>
+<div class="kp-vocab">🔤 BLUE (Best Linear Unbiased Estimator)（最优线性无偏估计量） | unbiased（无偏的） | consistent（一致的） | R-squared（R方/拟合优度）</div>
+</div><h2 class="sec-title">Heteroskedasticity-Robust Inference<span class="cn">（异方差稳健推断）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Heteroskedasticity-robust standard errors (also called White standard errors or Huber-White standard errors) provide valid inference without knowing the form of heteroskedasticity. These formulas are asymptotically valid (valid in large samples). The robust standard error for $\hat{\beta}_j$ is: $$se(\hat{\beta}_j) = \sqrt{\frac{\sum \hat{r}_{ij}^2 \hat{u}_i^2}{SSR_j^2}}$$ where $\hat{r}_{ij}$ are residuals from regressing $x_j$ on all other x's.</div>
+<div class="kp-cn">【中文】异方差稳健标准误（也称White标准误或Huber-White标准误）在不知道异方差形式的情况下提供有效的推断。这些公式在大样本下渐近有效。$\hat{\beta}_j$ 的稳健标准误为：$$se(\hat{\beta}_j) = \sqrt{\frac{\sum \hat{r}_{ij}^2 \hat{u}_i^2}{SSR_j^2}}$$ 其中 $\hat{r}_{ij}$ 是将 $x_j$ 对所有其他x回归的残差。</div>
+<div class="kp-vocab">🔤 heteroskedasticity-robust standard errors（异方差稳健标准误） | White standard errors（White标准误） | Huber-White standard errors（Huber-White标准误） | asymptotically valid（渐近有效的）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Using robust standard errors, the usual t-test is valid asymptotically. The standard F-statistic does not work under heteroskedasticity, but heteroskedasticity-robust versions (Wald tests with robust covariance matrix) are available in most econometric software packages.</div>
+<div class="kp-cn">【中文】使用稳健标准误，常规的t检验是大样本下有效的。标准F统计量在异方差性下不适用，但大多数计量软件都提供了异方差稳健的F统计量版本（使用稳健协方差矩阵的Wald检验）。</div>
+<div class="kp-vocab">🔤 Wald test（Wald检验） | robust covariance matrix（稳健协方差矩阵）</div>
+</div><h2 class="sec-title">Testing for Heteroskedasticity: Breusch-Pagan Test<span class="cn">（异方差性检验：Breusch-Pagan检验）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> The Breusch-Pagan test assumes the error variance is a linear function of the explanatory variables: $$Var(u|x) = \sigma^2 = h(\delta_0 + \delta_1 x_1 + ... + \delta_k x_k)$$ The null hypothesis is homoskedasticity: $$H_0: \delta_1 = \delta_2 = ... = \delta_k = 0$$ If the null is rejected, heteroskedasticity is present.</div>
+<div class="kp-cn">【中文】Breusch-Pagan检验假设误差方差是解释变量的线性函数：$$Var(u|x) = \sigma^2 = h(\delta_0 + \delta_1 x_1 + ... + \delta_k x_k)$$ 原假设为同方差性：$$H_0: \delta_1 = \delta_2 = ... = \delta_k = 0$$ 如果拒绝原假设，则存在异方差性。</div>
+<div class="kp-vocab">🔤 Breusch-Pagan test（Breusch-Pagan检验） | null hypothesis（原假设） | Lagrange Multiplier (LM) test（拉格朗日乘数检验）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Breusch-Pagan test steps: (1) Estimate the original model by OLS and obtain squared residuals $\hat{u}^2$; (2) Regress $\hat{u}^2$ on all explanatory variables; (3) Compute the LM statistic: $$LM = n \cdot R^2_{\hat{u}^2}$$ which follows a $\chi^2_k$ distribution under $H_0$, or use the F-statistic for $\hat{u}^2$ regression.</div>
+<div class="kp-cn">【中文】Breusch-Pagan检验步骤：(1) 用OLS估计原模型并得到残差平方 $\hat{u}^2$；(2) 将 $\hat{u}^2$ 对所有解释变量做回归；(3) 计算LM统计量：$$LM = n \cdot R^2_{\hat{u}^2}$$ 在原假设下服从 $\chi^2_k$ 分布，或使用 $\hat{u}^2$ 回归的F统计量。</div>
+<div class="kp-vocab">🔤 squared residuals（残差平方） | LM statistic（LM统计量） | chi-squared distribution（卡方分布）</div>
+</div><h2 class="sec-title">Testing for Heteroskedasticity: The White Test<span class="cn">（异方差性检验：White检验）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> The White test is a more general test that does not assume a specific functional form for heteroskedasticity. It regresses $\hat{u}^2$ on all explanatory variables, their squares, and cross-products. Under $H_0$, $LM = n \cdot R^2_{\hat{u}^2} \sim \chi^2_q$ where $q$ is the number of regressors in the auxiliary regression (excluding the intercept).</div>
+<div class="kp-cn">【中文】White检验是一种更一般的检验方法，不假定异方差性的具体函数形式。它将 $\hat{u}^2$ 对所有解释变量、它们的平方项和交叉项进行回归。在原假设下，$LM = n \cdot R^2_{\hat{u}^2} \sim \chi^2_q$，其中 $q$ 是辅助回归中解释变量的个数（不包括截距项）。</div>
+<div class="kp-vocab">🔤 White test（White检验） | cross-products（交叉项/交互项） | auxiliary regression（辅助回归）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Disadvantage of the original White test: including all squares and interactions leads to many parameters. For example, k=6 explanatory variables leads to 27 parameters in the auxiliary regression, consuming many degrees of freedom. The alternative (reduced) White test uses only fitted values $\hat{y}$ and $\hat{y}^2$ as regressors, saving degrees of freedom.</div>
+<div class="kp-cn">【中文】原始White检验的缺点：纳入所有平方项和交互项导致大量参数。例如，k=6个解释变量在辅助回归中需要估计27个参数，消耗大量自由度。替代的（简化）White检验仅使用拟合值 $\hat{y}$ 和 $\hat{y}^2$ 作为回归元，从而节省自由度。</div>
+<div class="kp-vocab">🔤 degrees of freedom（自由度） | reduced White test（简化White检验） | fitted values（拟合值）</div>
+</div><h2 class="sec-title">Weighted Least Squares (WLS): Known Heteroskedasticity Form<span class="cn">（加权最小二乘法：已知异方差形式）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> If the form of heteroskedasticity is known up to a multiplicative constant: $$Var(u|x) = \sigma^2 \cdot h(x)$$ then we can transform the model by dividing by $\sqrt{h(x)}$ to obtain a homoskedastic model. OLS applied to the transformed model is Weighted Least Squares (WLS).</div>
+<div class="kp-cn">【中文】如果异方差性的形式已知（仅差一个乘数常数）：$$Var(u|x) = \sigma^2 \cdot h(x)$$ 那么我们可以将模型除以 $\sqrt{h(x)}$ 进行变换，得到一个同方差模型。对变换后模型应用OLS即为加权最小二乘法（WLS）。</div>
+<div class="kp-vocab">🔤 Weighted Least Squares (WLS)（加权最小二乘法） | multiplicative constant（乘数常数） | transformed model（变换后的模型）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> If all Gauss-Markov assumptions (including MLR.5) hold in the transformed model, WLS is the best linear unbiased estimator (BLUE). WLS is a special case of Generalized Least Squares (GLS).</div>
+<div class="kp-cn">【中文】如果在变换后的模型中所有高斯-马尔可夫假设（包括MLR.5）均成立，则WLS是最优线性无偏估计量（BLUE）。WLS是广义最小二乘法（GLS）的一个特例。</div>
+<div class="kp-vocab">🔤 Generalized Least Squares (GLS)（广义最小二乘法）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Why is WLS more efficient than OLS? Observations with larger variance are less informative and should receive less weight in estimation. WLS assigns smaller weights to observations with high variance and larger weights to observations with low variance, producing more efficient estimates.</div>
+<div class="kp-cn">【中文】为什么WLS比OLS更有效？方差较大的观测值信息量较少，在估计中应获得较小的权重。WLS为高方差观测值分配较小的权重，为低方差观测值分配较大的权重，从而产生更有效的估计。</div>
+<div class="kp-vocab">🔤 efficiency（有效性） | weight（权重） | informative observation（信息量大的观测值）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Important special case: when observations are reported as averages at the city/county/state/firm level, they should be weighted by the size of the unit (e.g., firm employment $m_i$). If errors are homoskedastic at the individual level, then WLS with weights proportional to $m_i$ should be used. Robust standard errors can also be computed after WLS.</div>
+<div class="kp-cn">【中文】重要特殊情况：当观测值是以城市/县/州/企业层面的平均值形式报告时，应以单位规模（如企业雇佣人数 $m_i$）作为权重。如果个体层面的误差是同方差的，则应使用权数与 $m_i$ 成正比的WLS。在WLS之后也可以计算稳健标准误。</div>
+<div class="kp-vocab">🔤 aggregated data（汇总数据） | average data（均值数据） | grouped data（分组数据）</div>
+</div><h2 class="sec-title">Feasible Generalized Least Squares (FGLS)<span class="cn">（可行的广义最小二乘法）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> When the heteroskedasticity function is unknown, we can use Feasible GLS (FGLS). Steps: (1) Estimate by OLS and obtain residuals $\hat{u}$; (2) Estimate the variance function, e.g., $\log(\hat{u}^2)$ on explanatory variables, to obtain fitted values $\hat{g}$; (3) Use $\hat{h} = \exp(\hat{g})$ as the estimated variance function for WLS weights.</div>
+<div class="kp-cn">【中文】当异方差函数未知时，我们可以使用可行的广义最小二乘法（FGLS）。步骤：(1) 用OLS估计并得到残差 $\hat{u}$；(2) 估计方差函数，例如将 $\log(\hat{u}^2)$ 对解释变量回归，得到拟合值 $\hat{g}$；(3) 使用 $\hat{h} = \exp(\hat{g})$ 作为估计的方差函数来计算WLS权重。</div>
+<div class="kp-vocab">🔤 Feasible GLS (FGLS)（可行的广义最小二乘法） | variance function（方差函数） | two-step estimation（两步估计）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Advantage of FGLS: it typically produces more efficient estimates with smaller standard errors than OLS. In the cigarette demand example, the income elasticity became statistically significant after FGLS estimation, and other coefficients were more precisely estimated.</div>
+<div class="kp-cn">【中文】FGLS的优点：通常能产生比OLS更有效的估计，标准误更小。在香烟需求案例中，FGLS估计后收入弹性变得统计显著，其他系数的估计也更加精确。</div>
+<div class="kp-vocab">🔤 elasticity（弹性） | statistically significant（统计显著的） | precise estimation（精确估计）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> What if the assumed heteroskedasticity function is wrong? If the variance function is misspecified, WLS is still consistent under MLR.1-MLR.4, but robust standard errors should be computed. If OLS and WLS produce very different estimates, this typically indicates other assumptions (e.g., MLR.4 zero conditional mean) are violated. With strong heteroskedasticity, using even a wrong variance form often improves efficiency.</div>
+<div class="kp-cn">【中文】如果假定的异方差函数是错误的怎么办？如果方差函数设定错误，在MLR.1-MLR.4下WLS仍然是一致的，但应使用稳健标准误。如果OLS和WLS产生了截然不同的估计值，这通常意味着其他假设（如MLR.4零条件均值）被违反了。当异方差性严重时，即使使用错误的方差形式也往往能提高效率。</div>
+<div class="kp-vocab">🔤 misspecified variance function（误设方差函数） | MLR.4（多元线性回归假设4（零条件均值）） | zero conditional mean（零条件均值）</div>
+</div><h2 class="sec-title">WLS in the Linear Probability Model<span class="cn">（线性概率模型中的WLS）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> The LPM is necessarily heteroskedastic because $$Var(y|x) = p(x)[1 - p(x)]$$ where $p(x)$ is the probability that y=1. WLS can be applied using estimated probabilities $\hat{p}$ from OLS, with weights $$w_i = 1 / \sqrt{\hat{p}_i(1 - \hat{p}_i)}$$.</div>
+<div class="kp-cn">【中文】LPM必然存在异方差性，因为 $$Var(y|x) = p(x)[1 - p(x)]$$ 其中 $p(x)$ 是 y=1 的概率。可以使用OLS估计的概率 $\hat{p}$ 来应用WLS，权重为 $$w_i = 1 / \sqrt{\hat{p}_i(1 - \hat{p}_i)}$$。</div>
+<div class="kp-vocab">🔤 LPM heteroskedasticity（线性概率模型的异方差性） | Bernoulli variance（伯努利方差）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> WLS in LPM is infeasible if any predicted probability is below 0 or above 1. If such cases are rare, they may be adjusted to boundary values (e.g., 0.01/0.99). Otherwise, it is better to use OLS with robust standard errors.</div>
+<div class="kp-cn">【中文】如果任何预测概率低于0或高于1，则LPM中的WLS不可行。如果这种情况罕见，可以将其调整为边界值（如0.01/0.99）。否则，最好使用带有稳健标准误的OLS。</div>
+<div class="kp-vocab">🔤 infeasible WLS（不可行的WLS） | boundary adjustment（边界调整）</div>
+</div><div class="vocab-box"><h4>📚 Ch8 核心词汇汇总</h4><table><tr><th>English</th><th>中文</th></tr><tr><td>heteroskedasticity</td><td>异方差性</td></tr><tr><td>homoskedasticity</td><td>同方差性</td></tr><tr><td>BLUE (Best Linear Unbiased Estimator)</td><td>最优线性无偏估计量</td></tr><tr><td>heteroskedasticity-robust standard errors</td><td>异方差稳健标准误</td></tr><tr><td>White standard errors</td><td>White标准误</td></tr><tr><td>asymptotically valid</td><td>渐近有效的</td></tr><tr><td>Breusch-Pagan test</td><td>Breusch-Pagan检验</td></tr><tr><td>White test</td><td>White检验</td></tr><tr><td>LM statistic</td><td>LM统计量</td></tr><tr><td>Weighted Least Squares (WLS)</td><td>加权最小二乘法</td></tr><tr><td>Generalized Least Squares (GLS)</td><td>广义最小二乘法</td></tr><tr><td>Feasible GLS (FGLS)</td><td>可行的广义最小二乘法</td></tr><tr><td>variance function</td><td>方差函数</td></tr><tr><td>transformed model</td><td>变换后的模型</td></tr><tr><td>auxiliary regression</td><td>辅助回归</td></tr><tr><td>grouped/averaged data</td><td>分组/均值数据</td></tr><tr><td>efficiency</td><td>有效性</td></tr><tr><td>misspecification</td><td>误设/设定错误</td></tr><tr><td>zero conditional mean</td><td>零条件均值</td></tr><tr><td>chi-squared distribution</td><td>卡方分布</td></tr><tr><td>Wald test</td><td>Wald检验</td></tr><tr><td>reduced White test</td><td>简化White检验</td></tr></table></div></div><div class="chapter" id="CH09"><h1 class="ch-title">Chapter 9: More on Specification and Data Issues<br><span class="cn">模型设定与数据问题的进一步讨论</span></h1><h2 class="sec-title">Functional Form Misspecification<span class="cn">（函数形式误设）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Functional form misspecification occurs when the model omits nonlinear terms (squares, interactions, higher-order terms) that should be included. One can test for this by adding squared terms or interactions and testing their joint significance using an F-test. If significant, the functional form should be generalized.</div>
+<div class="kp-cn">【中文】函数形式误设发生在模型遗漏了本应包含的非线性项（平方项、交互项、高阶项）时。可以通过加入平方项或交互项并用F检验检验它们的联合显著性来检验这一点。如果显著，则应推广函数形式。</div>
+<div class="kp-vocab">🔤 functional form misspecification（函数形式误设） | nonlinear terms（非线性项） | joint significance test（联合显著性检验） | higher-order terms（高阶项）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> RESET (Regression Specification Error Test) is a general test for functional form misspecification. Steps: (1) Estimate the original model $y = \beta_0 + \beta_1 x_1 + ... + \beta_k x_k + u$ by OLS, obtaining fitted values $\hat{y}$; (2) Add $\hat{y}^2$ and possibly $\hat{y}^3$ to the original regression; (3) Test that the coefficients on $\hat{y}^2$ and higher powers are jointly zero using an F-test. Rejection suggests misspecification.</div>
+<div class="kp-cn">【中文】RESET（回归设定误差检验）是检验函数形式误设的通用检验方法。步骤：(1) 用OLS估计原模型 $y = \beta_0 + \beta_1 x_1 + ... + \beta_k x_k + u$，得到拟合值 $\hat{y}$；(2) 在原回归中加入 $\hat{y}^2$ 和可能的 $\hat{y}^3$；(3) 用F检验检验 $\hat{y}^2$ 和更高次幂项的系数是否联合为零。拒绝原假设表明存在设定误差。</div>
+<div class="kp-vocab">🔤 RESET (Regression Specification Error Test)（回归设定误差检验） | fitted values（拟合值） | specification error（设定误差）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> RESET has a limitation: it provides little guidance as to where the misspecification comes from. Including higher-order fitted values implicitly creates complicated interactions and higher-order terms of all explanatory variables, making it difficult to pinpoint the source of misspecification.</div>
+<div class="kp-cn">【中文】RESET的局限性：它对误设的来源提供的指引很少。纳入高阶拟合值隐含地生成了所有解释变量之间复杂的交互项和高阶项，因此难以确定误设的具体来源。</div>
+<div class="kp-vocab">🔤 RESET limitation（RESET的局限性） | implicit interactions（隐含交互项）</div>
+</div><h2 class="sec-title">Testing Against Nonnested Alternatives<span class="cn">（非嵌套备择模型的检验）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> When two models are nonnested (neither is a special case of the other), we can test one model against the other. A common approach is to take the fitted values from Model B and include them in Model A. If the fitted values from Model B are significant in Model A, Model A is rejected in favor of Model B (and vice versa).</div>
+<div class="kp-cn">【中文】当两个模型是非嵌套的（任何一个都不是另一个的特例）时，我们可以用其中一个检验另一个。常见方法是将模型B的拟合值纳入模型A：如果模型B的拟合值在模型A中显著，则拒绝模型A，支持模型B（反之亦然）。</div>
+<div class="kp-vocab">🔤 nonnested models（非嵌套模型） | nonnested alternatives test（非嵌套备择检验） | Davidson-MacKinnon test（Davidson-MacKinnon检验）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Limitations of nonnested testing: (1) A clear winner may not emerge (both models might be rejected or both accepted); (2) Cannot be used if the models differ in their definition of the dependent variable (e.g., one uses y and the other uses log(y)).</div>
+<div class="kp-cn">【中文】非嵌套检验的局限性：(1) 可能不会出现明确的胜出模型（两个模型可能都被拒绝或都未被拒绝）；(2) 如果模型对因变量的定义不同（如一个使用y，另一个使用log(y)），则无法使用。</div>
+<div class="kp-vocab">🔤 dependent variable definition（因变量定义） | inconclusive test（无法得出结论的检验）</div>
+</div><h2 class="sec-title">Proxy Variables for Unobserved Explanatory Variables<span class="cn">（不可观测解释变量的代理变量）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> When an important variable (e.g., ability in a wage equation) is unobserved and omitted, OLS estimates are biased due to omitted variable bias. A proxy variable (e.g., IQ score) can be included to control for the unobserved variable and reduce bias in the coefficients of interest.</div>
+<div class="kp-cn">【中文】当重要变量（如工资方程中的能力）不可观测而被遗漏时，OLS估计因遗漏变量偏误而产生偏差。可以纳入一个代理变量（如IQ分数）来控制不可观测变量，从而减少感兴趣系数的偏误。</div>
+<div class="kp-vocab">🔤 proxy variable（代理变量） | omitted variable bias（遗漏变量偏误） | unobserved variable（不可观测变量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Two key assumptions for the proxy variable method: (1) The proxy variable does not belong in the population regression (it is 'just a proxy' — uncorrelated with the error term after controlling for the unobserved variable and other x's); (2) The correlation between the omitted variable and each x_j is zero once the proxy is included (the proxy is a 'good' proxy that soaks up the variation of the omitted variable).</div>
+<div class="kp-cn">【中文】代理变量方法的两个关键假设：(1) 代理变量不属于总体回归（它'只是代理'——在控制了不可观测变量和其他x后与误差项不相关）；(2) 一旦纳入代理变量，遗漏变量与每个x_j之间的相关性为零（代理变量是一个'好'的代理，能充分吸收遗漏变量的变动）。</div>
+<div class="kp-vocab">🔤 proxy assumption（代理变量假设） | good proxy（好的代理/有效代理） | endogeneity（内生性）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> In the wage equation example, using IQ as a proxy for ability typically reduces the measured return to education (e.g., the education coefficient becomes smaller). Even if IQ imperfectly controls for ability, including it will at least reduce the bias in the education coefficient.</div>
+<div class="kp-cn">【中文】在工资方程案例中，使用IQ作为能力的代理通常会降低测量的教育回报（即教育系数变小）。即使IQ不能完美控制能力，纳入它至少可以降低教育系数的偏误。</div>
+<div class="kp-vocab">🔤 return to education（教育回报） | IQ score（智商分数） | ability bias（能力偏误）</div>
+</div><h2 class="sec-title">Lagged Dependent Variables as Proxy Variables<span class="cn">（滞后因变量作为代理变量）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> In many cases, omitted unobserved factors can be proxied by the lagged value of the dependent variable from an earlier time period. For example, in a city crime rate equation: $$crime_t = \beta_0 + \beta_1 crime_{t-1} + ... + u_t$$ Including past crime rate at least partially controls for many omitted factors that also determine the current crime rate.</div>
+<div class="kp-cn">【中文】在许多情况下，遗漏的不可观测因素可以用早期时间段因变量的滞后值作为代理。例如，在城市犯罪率方程中：$$crime_t = \beta_0 + \beta_1 crime_{t-1} + ... + u_t$$ 纳入过去的犯罪率可以至少部分地控制同样决定当前犯罪率的许多遗漏因素。</div>
+<div class="kp-vocab">🔤 lagged dependent variable（滞后因变量） | lagged proxy（滞后代理） | time-series proxy（时间序列代理）</div>
+</div><h2 class="sec-title">Random Coefficient Models<span class="cn">（随机系数模型）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Random coefficient models (random slopes models) allow regression coefficients to vary randomly across individuals. Instead of a constant $\beta_j$, we have $\beta_{ij} = \beta_j + a_{ij}$ where $a_{ij}$ is a random individual-specific deviation. OLS still provides a consistent estimate of the average population coefficient, but the error term becomes heteroskedastic.</div>
+<div class="kp-cn">【中文】随机系数模型（随机斜率模型）允许回归系数在个体之间随机变化。不再是常数 $\beta_j$，而是 $\beta_{ij} = \beta_j + a_{ij}$，其中 $a_{ij}$ 是随机的个体特定偏差。OLS仍然提供平均总体系数的一致估计，但误差项变得异方差。</div>
+<div class="kp-vocab">🔤 random coefficient model（随机系数模型） | random slopes（随机斜率） | individual-specific effect（个体特定效应）</div>
+</div><h2 class="sec-title">Measurement Error in Explanatory Variables<span class="cn">（解释变量的测量误差）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Measurement error occurs when we observe $x^{obs} = x^* + e$ instead of the true value $x^*$, where $e$ is the measurement error. Under the classical errors-in-variables (CEV) assumption, $e$ is independent of $x^*$ and $u$ (the regression error). However, $x^{obs}$ is correlated with the composite error, making it endogenous.</div>
+<div class="kp-cn">【中文】当我们观测到 $x^{obs} = x^* + e$ 而非真实值 $x^*$ 时，就存在测量误差，其中 $e$ 是测量误差。在经典变量误差（CEV）假设下，$e$ 与 $x^*$ 和 $u$（回归误差）均独立。然而，$x^{obs}$ 与复合误差相关，从而成为内生变量。</div>
+<div class="kp-vocab">🔤 measurement error（测量误差） | classical errors-in-variables (CEV)（经典变量误差） | endogenous variable（内生变量） | true value（真实值）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Consequence of measurement error: the coefficient on the mismeasured variable suffers from attenuation bias — the OLS estimate is biased toward zero. Formally: $$plim(\hat{\beta}_1) = \beta_1 \cdot \left(\frac{\sigma_{x^*}^2}{\sigma_{x^*}^2 + \sigma_e^2}\right)$$ where the term in parentheses (the reliability ratio) is between 0 and 1. Additionally, coefficients on other variables are also biased.</div>
+<div class="kp-cn">【中文】测量误差的后果：有误差测量变量的系数遭受衰减偏误——OLS估计值向零偏误。形式化为：$$plim(\hat{\beta}_1) = \beta_1 \cdot \left(\frac{\sigma_{x^*}^2}{\sigma_{x^*}^2 + \sigma_e^2}\right)$$ 其中括号内的项（信度比）在0到1之间。此外，其他变量的系数也会产生偏误。</div>
+<div class="kp-vocab">🔤 attenuation bias（衰减偏误） | reliability ratio（信度比） | plim (probability limit)（概率极限） | inconsistency（不一致性）</div>
+</div><h2 class="sec-title">Missing Data and Nonrandom Samples<span class="cn">（缺失数据与非随机样本）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Missing data is a special case of sample selection (nonrandom sampling). If sample selection is based on independent variables (exogenous sample selection), there is no problem because regression conditions on the independent variables. If it is based on the dependent variable or error term (endogenous sample selection), it causes bias.</div>
+<div class="kp-cn">【中文】缺失数据是样本选择（非随机抽样）的一个特例。如果样本选择基于自变量（外生样本选择），则没有问题，因为回归以自变量为条件。如果它基于因变量或误差项（内生样本选择），则会导致偏误。</div>
+<div class="kp-vocab">🔤 missing data（缺失数据） | nonrandom sample（非随机样本） | exogenous sample selection（外生样本选择） | endogenous sample selection（内生样本选择）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Example of exogenous sample selection: If a savings survey over- or under-samples certain age, income, or household-size groups, this is acceptable because the regression examines savings for subgroups defined by these variables. Example of endogenous sample selection: If wealthy individuals systematically refuse to participate in a wealth survey, this biases the results.</div>
+<div class="kp-cn">【中文】外生样本选择的例子：如果储蓄调查过度或不足抽样某些年龄、收入或家庭规模组，这是可以接受的，因为回归考察的是由这些变量定义的子群的储蓄情况。内生样本选择的例子：如果富人系统性地拒绝参加财富调查，这将使结果产生偏误。</div>
+<div class="kp-vocab">🔤 oversampling（过度抽样） | subgroup analysis（子群分析） | nonresponse bias（无应答偏误）</div>
+</div><h2 class="sec-title">Missing Indicator Method and Missing Data Mechanisms<span class="cn">（缺失指示法及缺失数据机制）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The Missing Indicator Method (MIM): when some observations on an explanatory variable $x$ are missing, create (1) a new variable that equals $x$ when observed and a constant (e.g., sample mean) when missing; and (2) a missing indicator dummy = 1 if $x$ is missing. Both variables are included in the regression.</div>
+<div class="kp-cn">【中文】缺失指示法（MIM）：当某个解释变量 $x$ 的部分观测值缺失时，创建：(1) 一个新变量，在有观测值处等于 $x$，在缺失处等于某个常数（如样本均值）；(2) 一个缺失指示虚拟变量，若 $x$ 缺失则等于1。将这两个变量都纳入回归模型中。</div>
+<div class="kp-vocab">🔤 Missing Indicator Method (MIM)（缺失指示法） | missing indicator（缺失指示变量） | imputation（插补）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> MIM has good statistical properties only under strong assumptions unlikely to hold in practice. It is generally not recommended as a primary approach.</div>
+<div class="kp-cn">【中文】MIM只有在实践中不太可能成立的强假设下才具有良好的统计性质，一般不推荐作为主要方法使用。</div>
+<div class="kp-vocab">🔤 MIM limitations（缺失指示法局限）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Missing at Random (MAR): missingness is unrelated to the error term $u$ but may depend on the explanatory variables $(x_1, ..., x_k)$. Missing Completely at Random (MCAR): missingness is unrelated to both $u$ and $(x_1, ..., x_k)$. Under MAR, complete-case estimation (using only observations with full data) can be valid. Under MCAR, it is also valid.</div>
+<div class="kp-cn">【中文】随机缺失（MAR）：缺失性与误差项 $u$ 无关，但可能依赖于解释变量 $(x_1, ..., x_k)$。完全随机缺失（MCAR）：缺失性与 $u$ 和 $(x_1, ..., x_k)$ 均无关。在MAR下，完全观测估计（仅使用数据完整的观测值）可以是有效的。在MCAR下，也是有效的。</div>
+<div class="kp-vocab">🔤 Missing at Random (MAR)（随机缺失） | Missing Completely at Random (MCAR)（完全随机缺失） | complete cases estimator（完全观测估计量） | missingness mechanism（缺失机制）</div>
+</div><h2 class="sec-title">Outliers and Influential Observations<span class="cn">（异常值与有影响力的观测值）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Outliers and extreme values are a particular problem for OLS because OLS minimizes the sum of squared residuals, giving disproportionate weight to large deviations. If outliers result from data entry errors, the affected observations should be discarded. If they result from the data generating process, the decision to exclude them is more complex.</div>
+<div class="kp-cn">【中文】异常值和极端值对OLS尤其成问题，因为OLS最小化残差平方和，对大的偏差给予不成比例的权重。如果异常值来自数据录入错误，应丢弃受影响的观测值。如果它们来自数据生成过程，排除它们的决策则更为复杂。</div>
+<div class="kp-vocab">🔤 outlier（异常值） | influential observation（有影响力的观测值） | data entry error（数据录入错误） | data generating process（数据生成过程）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> In the R&D intensity and firm size example, a few very large firms or firms with unusually high R&D spending can dramatically affect OLS estimates. It is important to examine whether results are sensitive to the inclusion of outliers and to report both results with and without outliers.</div>
+<div class="kp-cn">【中文】在研发强度与企业规模案例中，少数非常大的企业或研发支出异常高的企业可以显著影响OLS估计。重要的是检验结果是否对纳入异常值敏感，并同时报告包含和不包含异常值的结果。</div>
+<div class="kp-vocab">🔤 R&D intensity（研发强度） | sensitivity analysis（敏感性分析） | robustness check（稳健性检验）</div>
+</div><h2 class="sec-title">Least Absolute Deviations (LAD) and Quantile Regression<span class="cn">（最小绝对离差法与分位数回归）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Least Absolute Deviations (LAD) minimizes the sum of absolute residuals $\sum |y_i - \hat{y}_i|$ instead of squared residuals. LAD estimates the parameters of the conditional median (instead of the conditional mean as OLS does). LAD is more robust to outliers because deviations are not squared.</div>
+<div class="kp-cn">【中文】最小绝对离差法（LAD）最小化绝对残差之和 $\sum |y_i - \hat{y}_i|$ 而非平方残差。LAD估计条件中位数的参数（而非OLS所估计的条件均值）。LAD对异常值更稳健，因为偏差不需要平方。</div>
+<div class="kp-vocab">🔤 Least Absolute Deviations (LAD)（最小绝对离差法） | conditional median（条件中位数） | conditional mean（条件均值） | absolute residual（绝对残差）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> LAD is a special case of quantile regression, which estimates parameters of conditional quantiles (e.g., median = 0.5 quantile, 0.25 quantile, 0.75 quantile). Quantile regression provides a more complete picture of the relationship between variables across the entire distribution of the dependent variable.</div>
+<div class="kp-cn">【中文】LAD是分位数回归的一个特例，分位数回归估计条件分位数的参数（如中位数=0.5分位数、0.25分位数、0.75分位数）。分位数回归提供了变量之间关系在因变量整个分布上更完整的画面。</div>
+<div class="kp-vocab">🔤 quantile regression（分位数回归） | conditional quantile（条件分位数） | distributional effect（分布效应）</div>
+</div><div class="vocab-box"><h4>📚 Ch9 核心词汇汇总</h4><table><tr><th>English</th><th>中文</th></tr><tr><td>functional form misspecification</td><td>函数形式误设</td></tr><tr><td>RESET (Regression Specification Error Test)</td><td>回归设定误差检验</td></tr><tr><td>nonnested models</td><td>非嵌套模型</td></tr><tr><td>proxy variable</td><td>代理变量</td></tr><tr><td>omitted variable bias</td><td>遗漏变量偏误</td></tr><tr><td>lagged dependent variable</td><td>滞后因变量</td></tr><tr><td>random coefficient model</td><td>随机系数模型</td></tr><tr><td>random slopes</td><td>随机斜率</td></tr><tr><td>measurement error</td><td>测量误差</td></tr><tr><td>classical errors-in-variables (CEV)</td><td>经典变量误差</td></tr><tr><td>attenuation bias</td><td>衰减偏误</td></tr><tr><td>reliability ratio</td><td>信度比</td></tr><tr><td>missing data</td><td>缺失数据</td></tr><tr><td>Missing Indicator Method (MIM)</td><td>缺失指示法</td></tr><tr><td>Missing at Random (MAR)</td><td>随机缺失</td></tr><tr><td>Missing Completely at Random (MCAR)</td><td>完全随机缺失</td></tr><tr><td>exogenous sample selection</td><td>外生样本选择</td></tr><tr><td>endogenous sample selection</td><td>内生样本选择</td></tr><tr><td>outlier</td><td>异常值</td></tr><tr><td>influential observation</td><td>有影响力的观测值</td></tr><tr><td>Least Absolute Deviations (LAD)</td><td>最小绝对离差法</td></tr><tr><td>quantile regression</td><td>分位数回归</td></tr><tr><td>conditional median</td><td>条件中位数</td></tr><tr><td>complete cases estimator</td><td>完全观测估计量</td></tr></table></div></div><div class="chapter" id="CH13"><h1 class="ch-title">Chapter 13: Pooling Cross Sections across Time: Simple Panel Data Methods<br><span class="cn">跨时期横截面数据混合：简单面板数据方法</span></h1><h2 class="sec-title">Independently Pooled Cross Sections vs. Panel Data<span class="cn">（独立混合横截面数据与面板数据的区别）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> An **independently pooled cross section** is obtained by sampling randomly from a large population at different points in time (usually different years). Each sample is drawn independently, so the individuals observed in different periods are different.</div>
+<div class="kp-cn">【中文】独立混合横截面数据通过在不同时间点（通常是不同年份）从大总体中随机抽样获得。每次抽样独立进行，不同时期观测到的个体是不同的。</div>
+<div class="kp-vocab">🔤 independently pooled cross section（独立混合横截面数据） | random sampling（随机抽样）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> A **panel data set** (also called **longitudinal data**) has both a cross-sectional and a time series dimension. We follow (or attempt to follow) the same individuals, families, firms, cities, or states across time.</div>
+<div class="kp-cn">【中文】面板数据集（也称纵向数据）同时具有横截面和时间序列维度。我们跟踪相同的个体、家庭、企业、城市或州随时间变化的情况。</div>
+<div class="kp-vocab">🔤 panel data（面板数据） | longitudinal data（纵向数据） | cross-sectional dimension（横截面维度） | time series dimension（时间序列维度）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag info">了解</span> Example: Sander (1992) uses General Social Survey data from even years 1972-1984 to estimate a model explaining total number of kids born to a woman (kids). Example of wage equation: $$\log(wage)$$ pooled across years 1978 (base year) and 1985, with 550 people in 1978 and a different set of 534 people in 1985.</div>
+<div class="kp-cn">【中文】示例：Sander (1992) 使用1972-1984偶数年综合社会调查数据估计女性生育孩子数量的模型。工资方程示例：$$\log(wage)$$ 混合1978年（基年）和1985年数据，1978年有550人，1985年有另一组534人。</div>
+<div class="kp-vocab">🔤 base year（基年）</div>
+</div><h2 class="sec-title">Policy Analysis with Pooled Cross Sections: Difference-in-Differences (DiD)<span class="cn">（用混合横截面数据进行政策分析：双重差分法）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Two or more independently sampled cross sections can be used to evaluate the impact of a certain event or policy change. This is the **difference-in-differences (DiD)** approach.</div>
+<div class="kp-cn">【中文】两个或多个独立抽取的横截面数据可用于评估某一事件或政策变化的影响。这就是双重差分法（DiD）。</div>
+<div class="kp-vocab">🔤 difference-in-differences (DiD)（双重差分法） | policy change（政策变化） | policy evaluation（政策评估）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Example: Effect of a new garbage incinerator's location on housing prices. Examine house prices before and after the incinerator was built. It would be wrong to conclude only from the post-incinerator regression that being near the incinerator depresses prices; one must compare with the situation before it was built.</div>
+<div class="kp-cn">【中文】示例：新垃圾焚烧厂选址对房价的影响。在焚烧厂建成前后分别考察房价。仅从建成后的回归中得出靠近焚烧厂会压低房价的结论是错误的；必须与建成前的情况进行比较。</div>
+<div class="kp-vocab">🔤 garbage incinerator（垃圾焚烧厂） | housing prices（房价）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> The DiD effect can be estimated in a **regression framework**: $$y = \beta_0 + \beta_1 dT + \beta_2 dA + \beta_3 (dT \times dA) + u$$, where $$dT$$ is the time dummy (after=1), $$dA$$ is the treatment group dummy, and $$\beta_3$$ captures the DiD effect. Standard errors for the DiD effect can be obtained directly from the regression.</div>
+<div class="kp-cn">【中文】DiD效应可以在回归框架中估计：$$y = \beta_0 + \beta_1 dT + \beta_2 dA + \beta_3 (dT \times dA) + u$$，其中 $$dT$$ 是时间虚拟变量（政策后=1），$$dA$$ 是处理组虚拟变量，$$\beta_3$$ 捕捉DiD效应。从回归中可以直接获得DiD效应的标准误。</div>
+<div class="kp-vocab">🔤 regression framework（回归框架） | time dummy（时间虚拟变量） | treatment group dummy（处理组虚拟变量） | interaction term（交互项）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> If houses sold before and after the incinerator was built were systematically different, further explanatory variables should be included. This will also reduce the error variance and thus standard errors.</div>
+<div class="kp-cn">【中文】如果焚烧厂建成前后出售的房屋存在系统性差异，应加入额外的解释变量。这也会减少误差方差从而降低标准误。</div>
+<div class="kp-vocab">🔤 error variance（误差方差） | standard errors（标准误）</div>
+</div><h2 class="sec-title">Natural Experiments and Quasi-Experiments<span class="cn">（自然实验与准实验）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> A **natural experiment** (or **quasi-experiment**) occurs when some exogenous event—often a change in government policy—changes the environment in which individuals, families, firms, or cities operate. A natural experiment always has a **control group** (not affected by the policy) and a **treatment group** (affected by the policy).</div>
+<div class="kp-cn">【中文】自然实验（或准实验）发生在外生事件（通常是政府政策变化）改变了个人、家庭、企业或城市所处环境时。自然实验总是有一个控制组（不受政策影响）和一个处理组（受政策影响）。</div>
+<div class="kp-vocab">🔤 natural experiment（自然实验） | quasi-experiment（准实验） | exogenous event（外生事件） | control group（控制组） | treatment group（处理组）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> A **true experiment** differs from a natural experiment in that treatment and control groups are randomly and explicitly chosen by the researcher.</div>
+<div class="kp-cn">【中文】真实实验与自然实验的区别在于，处理组和控制组由研究者随机且明确地选择。</div>
+<div class="kp-vocab">🔤 true experiment（真实实验） | random assignment（随机分配）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> DiD compares the difference in outcomes of the treatment group and the control group before and after the policy was enacted. **Caution**: DiD only works if the difference in outcomes between the two groups is not changed by other factors than the policy change (e.g., there must be no differential trends).</div>
+<div class="kp-cn">【中文】DiD比较政策实施前后处理组和控制组结果的差异。注意：DiD只有在两组结果差异不受政策以外其他因素影响时才有效（即不能有差异性趋势）。</div>
+<div class="kp-vocab">🔤 differential trends（差异性趋势） | outcome variable（结果变量）</div>
+</div><h2 class="sec-title">DiD Estimator: Interpretation and Assumptions<span class="cn">（双重差分估计量的解释与假设）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> The DiD estimator can be rewritten as: $$\hat{\beta}_{DiD} = (\bar{y}_{T,after} - \bar{y}_{T,before}) - (\bar{y}_{C,after} - \bar{y}_{C,before})$$. The first term is the difference in means over time for the treated group; the second term is the difference in means over time for the control group.</div>
+<div class="kp-cn">【中文】DiD估计量可重写为：$$\hat{\beta}_{DiD} = (\bar{y}_{T,after} - \bar{y}_{T,before}) - (\bar{y}_{C,after} - \bar{y}_{C,before})$$。第一项是处理组随时间变化的均值差；第二项是控制组随时间变化的均值差。</div>
+<div class="kp-vocab">🔤 DiD estimator（双重差分估计量） | average treatment effect（平均处理效应）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> The first term alone would be a good estimator only if no external factors changed across the two periods. Subtracting the control group difference controls for changes in external factors common to both groups. Under random assignment, the DiD estimator can be interpreted as the **average treatment effect**.</div>
+<div class="kp-cn">【中文】仅用第一项作为估计量只有在两期间无外部因素变化时才有效。减去控制组差异可以控制两组共同面临的外部因素变化。在随机分配下，DiD估计量可解释为平均处理效应。</div>
+<div class="kp-vocab">🔤 average treatment effect（平均处理效应） | external factors（外部因素）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> The standard two-group, two-period DiD setup relies on the **parallel trends assumption**: any trends in the outcome $$y$$ would trend at the same rate in both groups in the absence of the intervention. If parallel trends is violated, we cannot be sure DiD identifies policy effects versus some other unaccounted factor.</div>
+<div class="kp-cn">【中文】标准的两组两期DiD设定依赖于平行趋势假设：在没有干预的情况下，结果变量 $$y$$ 在两组中会以相同的速率变化。如果平行趋势假设被违反，我们无法确定DiD识别的是政策效应还是其他未被考虑的因素。</div>
+<div class="kp-vocab">🔤 parallel trends assumption（平行趋势假设）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example: Meyer, Viscusi, and Durbin (1995) studied the length of time an injured worker receives workers' compensation. Kentucky raised the cap on weekly earnings on July 15, 1980. An increase in the cap has no effect on low-income workers but makes it less costly for high-income workers to stay on compensation.</div>
+<div class="kp-cn">【中文】示例：Meyer, Viscusi 和 Durbin (1995) 研究了受伤工人领取工伤补偿的时间长度。肯塔基州于1980年7月15日提高了周收入上限。提高上限对低收入工人无影响，但降低了高收入工人继续领取补偿的成本。</div>
+<div class="kp-vocab">🔤 workers' compensation（工伤补偿） | cap on weekly earnings（周收入上限）</div>
+</div><h2 class="sec-title">Difference-in-Difference-in-Differences (DDD)<span class="cn">（三重差分法）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> The **difference-in-difference-in-differences (DDD)** estimator adds an additional control group for more flexibility when the parallel trends assumption may be violated.</div>
+<div class="kp-cn">【中文】三重差分（DDD）估计量通过增加一个额外的控制组来提供更多灵活性，以应对平行趋势假设可能被违反的情况。</div>
+<div class="kp-vocab">🔤 difference-in-difference-in-differences (DDD)（三重差分法） | additional control group（额外控制组）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Example: Effects of expanding health care for low-income families in a particular state. Let L = low-income (eligible), M = middle-income (not eligible), B = states that implemented the policy, A = states that did not. The DDD estimator has two components: a DD estimator for implementing states and a DD estimator for non-implementing states.</div>
+<div class="kp-cn">【中文】示例：某州扩大低收入家庭医疗保障的效果。设 L = 低收入（符合资格），M = 中等收入（不符合资格），B = 实施政策的州，A = 未实施政策的州。DDD估计量有两个组成部分：实施州的DD估计量和未实施州的DD估计量。</div>
+<div class="kp-vocab">🔤 DDD estimator（三重差分估计量） | health care expansion（医疗保障扩展）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> If health trends between L and M groups do not differ in non-implementation states, the second component vanishes and we are back to standard DiD. However, we include this second term to account for possibly different trends in L and M groups that are common across both states.</div>
+<div class="kp-cn">【中文】如果在未实施州中L组和M组之间的健康趋势没有差异，第二个组成部分消失，我们回到标准的DiD。然而，我们加入第二项是为了考虑L组和M组之间在两个州中共同存在的可能差异性趋势。</div>
+<div class="kp-vocab">🔤 vanishing component（消失的组成部分） | common trends（共同趋势）</div>
+</div><h2 class="sec-title">General Framework for Policy Analysis<span class="cn">（政策分析的通用框架）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> A more general approach to policy analysis includes **multiple control and treatment groups** as well as **more than two time periods**. Some units may never be treated, and others may be treated in different time periods.</div>
+<div class="kp-cn">【中文】更通用的政策分析方法包括多个控制组和处理组以及多于两个时期。有些单位可能从未接受处理，而其他单位可能在不同时期接受处理。</div>
+<div class="kp-vocab">🔤 general framework（通用框架） | multiple time periods（多个时期） | multiple groups（多个组别）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Each observation $$i$$ belongs to a pair $$(g, t)$$, where $$g$$ is a group and $$t$$ is a time period. Policy interventions occur at the group level. Indicate the policy with a dummy variable $$x_{g,t}$$ for group $$g$$ and time $$t$$.</div>
+<div class="kp-cn">【中文】每个观测 $$i$$ 属于一对 $$(g, t)$$，其中 $$g$$ 是组别，$$t$$ 是时期。政策干预发生在组别层面。用虚拟变量 $$x_{g,t}$$ 表示组 $$g$$ 在时间 $$t$$ 的政策状态。</div>
+<div class="kp-vocab">🔤 policy dummy variable（政策虚拟变量） | group-level intervention（组别层面干预）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> This model can be expanded with **lagged policy effects** or allowing the policy to have different effects between groups. The **parallel trends assumption** can also be relaxed for $$T > 2$$.</div>
+<div class="kp-cn">【中文】该模型可以通过加入滞后政策效应或允许政策在各组间有不同效应来扩展。当 $$T > 2$$ 时，平行趋势假设也可以被放松。</div>
+<div class="kp-vocab">🔤 lagged policy effects（滞后政策效应） | relaxed parallel trends（放松的平行趋势）</div>
+</div><h2 class="sec-title">Two-Period Panel Data Analysis<span class="cn">（两期面板数据分析）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Panel data sets are very useful for policy analysis and program evaluation because the **same cross-sectional units appear in each time period**. Example: Evaluating the effect of a Michigan job training program on worker productivity of manufacturing firms.</div>
+<div class="kp-cn">【中文】面板数据集对政策分析和项目评估非常有用，因为相同的横截面单元出现在每个时期。示例：评估密歇根州职业培训项目对制造业企业工人生产率的影响。</div>
+<div class="kp-vocab">🔤 program evaluation（项目评估） | job training program（职业培训项目） | worker productivity（工人生产率）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Example: Effect of unemployment on city crime rate. If cities are observed for at least two periods and other factors affecting crime stay approximately constant, it is possible to estimate the causal effect using panel data.</div>
+<div class="kp-cn">【中文】示例：失业对城市犯罪率的影响。如果城市至少被观测两个时期，且其他影响犯罪的因素大致保持不变，就能利用面板数据估计因果关系。</div>
+<div class="kp-vocab">🔤 causal effect（因果效应） | crime rate（犯罪率）</div>
+</div><h2 class="sec-title">Unobserved Effects Model (Fixed Effects Model)<span class="cn">（不可观测效应模型（固定效应模型））</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> The **unobserved effects model** is written as: $$y_{it} = \beta_0 + \beta_1 x_{it} + a_i + u_{it}$$. The variable $$a_i$$ captures all unobserved, time-constant factors that affect $$y_{it}$$. It is called the **unobserved effect**, **fixed effect**, or **unobserved heterogeneity** (individual heterogeneity, firm heterogeneity, city heterogeneity).</div>
+<div class="kp-cn">【中文】不可观测效应模型写为：$$y_{it} = \beta_0 + \beta_1 x_{it} + a_i + u_{it}$$。变量 $$a_i$$ 捕捉所有影响 $$y_{it}$$ 的不可观测、不随时间变化的因素。它被称为不可观测效应、固定效应或不可观测异质性（个体异质性、企业异质性、城市异质性）。</div>
+<div class="kp-vocab">🔤 unobserved effects model（不可观测效应模型） | fixed effect（固定效应） | unobserved heterogeneity（不可观测异质性） | idiosyncratic error（特质误差） | time-varying error（时变误差）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> The error $$u_{it}$$ is called the **idiosyncratic error** or **time-varying error** because it represents unobserved factors that change over time and affect $$y_{it}$$. Note that $$a_i$$ has no $$t$$ subscript, meaning it does not change over time.</div>
+<div class="kp-cn">【中文】误差 $$u_{it}$$ 被称为特质误差或时变误差，因为它代表随时间变化并影响 $$y_{it}$$ 的不可观测因素。注意 $$a_i$$ 没有 $$t$$ 下标，意味着它不随时间变化。</div>
+<div class="kp-vocab">🔤 idiosyncratic error（特质误差） | time-constant factors（时间不变因素）</div>
+</div><h2 class="sec-title">First-Differenced Estimation<span class="cn">（一阶差分估计）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> For two-period panel data, we eliminate the unobserved effect $$a_i$$ by **differencing** the data across the two periods: $$\Delta y_i = \beta_1 \Delta x_i + \Delta u_i$$, where $$\Delta y_i = y_{i2} - y_{i1}$$ and $$\Delta x_i = x_{i2} - x_{i1}$$. The differenced equation is then estimated by OLS.</div>
+<div class="kp-cn">【中文】对于两期面板数据，通过对两期数据取差分来消除不可观测效应 $$a_i$$：$$\Delta y_i = \beta_1 \Delta x_i + \Delta u_i$$，其中 $$\Delta y_i = y_{i2} - y_{i1}$$，$$\Delta x_i = x_{i2} - x_{i1}$$。然后用OLS估计差分方程。</div>
+<div class="kp-vocab">🔤 first-differencing（一阶差分） | differenced equation（差分方程） | first-differenced estimator（一阶差分估计量）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> **Key advantages of first-differencing**: (1) There may be arbitrary correlation between the unobserved time-invariant characteristics $$a_i$$ and the included explanatory variables; OLS in the original equation would be inconsistent. (2) The first-differenced panel estimator consistently estimates causal effects in the presence of **time-invariant endogeneity**.</div>
+<div class="kp-cn">【中文】一阶差分的关键优势：(1) 不可观测的时间不变特征 $$a_i$$ 与包含的解释变量之间可以存在任意相关性；原方程的OLS将不一致。(2) 一阶差分面板估计量在存在时间不变内生性时可以一致地估计因果效应。</div>
+<div class="kp-vocab">🔤 time-invariant endogeneity（时间不变内生性） | inconsistent estimation（不一致估计） | consistent estimation（一致估计）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> **Limitations of first-differencing**: (1) For consistency, **strict exogeneity** must hold in the original equation. (2) First-differenced estimates will be imprecise if explanatory variables vary only little over time; no estimate is possible if variables are time-invariant.</div>
+<div class="kp-cn">【中文】一阶差分的局限性：(1) 为了一致性，原方程必须满足严格外生性。(2) 如果解释变量随时间变化很小，一阶差分估计将不精确；如果变量是时间不变的，则无法估计。</div>
+<div class="kp-vocab">🔤 strict exogeneity（严格外生性） | time-invariant variables（时间不变变量） | imprecise estimates（不精确估计）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Further explanatory variables may be included in the original equation. The first-differenced panel estimator is a way to consistently estimate causal effects in the presence of time-invariant endogeneity.</div>
+<div class="kp-cn">【中文】原方程中可以包含更多的解释变量。一阶差分面板估计量是在存在时间不变内生性时一致估计因果效应的一种方法。</div>
+<div class="kp-vocab">🔤 additional explanatory variables（额外解释变量）</div>
+</div><h2 class="sec-title">Panel Data Organization and Applications<span class="cn">（面板数据的组织与应用实例）</span></h2><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> **Two ways to organize panel data**: (1) One record per cross-sectional unit per time period (long format) — most datasets in the text (CRIME2, CRIME3, GPA3, LOWBRTH, RENTAL). (2) One record per cross-sectional unit with variables for each period (wide format) — e.g., SLP75_81.</div>
+<div class="kp-cn">【中文】面板数据的两种组织方式：(1) 每个横截面单元每个时期一条记录（长格式）——教材中大多数数据集（CRIME2、CRIME3、GPA3、LOWBRTH、RENTAL）。(2) 每个横截面单元一条记录，每个时期的变量分开（宽格式）——如 SLP75_81。</div>
+<div class="kp-vocab">🔤 long format（长格式） | wide format（宽格式）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Example: Biddle and Hamermesh (1990) use two years of panel data (1975 and 1981) with 239 people to estimate the tradeoff between sleeping and working. An unobserved effects model for total minutes of sleeping per week.</div>
+<div class="kp-cn">【中文】示例：Biddle 和 Hamermesh (1990) 使用两年面板数据（1975年和1981年）共239人估计睡眠与工作的权衡关系——每周睡眠总分钟数的不可观测效应模型。</div>
+<div class="kp-vocab">🔤 sleep-work tradeoff（睡眠与工作的权衡）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag must">必考</span> Example: Eide (1994) uses panel data from police districts in Norway to estimate a distributed lag model for crime rates. The explanatory variable is the **clear-up percentage** (clrprc)—the percentage of crimes that led to a conviction. Past clear-up rates lagged one and two years may have a deterrent effect on current crime.</div>
+<div class="kp-cn">【中文】示例：Eide (1994) 使用挪威警区面板数据估计犯罪率的分布滞后模型。解释变量是破案率——导致定罪的犯罪百分比。滞后一年和两年的过去破案率可能对当前犯罪有威慑效应。</div>
+<div class="kp-vocab">🔤 distributed lag model（分布滞后模型） | clear-up percentage（破案率） | deterrent effect（威慑效应）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example: Traffic deaths and drunk driving laws. TRAFFIC1 contains data for 1985 and 1990 for all 50 states and DC. Dependent variable: traffic deaths per 100 million miles driven (dthrte). Explanatory variables: open container laws and administrative per se laws.</div>
+<div class="kp-cn">【中文】示例：交通事故死亡与酒驾法律。TRAFFIC1包含1985年和1990年全美50州和华盛顿特区的数据。因变量：每1亿英里驾驶里程的交通事故死亡人数。解释变量：开放容器法和行政即时吊销驾照法。</div>
+<div class="kp-vocab">🔤 open container laws（开放容器法） | administrative per se laws（行政即时吊销法） | traffic deaths（交通事故死亡）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag key">重点</span> Differencing with **more than two time periods** ($$T = 3$$): $$y_{it} = \beta_0 + \beta_1 x_{it} + a_i + u_{it}$$ for $$t = 1,2,3$$. The key assumption is that the idiosyncratic errors are uncorrelated with the explanatory variable in each time period.</div>
+<div class="kp-cn">【中文】多于两个时期（$$T = 3$$）的差分方法：$$y_{it} = \beta_0 + \beta_1 x_{it} + a_i + u_{it}$$，$$t = 1,2,3$$。关键假设是特质误差在每个时期与解释变量不相关。</div>
+<div class="kp-vocab">🔤 multi-period differencing（多期差分） | uncorrelated errors（不相关误差）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag freq">高频</span> Example: Papke (1994) studied the Indiana enterprise zone (EZ) program on unemployment claims, analyzing 22 cities from 1980-1988. Six EZs designated in 1984, four more in 1985, twelve cities served as control group. A policy evaluation model is differenced to eliminate $$a_i$$.</div>
+<div class="kp-cn">【中文】示例：Papke (1994) 研究印第安纳州企业区（EZ）项目对失业救济申请的影响，分析1980-1988年22个城市的数据。1984年设立6个企业区，1985年新增4个，12个城市作为控制组。政策评估模型通过差分消除 $$a_i$$。</div>
+<div class="kp-vocab">🔤 enterprise zone（企业区） | unemployment claims（失业救济申请）</div>
+</div><div class="kp">
+<div class="kp-en"><span class="tag info">了解</span> Example: Cornwell and Trumbull (1994) used data on 90 counties in North Carolina (1981-1987) to estimate an unobserved effects model of crime. Variables: crime rate (crimes per person), prbarr (probability of arrest), prbconv (probability of conviction), prbpris (probability of prison), avgsen (average sentence length), polpc (police officers per capita).</div>
+<div class="kp-cn">【中文】示例：Cornwell 和 Trumbull (1994) 使用北卡罗来纳州90个县1981-1987年的数据估计犯罪的不可观测效应模型。变量包括：犯罪率（人均犯罪数）、逮捕概率、定罪概率、入狱概率、平均刑期、人均警察数量。</div>
+<div class="kp-vocab">🔤 probability of arrest（逮捕概率） | probability of conviction（定罪概率） | sentence length（刑期长度） | police per capita（人均警察数）</div>
+</div><div class="vocab-box"><h4>📚 Ch13 核心词汇汇总</h4><table><tr><th>English</th><th>中文</th></tr><tr><td>independently pooled cross section</td><td>独立混合横截面数据</td></tr><tr><td>panel data / longitudinal data</td><td>面板数据/纵向数据</td></tr><tr><td>difference-in-differences (DiD)</td><td>双重差分法</td></tr><tr><td>difference-in-difference-in-differences (DDD)</td><td>三重差分法</td></tr><tr><td>natural experiment / quasi-experiment</td><td>自然实验/准实验</td></tr><tr><td>treatment group</td><td>处理组</td></tr><tr><td>control group</td><td>控制组</td></tr><tr><td>parallel trends assumption</td><td>平行趋势假设</td></tr><tr><td>average treatment effect</td><td>平均处理效应</td></tr><tr><td>unobserved effects model / fixed effects model</td><td>不可观测效应模型/固定效应模型</td></tr><tr><td>unobserved heterogeneity</td><td>不可观测异质性</td></tr><tr><td>idiosyncratic error / time-varying error</td><td>特质误差/时变误差</td></tr><tr><td>first-differencing</td><td>一阶差分</td></tr><tr><td>first-differenced estimator</td><td>一阶差分估计量</td></tr><tr><td>strict exogeneity</td><td>严格外生性</td></tr><tr><td>time-invariant endogeneity</td><td>时间不变内生性</td></tr><tr><td>distributed lag model</td><td>分布滞后模型</td></tr><tr><td>program evaluation</td><td>项目评估</td></tr><tr><td>policy analysis</td><td>政策分析</td></tr><tr><td>lagged policy effects</td><td>滞后政策效应</td></tr><tr><td>differential trends</td><td>差异性趋势</td></tr><tr><td>true experiment</td><td>真实实验</td></tr><tr><td>random assignment</td><td>随机分配</td></tr><tr><td>exogenous event</td><td>外生事件</td></tr><tr><td>time dummy</td><td>时间虚拟变量</td></tr><tr><td>interaction term</td><td>交互项</td></tr><tr><td>causal effect</td><td>因果效应</td></tr><tr><td>time-invariant variables</td><td>时间不变变量</td></tr></table></div></div>
+<div class="footer">Based on Wooldridge, Introductory Econometrics: A Modern Approach, 7th Edition | Chapters 1-9, 13</div>
+</div>
+
+<script>
+function toggleToc(){var o=document.getElementById('tocOverlay');var b=document.getElementById('tocBtn');if(o.classList.contains('show')){o.classList.remove('show');b.classList.remove('active');b.textContent='📑 目录';}else{o.classList.add('show');b.classList.add('active');b.textContent='✕ 关闭';}}
+function closeToc(){var o=document.getElementById('tocOverlay');var b=document.getElementById('tocBtn');o.classList.remove('show');b.classList.remove('active');b.textContent='📑 目录';}
+</script></body></html>

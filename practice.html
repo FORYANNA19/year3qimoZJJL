@@ -1,0 +1,744 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>练习题 | 计量经济学</title><style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Segoe UI","Microsoft YaHei",sans-serif;background:#f1f5f9;color:#1e293b}
+.navbar{position:sticky;top:0;background:#1e293b;padding:0 24px;height:52px;display:flex;align-items:center;z-index:100;overflow-x:auto}
+.navbar a,.navbar button{color:#cbd5e1;text-decoration:none;font-size:14px;margin-right:12px;white-space:nowrap;background:none;border:none;cursor:pointer;padding:6px 14px;border-radius:6px;transition:all .15s}
+.navbar a:hover,.navbar button:hover{color:#fff;background:#334155}
+.navbar button.active{background:#2563eb;color:#fff}
+.navbar .brand{color:#fff;font-weight:700;margin-right:20px}
+.container{max-width:950px;margin:0 auto;padding:24px 30px}
+.section{display:none}
+.section.show{display:block}
+.q-block{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px 24px;margin:16px 0;transition:box-shadow .15s}
+.q-block:hover{box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.q-num{font-size:13px;color:#64748b;margin-bottom:6px}
+.q-num .ch-tag{display:inline-block;background:#dbeafe;color:#2563eb;padding:1px 8px;border-radius:4px;font-size:11px;font-weight:600;margin-left:8px}
+.q-text{font-size:15px;line-height:1.7;margin-bottom:12px}
+.q-options{margin:8px 0 12px}
+.q-opt{padding:6px 0;font-size:14px}
+.answer-area{margin-top:12px}
+.show-btn{display:inline-block;padding:8px 18px;background:#2563eb;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;transition:background .15s}
+.show-btn:hover{background:#1d4ed8}
+.show-btn.revealed{background:#059669}
+.answer-content{display:none;margin-top:14px;padding:16px 18px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:0 8px 8px 0}
+.answer-content.open{display:block}
+.answer-en{font-size:14px;color:#166534;line-height:1.7;font-weight:600}
+.answer-exp{font-size:14px;color:#475569;margin-top:8px;line-height:1.7;padding:10px 14px;background:#fff;border-radius:6px;border:1px solid #e2e8f0}
+.answer-topic{font-size:12px;color:#64748b;margin-top:6px}
+.answer-topic span{background:#fef3c7;color:#92400e;padding:1px 8px;border-radius:4px;font-weight:600}
+.blanks{display:inline-block;min-width:120px;border-bottom:2px dashed #2563eb;margin:0 4px;padding:0 6px;color:#2563eb;font-weight:600}
+.footer{text-align:center;padding:20px;color:#94a3b8;font-size:12px;border-top:1px solid #e2e8f0;margin-top:30px}
+@media(max-width:768px){.container{padding:16px 12px}.q-block{padding:14px 16px}}
+@media print{.navbar{display:none}.answer-content{display:block!important}.show-btn{display:none}}
+</style></head><body>
+<nav class="navbar">
+<a href="index.html" class="brand">← 返回</a>
+<button class="tab-btn active" onclick="switchSection('multiple-choice')">选择题 (30题)</button><button class="tab-btn" onclick="switchSection('fill-blank')">填空题 (15题)</button><button class="tab-btn" onclick="switchSection('short-answer')">简答题 (10题)</button>
+</nav>
+<div class="container">
+<div class="section show" id="multiple-choice"><div class="q-block" id="q1">
+<div class="q-num">Question 1 <span class="ch-tag">CH02</span></div>
+<div class="q-text">In the simple linear regression model y = β₀ + β₁x + u, if E(u|x) = 2, then:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> The OLS estimator β̂₁ remains unbiased</div><div class="q-opt" data-opt="1"><strong>B.</strong> The OLS estimator β̂₀ is biased, but β̂₁ is unbiased</div><div class="q-opt" data-opt="2"><strong>C.</strong> The OLS estimator β̂₀ will be biased</div><div class="q-opt" data-opt="3"><strong>D.</strong> The OLS estimator β̂₁ will also be biased</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(1)" id="btn1">👁 Show Answer</button>
+<div class="answer-content" id="ans1">
+<div class="answer-en"><strong>Answer: C</strong> — The OLS estimator β̂₀ will be biased</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Since E(u|x) = 2 ≠ 0, the zero conditional mean assumption (MLR.4) is violated. The intercept β̂₀ absorbs this bias (biased by +2), while the slope β̂₁ remains unbiased because the error has a constant mean that does not depend on x.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在简单线性回归模型 y = β₀ + β₁x + u 中，如果 E(u|x) = 2，则：<br><br>C. OLS估计量β̂₀将有偏。因为E(u|x)=2≠0违背了零条件均值假设，导致截距项β̂₀有偏（偏误量为2），斜率β̂₁仍无偏。</div>
+<div class="answer-topic">📌 考点：<span>零条件均值假设 / Zero Conditional Mean</span> | 章节：<span>CH02</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q2">
+<div class="q-num">Question 2 <span class="ch-tag">CH03</span></div>
+<div class="q-text">In multiple regression, adding a new variable that is highly correlated (but not perfectly) with an existing independent variable typically causes:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> R² to decrease</div><div class="q-opt" data-opt="1"><strong>B.</strong> Adjusted R² to necessarily decrease</div><div class="q-opt" data-opt="2"><strong>C.</strong> The standard errors of the existing coefficients to increase</div><div class="q-opt" data-opt="3"><strong>D.</strong> The signs of all coefficients to change</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(2)" id="btn2">👁 Show Answer</button>
+<div class="answer-content" id="ans2">
+<div class="answer-en"><strong>Answer: C</strong> — The standard errors of the existing coefficients to increase</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>High (but not perfect) correlation between regressors is called imperfect multicollinearity. OLS remains unbiased and consistent, but the variances (and thus standard errors) become large, making t-statistics smaller and coefficients appear insignificant.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在多元回归中，加入一个与已有自变量高度相关（但非完全相关）的新变量通常会导致：<br><br>C. 已有系数的标准误增大。高度相关（多重共线性）会导致系数估计量的方差膨胀，标准误增大，但OLS仍无偏。</div>
+<div class="answer-topic">📌 考点：<span>多重共线性 / Multicollinearity</span> | 章节：<span>CH03</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q3">
+<div class="q-num">Question 3 <span class="ch-tag">CH03</span></div>
+<div class="q-text">Which of the following is NOT required for the Gauss-Markov Theorem?</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> Homoskedasticity of the error term</div><div class="q-opt" data-opt="1"><strong>B.</strong> Normality of the error term</div><div class="q-opt" data-opt="2"><strong>C.</strong> Random sampling</div><div class="q-opt" data-opt="3"><strong>D.</strong> Zero conditional mean</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(3)" id="btn3">👁 Show Answer</button>
+<div class="answer-content" id="ans3">
+<div class="answer-en"><strong>Answer: B</strong> — Normality of the error term</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The Gauss-Markov Theorem requires MLR.1–MLR.5: linearity, random sampling, no perfect collinearity, zero conditional mean, and homoskedasticity. Normality (MLR.6) is NOT required for BLUE; it is needed only for exact t/F distributions in small samples.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>以下哪一项不是高斯-马尔可夫定理所要求的？<br><br>B. 误差项的正态性。高斯-马尔可夫定理需要MLR.1-MLR.5（线性、随机抽样、无完全共线性、零条件均值、同方差），不需要正态性假设。正态性仅用于小样本t/F检验的有效性。</div>
+<div class="answer-topic">📌 考点：<span>高斯-马尔可夫定理 / Gauss-Markov Theorem</span> | 章节：<span>CH03</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q4">
+<div class="q-num">Question 4 <span class="ch-tag">CH06</span></div>
+<div class="q-text">Consider the model ln(y) = β₀ + β₁ln(x) + u. If x increases by 1%, then y approximately increases by:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> 0.01β₁</div><div class="q-opt" data-opt="1"><strong>B.</strong> β₁%</div><div class="q-opt" data-opt="2"><strong>C.</strong> 100β₁%</div><div class="q-opt" data-opt="3"><strong>D.</strong> β₁ units</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(4)" id="btn4">👁 Show Answer</button>
+<div class="answer-content" id="ans4">
+<div class="answer-en"><strong>Answer: B</strong> — β₁%</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>In the log-log model ln(y) = β₀ + β₁ln(x) + u, β₁ is the elasticity of y with respect to x. A 1% increase in x leads to approximately a β₁% change in y. This is the constant elasticity model.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>考虑模型 ln(y) = β₀ + β₁ln(x) + u，如果x增加1%，则y约增加：<br><br>B. β₁%。在双对数模型（log-log/常弹性模型）中，β₁是弹性：x变化1%时y变化β₁%。</div>
+<div class="answer-topic">📌 考点：<span>对数函数形式 / Log Functional Form (Elasticity)</span> | 章节：<span>CH06</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q5">
+<div class="q-num">Question 5 <span class="ch-tag">CH06</span></div>
+<div class="q-text">In the model y = β₀ + β₁x + β₂x² + u, the marginal effect of x on y is:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> β₁</div><div class="q-opt" data-opt="1"><strong>B.</strong> β₁ + 2β₂x</div><div class="q-opt" data-opt="2"><strong>C.</strong> β₁ + β₂x</div><div class="q-opt" data-opt="3"><strong>D.</strong> constant (does not depend on x)</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(5)" id="btn5">👁 Show Answer</button>
+<div class="answer-content" id="ans5">
+<div class="answer-en"><strong>Answer: B</strong> — β₁ + 2β₂x</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>For y = β₀ + β₁x + β₂x² + u, the partial derivative is ∂y/∂x = β₁ + 2β₂x. The marginal effect is not constant — it depends on the value of x through the term 2β₂x.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在模型 y = β₀ + β₁x + β₂x² + u 中，x对y的边际效应是：<br><br>B. β₁ + 2β₂x。二次项模型中边际效应不是常数，而是随x变化的函数。求导∂y/∂x = β₁ + 2β₂x。</div>
+<div class="answer-topic">📌 考点：<span>二次项 / Quadratic Terms</span> | 章节：<span>CH06</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q6">
+<div class="q-num">Question 6 <span class="ch-tag">CH07</span></div>
+<div class="q-text">For an interaction term D·x where D is a dummy variable and x is continuous, its coefficient represents:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> The difference in intercepts between the D=1 and D=0 groups</div><div class="q-opt" data-opt="1"><strong>B.</strong> The difference in slopes of x between the D=1 and D=0 groups</div><div class="q-opt" data-opt="2"><strong>C.</strong> The average effect of x on y</div><div class="q-opt" data-opt="3"><strong>D.</strong> The difference in outcomes between groups when x=0</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(6)" id="btn6">👁 Show Answer</button>
+<div class="answer-content" id="ans6">
+<div class="answer-en"><strong>Answer: B</strong> — The difference in slopes of x between the D=1 and D=0 groups</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>In y = β₀ + β₁x + β₂D·x + u, the slope of x differs by group. When D=0: slope = β₁. When D=1: slope = β₁ + β₂. Therefore β₂ itself measures the difference in slopes between the two groups.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>对于交互项D·x（D为虚拟变量，x为连续变量），其系数表示：<br><br>B. 交互项系数衡量的是两组之间x斜率的差异（即D对x的边际效应的调节作用）。</div>
+<div class="answer-topic">📌 考点：<span>虚拟变量交互项 / Dummy Variable Interactions</span> | 章节：<span>CH07</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q7">
+<div class="q-num">Question 7 <span class="ch-tag">CH07</span></div>
+<div class="q-text">For a qualitative variable with three categories (low, medium, high), to avoid the dummy variable trap we should create:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> 1 dummy variable</div><div class="q-opt" data-opt="1"><strong>B.</strong> 2 dummy variables</div><div class="q-opt" data-opt="2"><strong>C.</strong> 3 dummy variables</div><div class="q-opt" data-opt="3"><strong>D.</strong> 4 dummy variables</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(7)" id="btn7">👁 Show Answer</button>
+<div class="answer-content" id="ans7">
+<div class="answer-en"><strong>Answer: B</strong> — 2 dummy variables</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>With g categories and an intercept, only g−1 dummies are needed. Including all g dummies creates perfect multicollinearity (dummy variable trap) because the sum of all g dummies equals 1, which is exactly the constant term.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>对于一个三分类定性变量（低、中、高），为避免虚拟变量陷阱，应创建：<br><br>B. 2个虚拟变量。规则：g个类别需g-1个虚拟变量（当模型中包含截距项时），否则会产生完全共线性（虚拟变量陷阱）。</div>
+<div class="answer-topic">📌 考点：<span>虚拟变量陷阱 / Dummy Variable Trap</span> | 章节：<span>CH07</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q8">
+<div class="q-num">Question 8 <span class="ch-tag">CH08</span></div>
+<div class="q-text">The null hypothesis of the Breusch-Pagan test for heteroskedasticity is:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> The error term is normally distributed</div><div class="q-opt" data-opt="1"><strong>B.</strong> There is no serial correlation in the error term</div><div class="q-opt" data-opt="2"><strong>C.</strong> The error term is homoskedastic</div><div class="q-opt" data-opt="3"><strong>D.</strong> There is no model specification error</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(8)" id="btn8">👁 Show Answer</button>
+<div class="answer-content" id="ans8">
+<div class="answer-en"><strong>Answer: C</strong> — The error term is homoskedastic</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The Breusch-Pagan test's H₀ is that the error variance is constant: Var(u|x) = σ² (homoskedasticity). H₁ is that the variance is a function of the regressors. Rejection of H₀ indicates heteroskedasticity.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>Breusch-Pagan异方差检验的原假设是：<br><br>C. 误差项是同方差的。BP检验的原假设H₀：Var(u|x₁,...,xₖ) = σ²（同方差）。备择假设：方差是解释变量的函数。</div>
+<div class="answer-topic">📌 考点：<span>Breusch-Pagan检验 / Breusch-Pagan Test</span> | 章节：<span>CH08</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q9">
+<div class="q-num">Question 9 <span class="ch-tag">CH08</span></div>
+<div class="q-text">In the presence of heteroskedasticity, using the usual OLS standard errors for t-tests leads to:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> Always lower power</div><div class="q-opt" data-opt="1"><strong>B.</strong> Incorrect Type I error probabilities (invalid inference)</div><div class="q-opt" data-opt="2"><strong>C.</strong> Biased OLS estimators</div><div class="q-opt" data-opt="3"><strong>D.</strong> Inability to compute t-statistics</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(9)" id="btn9">👁 Show Answer</button>
+<div class="answer-content" id="ans9">
+<div class="answer-en"><strong>Answer: B</strong> — Incorrect Type I error probabilities (invalid inference)</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Under heteroskedasticity, OLS coefficients remain unbiased and consistent (Gauss-Markov does not require homoskedasticity for unbiasedness). However, the usual standard errors are invalid, meaning t- and F-tests no longer have correct Type I error rates. This is the key reason robust standard errors are used.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在存在异方差的情况下，使用通常的OLS标准误进行t检验会导致：<br><br>B. 第一类错误概率不正确。异方差下OLS仍无偏且一致，但标准误失效 → t和F统计量不再服从t/F分布 → 假设检验失效。</div>
+<div class="answer-topic">📌 考点：<span>异方差的后果 / Consequences of Heteroskedasticity</span> | 章节：<span>CH08</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q10">
+<div class="q-num">Question 10 <span class="ch-tag">CH13</span></div>
+<div class="q-text">For a two-period panel data set, after first-differencing, which term is eliminated?</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> Time fixed effects</div><div class="q-opt" data-opt="1"><strong>B.</strong> The individual fixed effect αᵢ</div><div class="q-opt" data-opt="2"><strong>C.</strong> The explanatory variable xᵢₜ</div><div class="q-opt" data-opt="3"><strong>D.</strong> The error term uᵢₜ</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(10)" id="btn10">👁 Show Answer</button>
+<div class="answer-content" id="ans10">
+<div class="answer-en"><strong>Answer: B</strong> — The individual fixed effect αᵢ</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>In the unobserved effects model yᵢₜ = β₀ + β₁xᵢₜ + αᵢ + uᵢₜ, first-differencing gives Δyᵢ = β₁Δxᵢ + Δuᵢ. The time-invariant individual effect αᵢ and the intercept β₀ are both differenced out — this is the key advantage of panel data.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>对于两期面板数据，一阶差分后哪个项被消除了？<br><br>B. 个体固定效应αᵢ。一阶差分 Δyᵢ = β₁Δxᵢ + Δuᵢ，不随时间变化的αᵢ被差分消去（这正是使用面板数据的关键优势）。</div>
+<div class="answer-topic">📌 考点：<span>一阶差分 / First-Differencing</span> | 章节：<span>CH13</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q11">
+<div class="q-num">Question 11 <span class="ch-tag">CH13</span></div>
+<div class="q-text">In difference-in-differences (DID) estimation, the key identifying assumption is:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> The treatment and control groups have the same mean outcome before the policy</div><div class="q-opt" data-opt="1"><strong>B.</strong> The treatment and control groups follow the same time trend before the policy</div><div class="q-opt" data-opt="2"><strong>C.</strong> The treatment and control groups have identical outcomes after the policy</div><div class="q-opt" data-opt="3"><strong>D.</strong> No serial correlation</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(11)" id="btn11">👁 Show Answer</button>
+<div class="answer-content" id="ans11">
+<div class="answer-en"><strong>Answer: B</strong> — The treatment and control groups follow the same time trend before the policy</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The parallel trends (common trends) assumption is the cornerstone of DID: absent the treatment, both groups would have followed the same time path. If this fails, the DID estimate confounds the treatment effect with pre-existing differential trends.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在双重差分（DID）估计中，关键的识别假设是：<br><br>B. 平行趋势假设（Parallel Trends）：若无政策干预，处理组和对照组的结果变量应有相同的时间趋势。这是DID有效性的核心前提。</div>
+<div class="answer-topic">📌 考点：<span>双重差分法 / Difference-in-Differences (Parallel Trends)</span> | 章节：<span>CH13</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q12">
+<div class="q-num">Question 12 <span class="ch-tag">CH09</span></div>
+<div class="q-text">If the dependent variable suffers from classical measurement error but the independent variable is measured without error, then the OLS estimator is:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> Biased and inconsistent</div><div class="q-opt" data-opt="1"><strong>B.</strong> Unbiased but its variance is larger</div><div class="q-opt" data-opt="2"><strong>C.</strong> Unbiased and efficient</div><div class="q-opt" data-opt="3"><strong>D.</strong> Biased but its variance is smaller</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(12)" id="btn12">👁 Show Answer</button>
+<div class="answer-content" id="ans12">
+<div class="answer-en"><strong>Answer: B</strong> — Unbiased but its variance is larger</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Classical measurement error in the dependent variable (y* = y + e, where e is independent of x and u) does NOT cause bias. It simply increases the error variance, leading to larger standard errors. OLS remains unbiased and consistent.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>如果因变量存在经典测量误差，但自变量测量无误，则OLS估计量是：<br><br>B. 无偏但方差更大。因变量的经典测量误差被吸收到误差项中，不导致偏误，但会增大误差方差，降低估计精度。</div>
+<div class="answer-topic">📌 考点：<span>测量误差 / Measurement Error in Dependent Variable</span> | 章节：<span>CH09</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q13">
+<div class="q-num">Question 13 <span class="ch-tag">CH03</span></div>
+<div class="q-text">When n < k+1 (sample size smaller than the number of parameters to estimate):</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> OLS can still be computed, but standard errors are invalid</div><div class="q-opt" data-opt="1"><strong>B.</strong> There is perfect multicollinearity and OLS cannot be computed</div><div class="q-opt" data-opt="2"><strong>C.</strong> Heteroskedasticity-robust standard errors must be used</div><div class="q-opt" data-opt="3"><strong>D.</strong> R² equals 1</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(13)" id="btn13">👁 Show Answer</button>
+<div class="answer-content" id="ans13">
+<div class="answer-en"><strong>Answer: B</strong> — There is perfect multicollinearity and OLS cannot be computed</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>When n < k+1, the design matrix X has fewer rows than columns of parameters, so the rank of X'X is at most n < k+1. This means (X'X)⁻¹ does not exist — a case of perfect multicollinearity — and OLS cannot be computed.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>当 n < k+1（样本量小于待估参数个数）时：<br><br>B. 存在完全多重共线性，OLS无法计算。n < k+1意味着自由度不足，设计矩阵X的秩最多为n < k+1，导致(X'X)不可逆。</div>
+<div class="answer-topic">📌 考点：<span>完全共线性 / Perfect Multicollinearity</span> | 章节：<span>CH03</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q14">
+<div class="q-num">Question 14 <span class="ch-tag">CH02</span></div>
+<div class="q-text">In the model y = β₀ + β₁x + u, if x and u are correlated, then the OLS estimator β̂₁ is:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> Unbiased but inefficient</div><div class="q-opt" data-opt="1"><strong>B.</strong> Biased but consistent</div><div class="q-opt" data-opt="2"><strong>C.</strong> Inconsistent</div><div class="q-opt" data-opt="3"><strong>D.</strong> Still BLUE</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(14)" id="btn14">👁 Show Answer</button>
+<div class="answer-content" id="ans14">
+<div class="answer-en"><strong>Answer: C</strong> — Inconsistent</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>If Cov(x,u) ≠ 0, the zero conditional mean assumption fails (endogeneity). OLS is then both biased (in finite samples) and inconsistent (as n→∞, the estimator does not converge to the true β₁).</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在模型 y = β₀ + β₁x + u 中，如果x和u相关，则OLS估计量β̂₁是：<br><br>C. 不一致。x与u相关（内生性）违背了零条件均值假设，OLS既是有偏的又是不一致的。</div>
+<div class="answer-topic">📌 考点：<span>内生性 / Endogeneity (Inconsistency)</span> | 章节：<span>CH02</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q15">
+<div class="q-num">Question 15 <span class="ch-tag">CH04</span></div>
+<div class="q-text">Which statistic is specifically used to test whether several regression coefficients are jointly zero?</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> t-statistic</div><div class="q-opt" data-opt="1"><strong>B.</strong> F-statistic</div><div class="q-opt" data-opt="2"><strong>C.</strong> R²</div><div class="q-opt" data-opt="3"><strong>D.</strong> Adjusted R²</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(15)" id="btn15">👁 Show Answer</button>
+<div class="answer-content" id="ans15">
+<div class="answer-en"><strong>Answer: B</strong> — F-statistic</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The t-test is for testing a single coefficient (H₀: βⱼ = 0). The F-test is for joint hypothesis testing: H₀: β₁ = β₂ = ... = βq = 0 (all q coefficients jointly zero). It compares restricted vs. unrestricted model fit.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>以下哪个统计量专门用于检验多个回归系数是否同时为零？<br><br>B. F统计量。F检验用于联合假设检验（如H₀: β₁=β₂=...=βq=0），检验多个排除性约束是否同时成立。t检验仅用于单个系数的检验。</div>
+<div class="answer-topic">📌 考点：<span>F检验 / F-test (Joint Significance)</span> | 章节：<span>CH04</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q16">
+<div class="q-num">Question 16 <span class="ch-tag">CH09</span></div>
+<div class="q-text">If an important quadratic term is omitted from a regression model, then:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> OLS estimators remain unbiased</div><div class="q-opt" data-opt="1"><strong>B.</strong> Model specification error leads to omitted variable bias</div><div class="q-opt" data-opt="2"><strong>C.</strong> Heteroskedasticity is eliminated</div><div class="q-opt" data-opt="3"><strong>D.</strong> R² does not change</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(16)" id="btn16">👁 Show Answer</button>
+<div class="answer-content" id="ans16">
+<div class="answer-en"><strong>Answer: B</strong> — Model specification error leads to omitted variable bias</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Omitting a relevant quadratic term is a form of functional form misspecification. Since x² is correlated with x (and likely with y), it creates omitted variable bias — the coefficients on the included regressors become biased.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>如果回归模型中遗漏了一个重要的二次项，则：<br><br>B. 模型设定偏误导致遗漏变量偏误。遗漏相关的二次项是函数形式误设的一种，通常导致OLS估计量有偏。</div>
+<div class="answer-topic">📌 考点：<span>函数形式误设 / Functional Form Misspecification / OVB</span> | 章节：<span>CH09</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q17">
+<div class="q-num">Question 17 <span class="ch-tag">CH07</span></div>
+<div class="q-text">For the linear probability model P(y=1|x) = β₀ + β₁x, which of the following is true?</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> The error term is normally distributed</div><div class="q-opt" data-opt="1"><strong>B.</strong> Predicted probabilities always lie between 0 and 1</div><div class="q-opt" data-opt="2"><strong>C.</strong> The error term is heteroskedastic</div><div class="q-opt" data-opt="3"><strong>D.</strong> Coefficients are interpreted as log-odds ratios</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(17)" id="btn17">👁 Show Answer</button>
+<div class="answer-content" id="ans17">
+<div class="answer-en"><strong>Answer: C</strong> — The error term is heteroskedastic</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>In the LPM, y ∈ {0,1}, so the error term u = y − (β₀+β₁x) can only take two possible values for each x. The variance is Var(u|x) = p(x)(1−p(x)), which depends on x. Thus the LPM always has heteroskedastic errors. Also, fitted values can fall outside [0,1].</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>对于线性概率模型 P(y=1|x) = β₀ + β₁x，以下哪项正确？<br><br>C. 误差项必然是异方差的。因为y只能取0或1，Var(y|x)=p(x)(1-p(x))依赖于x，所以LPM的误差项天生是异方差的。预测概率可能超出[0,1]。</div>
+<div class="answer-topic">📌 考点：<span>线性概率模型 / Linear Probability Model (LPM)</span> | 章节：<span>CH07</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q18">
+<div class="q-num">Question 18 <span class="ch-tag">CH08</span></div>
+<div class="q-text">When using the White test, rejection of the null hypothesis indicates:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> Heteroskedasticity</div><div class="q-opt" data-opt="1"><strong>B.</strong> Serial correlation</div><div class="q-opt" data-opt="2"><strong>C.</strong> Functional form misspecification</div><div class="q-opt" data-opt="3"><strong>D.</strong> Multicollinearity</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(18)" id="btn18">👁 Show Answer</button>
+<div class="answer-content" id="ans18">
+<div class="answer-en"><strong>Answer: A</strong> — Heteroskedasticity</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The White test's null is homoskedasticity: Var(u|x) = σ². It regresses squared residuals on regressors, their squares, and cross products. Rejection implies heteroskedasticity. Note: the White test may also reject due to functional form misspecification, so it is not a 'pure' heteroskedasticity test.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>使用White检验时，拒绝原假设说明：<br><br>A. 异方差性。White检验的原假设是同方差性，拒绝意味着存在异方差。注意：White检验对函数形式误设也敏感，可能因此拒绝。</div>
+<div class="answer-topic">📌 考点：<span>White检验 / White Test</span> | 章节：<span>CH08</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q19">
+<div class="q-num">Question 19 <span class="ch-tag">CH13</span></div>
+<div class="q-text">In a fixed effects model, the individual effect αᵢ is assumed to:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> Be uncorrelated with all explanatory variables</div><div class="q-opt" data-opt="1"><strong>B.</strong> Be arbitrarily correlated with the explanatory variables</div><div class="q-opt" data-opt="2"><strong>C.</strong> Follow a normal distribution</div><div class="q-opt" data-opt="3"><strong>D.</strong> Vary over time</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(19)" id="btn19">👁 Show Answer</button>
+<div class="answer-content" id="ans19">
+<div class="answer-en"><strong>Answer: B</strong> — Be arbitrarily correlated with the explanatory variables</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The defining feature of the fixed effects (FE) model is that Cov(αᵢ, xᵢₜ) ≠ 0 is allowed — individual heterogeneity αᵢ can be arbitrarily correlated with regressors. The random effects (RE) model assumes Cov(αᵢ, xᵢₜ) = 0, which is much stronger.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在固定效应模型中，个体效应αᵢ被假设为：<br><br>B. 与解释变量可以任意相关。固定效应（FE）的核心优势正是允许不可观测的个体异质性αᵢ与解释变量任意相关。随机效应（RE）则假设不相关。</div>
+<div class="answer-topic">📌 考点：<span>固定效应模型 / Fixed Effects (FE vs RE)</span> | 章节：<span>CH13</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q20">
+<div class="q-num">Question 20 <span class="ch-tag">CH07</span></div>
+<div class="q-text">For the model y = β₀ + β₁x + β₂(x·D) + u, where D is a dummy variable, the marginal effect of x when D=1 is:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> β₁</div><div class="q-opt" data-opt="1"><strong>B.</strong> β₂</div><div class="q-opt" data-opt="2"><strong>C.</strong> β₁ + β₂</div><div class="q-opt" data-opt="3"><strong>D.</strong> β₁·β₂</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(20)" id="btn20">👁 Show Answer</button>
+<div class="answer-content" id="ans20">
+<div class="answer-en"><strong>Answer: C</strong> — β₁ + β₂</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The model is y = β₀ + β₁x + β₂(x·D) + u. The marginal effect: ∂y/∂x = β₁ + β₂·D. When D=1: marginal effect = β₁ + β₂. When D=0: marginal effect = β₁. So β₂ captures how the slope changes with D.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>对于模型 y = β₀ + β₁x + β₂(x·D) + u，其中D是虚拟变量，当D=1时x的边际效应是：<br><br>C. β₁ + β₂。当D=1时，∂y/∂x = β₁ + β₂·1 = β₁ + β₂。当D=0时，边际效应仅为β₁。</div>
+<div class="answer-topic">📌 考点：<span>交互项偏效应 / Partial Effect with Interactions</span> | 章节：<span>CH07</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q21">
+<div class="q-num">Question 21 <span class="ch-tag">CH09</span></div>
+<div class="q-text">The RESET test is primarily used to detect:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> Heteroskedasticity</div><div class="q-opt" data-opt="1"><strong>B.</strong> Functional form misspecification</div><div class="q-opt" data-opt="2"><strong>C.</strong> Multicollinearity</div><div class="q-opt" data-opt="3"><strong>D.</strong> Serial correlation</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(21)" id="btn21">👁 Show Answer</button>
+<div class="answer-content" id="ans21">
+<div class="answer-en"><strong>Answer: B</strong> — Functional form misspecification</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>RESET (Regression Specification Error Test) adds powers of fitted values (ŷ², ŷ³, …) to the original regression. If these terms are significant, the functional form is misspecified. It does NOT test for heteroskedasticity, autocorrelation, or multicollinearity.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>RESET检验主要用于检测：<br><br>B. 函数形式误设。RESET（Regression Specification Error Test）通过在回归中加入拟合值的平方和高次项检验函数形式是否正确。</div>
+<div class="answer-topic">📌 考点：<span>RESET检验 / RESET Test</span> | 章节：<span>CH09</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q22">
+<div class="q-num">Question 22 <span class="ch-tag">CH08</span></div>
+<div class="q-text">In time series regression, if the error term follows a first-order serial correlation but the explanatory variables are strictly exogenous, then the OLS estimators are:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> Biased and inconsistent</div><div class="q-opt" data-opt="1"><strong>B.</strong> Unbiased but the usual standard errors are invalid</div><div class="q-opt" data-opt="2"><strong>C.</strong> Still BLUE</div><div class="q-opt" data-opt="3"><strong>D.</strong> Inefficient but consistent</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(22)" id="btn22">👁 Show Answer</button>
+<div class="answer-content" id="ans22">
+<div class="answer-en"><strong>Answer: B</strong> — Unbiased but the usual standard errors are invalid</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Serial correlation in the errors, like heteroskedasticity, violates MLR.5 (spherical errors) but does not cause bias or inconsistency as long as strict exogeneity holds. However, the usual OLS standard errors and test statistics are no longer valid.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在时间序列回归中，如果误差项存在一阶序列相关但解释变量严格外生，则OLS估计量是：<br><br>B. 无偏但标准误无效。在严格外生性下，即使存在序列相关，OLS仍然无偏且一致。但同方差/无序列相关的假设被违反，标准误不准确，类似异方差情况。</div>
+<div class="answer-topic">📌 考点：<span>序列相关与OLS性质 / Serial Correlation & OLS Properties</span> | 章节：<span>CH08</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q23">
+<div class="q-num">Question 23 <span class="ch-tag">CH13</span></div>
+<div class="q-text">For panel data, using first-differencing versus fixed effects (within) estimation when there are only two periods:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> Produces identical results</div><div class="q-opt" data-opt="1"><strong>B.</strong> Produces different results, with first-differencing being more efficient</div><div class="q-opt" data-opt="2"><strong>C.</strong> Fixed effects cannot be computed</div><div class="q-opt" data-opt="3"><strong>D.</strong> First-differencing requires a balanced panel</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(23)" id="btn23">👁 Show Answer</button>
+<div class="answer-content" id="ans23">
+<div class="answer-en"><strong>Answer: A</strong> — Produces identical results</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>With T=2, first-differencing: Δyᵢ = β₁Δxᵢ + Δuᵢ. Fixed effects (within): ÿᵢₜ = β₁ẍᵢₜ + üᵢₜ where ẍ = x − x̄. When T=2, these two transformations produce numerically identical estimates. For T>2, they differ.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>对于面板数据，当只有两期时使用一阶差分和固定效应（组内）估计：<br><br>A. 产生相同结果。当T=2时，一阶差分估计量和固定效应（组内去均值）估计量在数值上完全相同。T>2时两者通常有差异。</div>
+<div class="answer-topic">📌 考点：<span>一阶差分与固定效应的关系 / FD vs FE (T=2 equivalence)</span> | 章节：<span>CH13</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q24">
+<div class="q-num">Question 24 <span class="ch-tag">CH02</span></div>
+<div class="q-text">Which of the following situations causes OLS estimators to be inconsistent?</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> Heteroskedasticity</div><div class="q-opt" data-opt="1"><strong>B.</strong> Measurement error in the dependent variable</div><div class="q-opt" data-opt="2"><strong>C.</strong> Correlation between an independent variable and the contemporaneous error term</div><div class="q-opt" data-opt="3"><strong>D.</strong> Presence of outliers</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(24)" id="btn24">👁 Show Answer</button>
+<div class="answer-content" id="ans24">
+<div class="answer-en"><strong>Answer: C</strong> — Correlation between an independent variable and the contemporaneous error term</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Heteroskedasticity → OLS consistent. Measurement error in y → OLS consistent (only variance increases). Outliers → can affect estimates but not necessarily inconsistent. Endogeneity (Cov(x,u)≠0) → the ONLY one that causes inconsistency.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>以下哪种情况会导致OLS估计量不一致？<br><br>C. 自变量与同期误差项相关（内生性）。异方差不影响一致性；因变量测量误差不影响一致性；内生性（x与u相关）导致不一致。</div>
+<div class="answer-topic">📌 考点：<span>OLS一致性的条件 / Consistency Conditions</span> | 章节：<span>CH02</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q25">
+<div class="q-num">Question 25 <span class="ch-tag">CH06</span></div>
+<div class="q-text">In the model ln(y) = β₀ + β₁x + u, the interpretation of β₁ is:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> A one-unit change in x changes y by β₁ units</div><div class="q-opt" data-opt="1"><strong>B.</strong> A one-unit change in x changes y by 100β₁%</div><div class="q-opt" data-opt="2"><strong>C.</strong> A 1% change in x changes y by β₁%</div><div class="q-opt" data-opt="3"><strong>D.</strong> A 1% change in x changes y by 0.01β₁ units</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(25)" id="btn25">👁 Show Answer</button>
+<div class="answer-content" id="ans25">
+<div class="answer-en"><strong>Answer: B</strong> — A one-unit change in x changes y by 100β₁%</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>In the log-level model ln(y) = β₀ + β₁x + u: ∂ln(y)/∂x = β₁. Since d[ln(y)] ≈ dy/y, we have %Δy ≈ 100·β₁·Δx. So for a 1-unit increase in x, y changes by approximately 100β₁ percent.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在模型 ln(y) = β₀ + β₁x + u 中，β₁的解释是：<br><br>B. x变化1单位 → y变化100β₁%。在半对数（log-level）模型中，β₁乘以100即为x每变化1单位时y的近似百分比变化。</div>
+<div class="answer-topic">📌 考点：<span>对数-水平模型 / Log-Level Model Interpretation</span> | 章节：<span>CH06</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q26">
+<div class="q-num">Question 26 <span class="ch-tag">CH03</span></div>
+<div class="q-text">If the correlation coefficient between two explanatory variables is 0.95, the most likely consequence is:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> OLS cannot be computed</div><div class="q-opt" data-opt="1"><strong>B.</strong> Standard errors become large, t-statistics become insignificant</div><div class="q-opt" data-opt="2"><strong>C.</strong> R² is close to zero</div><div class="q-opt" data-opt="3"><strong>D.</strong> Coefficient signs become opposite</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(26)" id="btn26">👁 Show Answer</button>
+<div class="answer-content" id="ans26">
+<div class="answer-en"><strong>Answer: B</strong> — Standard errors become large, t-statistics become insignificant</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>ρ = 0.95 indicates high but imperfect multicollinearity. The main consequence is inflated variance: Var(β̂ⱼ) = σ²/[SSTⱼ(1−R²ⱼ)], where R²ⱼ is high. This makes standard errors large and t-statistics small. OLS is still unbiased and consistent.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>如果两个解释变量的相关系数为0.95，最可能的后果是：<br><br>B. 标准误变大。高相关性（非完全共线性）不影响无偏性和一致性，但会增大方差，导致t值变小、系数不显著。这是多重共线性的典型后果。</div>
+<div class="answer-topic">📌 考点：<span>多重共线性的后果 / Consequences of Multicollinearity</span> | 章节：<span>CH03</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q27">
+<div class="q-num">Question 27 <span class="ch-tag">CH13</span></div>
+<div class="q-text">For pooled cross-sectional data, samples from different time periods:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> Must consist of the same individuals</div><div class="q-opt" data-opt="1"><strong>B.</strong> Can be independently drawn from the population each period</div><div class="q-opt" data-opt="2"><strong>C.</strong> Must have the same sample size</div><div class="q-opt" data-opt="3"><strong>D.</strong> Do not allow time dummy variables</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(27)" id="btn27">👁 Show Answer</button>
+<div class="answer-content" id="ans27">
+<div class="answer-en"><strong>Answer: B</strong> — Can be independently drawn from the population each period</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Pooled cross sections combine independently drawn random samples from different time periods. Unlike panel data, the same individuals are NOT tracked over time. Time dummies can (and should) be included to capture period effects.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>对于混合横截面数据，不同时期的样本：<br><br>B. 可以每期独立抽取。混合横截面的关键特征是不同时期的样本是独立抽取的，不追踪相同个体（与面板数据的关键区别）。</div>
+<div class="answer-topic">📌 考点：<span>混合横截面 vs 面板数据 / Pooled Cross Sections</span> | 章节：<span>CH13</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q28">
+<div class="q-num">Question 28 <span class="ch-tag">CH13</span></div>
+<div class="q-text">In the DID regression Yᵢₜ = β₀ + β₁Tₜ + β₂Dᵢ + β₃(Tₜ·Dᵢ) + uᵢₜ, the average treatment effect on the treated is:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> β₁</div><div class="q-opt" data-opt="1"><strong>B.</strong> β₂</div><div class="q-opt" data-opt="2"><strong>C.</strong> β₃</div><div class="q-opt" data-opt="3"><strong>D.</strong> β₁+β₂</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(28)" id="btn28">👁 Show Answer</button>
+<div class="answer-content" id="ans28">
+<div class="answer-en"><strong>Answer: C</strong> — β₃</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>In Yᵢₜ = β₀ + β₁Tₜ + β₂Dᵢ + β₃(Tₜ·Dᵢ) + uᵢₜ: for D=1 (treated), the change from T=0 to T=1 is (β₀+β₁+β₂+β₃) − (β₀+β₂) = β₁+β₃. For D=0 (control): (β₀+β₁) − β₀ = β₁. The DID estimate is (β₁+β₃) − β₁ = β₃. Hence β₃ is the ATT.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在DID回归 Yᵢₜ = β₀ + β₁Tₜ + β₂Dᵢ + β₃(Tₜ·Dᵢ) + uᵢₜ 中，处理组的平均处理效应是：<br><br>C. β₃。交互项系数β₃是DID的核心——它衡量政策前后处理组相对于对照组的变化差异，即平均处理效应（ATT）。</div>
+<div class="answer-topic">📌 考点：<span>DID回归系数解读 / DID Regression Coefficient</span> | 章节：<span>CH13</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q29">
+<div class="q-num">Question 29 <span class="ch-tag">CH06</span></div>
+<div class="q-text">If a regression model includes a quadratic term x², then:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> The marginal effect of x cannot be interpreted</div><div class="q-opt" data-opt="1"><strong>B.</strong> The marginal effect of x depends on the value of x</div><div class="q-opt" data-opt="2"><strong>C.</strong> The linear term x must be dropped</div><div class="q-opt" data-opt="3"><strong>D.</strong> The model is no longer linear</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(29)" id="btn29">👁 Show Answer</button>
+<div class="answer-content" id="ans29">
+<div class="answer-en"><strong>Answer: B</strong> — The marginal effect of x depends on the value of x</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The model y = β₀ + β₁x + β₂x² + u is linear in parameters (not in variables). The marginal effect ∂y/∂x = β₁ + 2β₂x varies with x, reflecting diminishing or increasing returns depending on the sign of β₂.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>如果回归模型包含二次项x²，则：<br><br>B. 边际效应依赖于x的值。二次项使边际效应成为x的函数：∂y/∂x = β₁ + 2β₂x。模型仍是参数线性的。</div>
+<div class="answer-topic">📌 考点：<span>二次项边际效应 / Quadratic Term Marginal Effect</span> | 章节：<span>CH06</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q30">
+<div class="q-num">Question 30 <span class="ch-tag">CH07</span></div>
+<div class="q-text">To test whether two regression lines (for D=0 and D=1) are identical in a model that includes a dummy variable and an interaction term, one should use:</div>
+<div class="q-options"><div class="q-opt" data-opt="0"><strong>A.</strong> A t-test on the interaction coefficient</div><div class="q-opt" data-opt="1"><strong>B.</strong> A joint F-test on the dummy coefficient and the interaction coefficient</div><div class="q-opt" data-opt="2"><strong>C.</strong> A t-test on the intercept</div><div class="q-opt" data-opt="3"><strong>D.</strong> A t-test on the slope</div></div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(30)" id="btn30">👁 Show Answer</button>
+<div class="answer-content" id="ans30">
+<div class="answer-en"><strong>Answer: B</strong> — A joint F-test on the dummy coefficient and the interaction coefficient</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>To test whether two regression lines are completely identical, both the intercept difference (dummy coefficient) and the slope difference (interaction coefficient) must be zero. This is a joint hypothesis requiring an F-test (with q=2 restrictions), not individual t-tests.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在包含虚拟变量和交互项的模型中，检验两条回归线（D=0和D=1）是否完全相同，应使用：<br><br>B. 联合F检验。两条回归线完全相同意味着截距差=0且斜率差=0，即虚拟变量系数和交互项系数同时为零，需要F检验（Chow检验）。</div>
+<div class="answer-topic">📌 考点：<span>邹检验 / Chow Test (Structural Change)</span> | 章节：<span>CH07</span></div>
+</div>
+</div>
+</div></div><div class="section show" id="fill-blank"><div class="q-block" id="q31">
+<div class="q-num">Question 31 <span class="ch-tag">CH02</span></div>
+<div class="q-text">In the multiple linear regression model, the <span class="blanks"><span class="blanks">________</span>___</span> assumption states that, given all explanatory variables, the expected value of the error is zero; this is crucial for unbiasedness of OLS.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(31)" id="btn31">👁 Show Answer</button>
+<div class="answer-content" id="ans31">
+<div class="answer-en"><strong>Answer:</strong> zero conditional mean</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The zero conditional mean assumption E(u|x₁,…,xₖ) = 0 is MLR.4 in the Gauss-Markov framework. It guarantees that OLS is unbiased: E(β̂ⱼ) = βⱼ. When violated (e.g., omitted variables correlated with included regressors), OLS is biased and inconsistent.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在多元线性回归模型中，___________假设指出在给定所有解释变量的情况下，误差的期望值为零；这对OLS的无偏性至关重要。<br><br>零条件均值（Zero Conditional Mean）。E(u|x₁,...,xₖ) = 0是OLS无偏性的核心条件，违反则导致内生性和不一致。</div>
+<div class="answer-topic">📌 考点：<span>零条件均值 / Zero Conditional Mean</span> | 章节：<span>CH02</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q32">
+<div class="q-num">Question 32 <span class="ch-tag">CH08</span></div>
+<div class="q-text">If the variance of the error term changes with the values of the explanatory variables, this phenomenon is called <span class="blanks">________</span>__.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(32)" id="btn32">👁 Show Answer</button>
+<div class="answer-content" id="ans32">
+<div class="answer-en"><strong>Answer:</strong> heteroskedasticity</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Heteroskedasticity means Var(u|x) depends on x, violating MLR.5. Common in cross-sectional data (e.g., variance of consumption increases with income). It does NOT cause bias or inconsistency, but invalidates standard errors and test statistics.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>如果误差项的方差随解释变量的取值变化而变化，这种现象称为__________。<br><br>异方差性（Heteroskedasticity）。Var(u|x) ≠ 常数，违反了MLR.5同方差假设，但不影响无偏性和一致性。</div>
+<div class="answer-topic">📌 考点：<span>异方差定义 / Heteroskedasticity Definition</span> | 章节：<span>CH08</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q33">
+<div class="q-num">Question 33 <span class="ch-tag">CH07</span></div>
+<div class="q-text">For a qualitative variable with g categories, when including an intercept in the regression model, we should include <span class="blanks">________</span> dummy variables to avoid the <span class="blanks">________</span>.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(33)" id="btn33">👁 Show Answer</button>
+<div class="answer-content" id="ans33">
+<div class="answer-en"><strong>Answer:</strong> g-1; dummy variable trap</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The dummy variable trap is perfect multicollinearity caused by including an intercept plus dummies for all g categories. The solution: omit one category (the base/reference group) and include g−1 dummies.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>对于一个有g个类别的定性变量，当回归模型包含截距项时，应包含________个虚拟变量以避免________。<br><br>g-1个虚拟变量；虚拟变量陷阱。如果包含全部g个虚拟变量加上截距，将产生完全多重共线性。</div>
+<div class="answer-topic">📌 考点：<span>虚拟变量陷阱 / Dummy Variable Trap</span> | 章节：<span>CH07</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q34">
+<div class="q-num">Question 34 <span class="ch-tag">CH09</span></div>
+<div class="q-text">When classical measurement error occurs in an independent variable, the OLS estimator suffers from <span class="blanks">________</span>__ bias, meaning the estimated coefficient is biased toward <span class="blanks">________</span>.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(34)" id="btn34">👁 Show Answer</button>
+<div class="answer-content" id="ans34">
+<div class="answer-en"><strong>Answer:</strong> attenuation; zero</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>In the classical errors-in-variables model (CEV), the observed x equals the true x* plus random noise. This noise attenuates the OLS slope estimate toward zero: plim(β̂₁) = β₁ · [σ²_x*/(σ²_x* + σ²_e)]. This is called attenuation bias.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>当自变量存在经典测量误差时，OLS估计量遭受__________偏误，即估计系数偏向__________。<br><br>衰减偏误（Attenuation Bias）；零。自变量的经典测量误差使OLS系数估计向零衰减（缩小），这是一种向零的不一致。</div>
+<div class="answer-topic">📌 考点：<span>衰减偏误 / Attenuation Bias</span> | 章节：<span>CH09</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q35">
+<div class="q-num">Question 35 <span class="ch-tag">CH13</span></div>
+<div class="q-text">For a two-period panel data model yᵢₜ = β₀ + β₁xᵢₜ + αᵢ + uᵢₜ, after first-differencing, the intercept β₀ and the individual effect αᵢ are both <span class="blanks">________</span>__.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(35)" id="btn35">👁 Show Answer</button>
+<div class="answer-content" id="ans35">
+<div class="answer-en"><strong>Answer:</strong> differenced out / eliminated</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>First-differencing eliminates all time-invariant components. Both the intercept β₀ and the individual fixed effect αᵢ are constant over time, so they disappear in Δyᵢ = yᵢ₂ − yᵢ₁ = β₁(xᵢ₂−xᵢ₁) + (uᵢ₂−uᵢ₁).</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>对于两期面板数据模型 yᵢₜ = β₀ + β₁xᵢₜ + αᵢ + uᵢₜ，一阶差分后截距β₀和个体效应αᵢ都被__________。<br><br>被差分消去（Differenced Out）。Δyᵢ = β₁Δxᵢ + Δuᵢ，所有不随时间变化的项（αᵢ和常数β₀）都被消除。</div>
+<div class="answer-topic">📌 考点：<span>一阶差分消除个体效应 / First-Differencing Eliminates αᵢ</span> | 章节：<span>CH13</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q36">
+<div class="q-num">Question 36 <span class="ch-tag">CH13</span></div>
+<div class="q-text">In difference-in-differences estimation, the key identification assumption is that the treatment and control groups have the same <span class="blanks">________</span>__ before the policy intervention.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(36)" id="btn36">👁 Show Answer</button>
+<div class="answer-content" id="ans36">
+<div class="answer-en"><strong>Answer:</strong> time trend (parallel trends)</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The parallel trends (common trends) assumption states that, in the absence of treatment, the average outcome for the treated group would have followed the same time path as the control group. It is the key untestable (but checkable with pre-treatment data) identifying assumption in DID.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在双重差分估计中，关键的识别假设是处理组和对照组在政策干预前具有相同的__________。<br><br>时间趋势/平行趋势（Parallel Trends）。这是DID方法最关键的假设：若无政策冲击，两组的结果应有相同的变化趋势。</div>
+<div class="answer-topic">📌 考点：<span>平行趋势假设 / Parallel Trends Assumption</span> | 章节：<span>CH13</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q37">
+<div class="q-num">Question 37 <span class="ch-tag">CH08</span></div>
+<div class="q-text">The White test for heteroskedasticity is performed by regressing the <span class="blanks">________</span>__ OLS residuals on the original explanatory variables, their squares, and cross products.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(37)" id="btn37">👁 Show Answer</button>
+<div class="answer-content" id="ans37">
+<div class="answer-en"><strong>Answer:</strong> squared</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The White test uses an auxiliary regression of squared OLS residuals û² on the original regressors, their squares, and cross products. The LM = n·R² statistic follows χ² under H₀. The test is general (does not require specifying the form of heteroskedasticity) but has low power in small samples.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>White异方差检验通过将OLS残差的__________对原始解释变量、其平方项和交叉乘积进行回归来实现。<br><br>平方（Squared）。White检验的辅助回归以残差平方û²为被解释变量，对x、x²和交叉项回归。LM = n·R²。</div>
+<div class="answer-topic">📌 考点：<span>White检验步骤 / White Test Procedure</span> | 章节：<span>CH08</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q38">
+<div class="q-num">Question 38 <span class="ch-tag">CH06</span></div>
+<div class="q-text">In the model ln(y) = β₀ + β₁ln(x) + u, β₁ is called the <span class="blanks">________</span>__; it measures the percentage change in y when x changes by 1%.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(38)" id="btn38">👁 Show Answer</button>
+<div class="answer-content" id="ans38">
+<div class="answer-en"><strong>Answer:</strong> elasticity</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>In the constant elasticity (log-log) model, β₁ is the elasticity: %Δy / %Δx = β₁. This means a 1% increase in x is associated with a β₁% change in y, holding other factors constant.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在模型 ln(y) = β₀ + β₁ln(x) + u 中，β₁被称为__________；它衡量x变化1%时y的百分比变化。<br><br>弹性（Elasticity）。双对数模型的斜率系数即为y对x的弹性，是经济学中最常用的概念之一。</div>
+<div class="answer-topic">📌 考点：<span>弹性 / Elasticity in Log-Log Model</span> | 章节：<span>CH06</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q39">
+<div class="q-num">Question 39 <span class="ch-tag">CH03</span></div>
+<div class="q-text">When the sample size n is smaller than the number of parameters k+1, OLS cannot be estimated because of <span class="blanks">________</span>__.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(39)" id="btn39">👁 Show Answer</button>
+<div class="answer-content" id="ans39">
+<div class="answer-en"><strong>Answer:</strong> perfect multicollinearity</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>When n < k+1, there are more parameters to estimate than observations. The matrix X'X is at most rank n, but is (k+1)×(k+1), so it is singular and cannot be inverted. This is perfect multicollinearity — OLS is undefined.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>当样本量n小于参数个数k+1时，OLS无法估计，原因是__________。<br><br>完全多重共线性（Perfect Multicollinearity）。n < k+1意味着X'X的秩不足，无法求逆矩阵，OLS公式(X'X)⁻¹X'y无法计算。</div>
+<div class="answer-topic">📌 考点：<span>完全共线性 / Perfect Multicollinearity (n < k+1)</span> | 章节：<span>CH03</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q40">
+<div class="q-num">Question 40 <span class="ch-tag">CH07</span></div>
+<div class="q-text">For the linear probability model, because the dependent variable takes only values 0 or 1, the error term necessarily exhibits <span class="blanks">________</span>__.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(40)" id="btn40">👁 Show Answer</button>
+<div class="answer-content" id="ans40">
+<div class="answer-en"><strong>Answer:</strong> heteroskedasticity</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The LPM error term is u = y − (β₀+β₁x). Since y ∈ {0,1}, u can only equal −p(x) or 1−p(x). The variance is Var(u|x) = p(x)(1−p(x)), which clearly depends on x. Hence, the LPM error is inherently heteroskedastic.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>对于线性概率模型，由于因变量只取0或1，误差项必然表现出__________。<br><br>异方差性（Heteroskedasticity）。Var(u|x) = p(x)(1-p(x))，方差是x的函数，LPM天生异方差，需要用稳健标准误。</div>
+<div class="answer-topic">📌 考点：<span>LPM的异方差性 / LPM Heteroskedasticity</span> | 章节：<span>CH07</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q41">
+<div class="q-num">Question 41 <span class="ch-tag">CH13</span></div>
+<div class="q-text">In a fixed effects model, the individual heterogeneity αᵢ is allowed to be correlated with the <span class="blanks">________</span>__, whereas in a random effects model it is assumed uncorrelated.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(41)" id="btn41">👁 Show Answer</button>
+<div class="answer-content" id="ans41">
+<div class="answer-en"><strong>Answer:</strong> explanatory variables</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>FE and RE both model yᵢₜ = β₀ + β₁xᵢₜ + αᵢ + uᵢₜ. The critical difference: FE allows Cov(αᵢ, xᵢₜ) to be any value (arbitrary correlation); RE requires Cov(αᵢ, xᵢₜ) = 0. If this RE assumption fails, RE is inconsistent.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在固定效应模型中，个体异质性αᵢ被允许与__________相关；而在随机效应模型中则假设不相关。<br><br>解释变量（Explanatory Variables）。FE和RE的根本区别：FE允许αᵢ与x任意相关，RE要求Cov(x,αᵢ)=0。</div>
+<div class="answer-topic">📌 考点：<span>固定效应 vs 随机效应 / FE vs RE Key Difference</span> | 章节：<span>CH13</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q42">
+<div class="q-num">Question 42 <span class="ch-tag">CH04</span></div>
+<div class="q-text">To test whether a group of variables (e.g., motheduc and fatheduc) are jointly significant, one should use a(n) <span class="blanks">________</span>__ test.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(42)" id="btn42">👁 Show Answer</button>
+<div class="answer-content" id="ans42">
+<div class="answer-en"><strong>Answer:</strong> F</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The F-test for joint significance tests H₀: all coefficients of a subset of variables are zero. It uses the formula F = [(SSRᵣ−SSRᵤᵣ)/q] / [SSRᵤᵣ/(n−k−1)], comparing restricted and unrestricted models.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>要检验一组变量（如母亲教育程度和父亲教育程度）是否联合显著，应使用__________检验。<br><br>F检验（F-test）。F检验用于检验多个排除性约束：H₀: β_motheduc = β_fatheduc = 0。</div>
+<div class="answer-topic">📌 考点：<span>联合显著性F检验 / Joint F-test</span> | 章节：<span>CH04</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q43">
+<div class="q-num">Question 43 <span class="ch-tag">CH06</span></div>
+<div class="q-text">For the model y = β₀ + β₁x + β₂x² + u, if β₂ < 0, the marginal effect of x on y is <span class="blanks">________</span>__ as x increases.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(43)" id="btn43">👁 Show Answer</button>
+<div class="answer-content" id="ans43">
+<div class="answer-en"><strong>Answer:</strong> decreasing</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>With ∂y/∂x = β₁ + 2β₂x, if β₂ < 0 (concave relationship), the marginal effect decreases as x increases. This captures diminishing marginal returns — a common pattern in economics (e.g., diminishing returns to education or experience).</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>对于模型 y = β₀ + β₁x + β₂x² + u，如果β₂ < 0，则随着x增加，x对y的边际效应__________。<br><br>递减（Decreasing）。∂y/∂x = β₁ + 2β₂x，若β₂<0，随x增大边际效应递减（边际报酬递减）。</div>
+<div class="answer-topic">📌 考点：<span>二次项/边际效应符号 / Quadratic Term Sign Analysis</span> | 章节：<span>CH06</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q44">
+<div class="q-num">Question 44 <span class="ch-tag">CH13</span></div>
+<div class="q-text">In pooled cross-sectional data, samples from different time periods are <span class="blanks">________</span>__ drawn and usually do not track the same individuals.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(44)" id="btn44">👁 Show Answer</button>
+<div class="answer-content" id="ans44">
+<div class="answer-en"><strong>Answer:</strong> independently</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Pooled cross sections stack independently drawn samples from different time periods. Unlike panel data, there is no individual tracking. The independence across periods is what distinguishes pooled cross sections from panels.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>在混合横截面数据中，不同时期的样本是__________抽取的，通常不追踪相同的个体。<br><br>独立（Independently）。混合横截面的关键特征：每期独立随机抽样，个体不重复（与面板/追踪数据的核心区别）。</div>
+<div class="answer-topic">📌 考点：<span>混合横截面特征 / Pooled Cross Sections Property</span> | 章节：<span>CH13</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q45">
+<div class="q-num">Question 45 <span class="ch-tag">CH04</span></div>
+<div class="q-text">If the null hypothesis is β₁ = 0 and the alternative is β₁ > 0, one should use a <span class="blanks">________</span>__-tailed t-test.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(45)" id="btn45">👁 Show Answer</button>
+<div class="answer-content" id="ans45">
+<div class="answer-en"><strong>Answer:</strong> one</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>A one-tailed test is used when the alternative hypothesis is directional (e.g., H₁: β₁ > 0 or H₁: β₁ < 0). The critical value is based on one tail of the distribution. A two-tailed test (H₁: β₁ ≠ 0) uses both tails and is more common in practice.</div>
+<div class="answer-exp"><strong>【中文翻译 & 解析】</strong><br>如果原假设是β₁=0，备择假设是β₁>0，应使用__________尾t检验。<br><br>单尾（One-tailed）。备择假设为β₁>0（单侧），用单尾检验；备择为β₁≠0（双侧），用双尾检验。</div>
+<div class="answer-topic">📌 考点：<span>单尾与双尾检验 / One-tailed vs Two-tailed t-test</span> | 章节：<span>CH04</span></div>
+</div>
+</div>
+</div></div><div class="section show" id="short-answer"><div class="q-block" id="q46">
+<div class="q-num">Question 46 <span class="ch-tag">CH06</span></div>
+<div class="q-text">Briefly explain why adjusted R² (R̄²) is often preferred over regular R² in multiple regression.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(46)" id="btn46">👁 Show Answer</button>
+<div class="answer-content" id="ans46">
+<div class="answer-en"><strong>Reference Answer (EN):</strong><br>R² never decreases when a new variable is added, even if the variable is irrelevant, because it mechanically fits the sample better. This encourages overfitting. Adjusted R² imposes a penalty for the number of independent variables: R̄² = 1 − [SSR/(n−k−1)]/[SST/(n−1)]. Hence, it provides a more honest comparison across models and favors parsimonious specifications.</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>R² measures the proportion of variation in y explained by the model. It always increases (or stays the same) when adding variables — even irrelevant ones — because OLS minimizes SSR and more variables can only reduce (or maintain) SSR. This encourages overfitting. Adjusted R² applies a degrees-of-freedom penalty: R̄² = 1 − [SSR/(n−k−1)]/[SST/(n−1)]. When adding a variable, R̄² increases only if the t-statistic on the new variable exceeds 1 in absolute value. This penalizes complexity and favors parsimonious models.</div>
+<div class="answer-exp"><strong>【中文题目 & 参考答案】</strong><br>简要解释为什么在多元回归中调整R²（R̄²）通常优于普通R²。<br><br>R²在加入新变量时永不下降（即使变量无关），因为它机械地拟合得更好，鼓励过度拟合。调整R²对解释变量个数施加惩罚：R̄² = 1 − [SSR/(n−k−1)]/[SST/(n−1)]。因此，调整R²提供了更诚实的模型间比较，倾向于简洁的模型设定。</div>
+<div class="answer-topic">📌 考点：<span>调整R² / Adjusted R² vs R²</span> | 章节：<span>CH06</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q47">
+<div class="q-num">Question 47 <span class="ch-tag">CH03</span></div>
+<div class="q-text">Define omitted variable bias and provide the bias formula (assuming the true model has two variables but only one is estimated).</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(47)" id="btn47">👁 Show Answer</button>
+<div class="answer-content" id="ans47">
+<div class="answer-en"><strong>Reference Answer (EN):</strong><br>Omitted variable bias occurs when a relevant variable is left out of the regression and that omitted variable is correlated with the included regressor(s). The bias in the OLS estimator of the included variable x₁ is given by: Bias(β̂₁) = β₂·δ̃₁, where β₂ is the population coefficient of the omitted variable, and δ̃₁ is the slope coefficient from regressing the omitted variable on x₁.</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Omitted variable bias arises when: (1) the omitted variable is a determinant of y (β₂ ≠ 0), and (2) the omitted variable is correlated with an included regressor (Cov(x₁, omitted) ≠ 0). Under these conditions, E(β̂₁) ≠ β₁. The bias formula: Bias(β̂₁) = β₂ · δ̃₁, where δ̃₁ = Cov(omitted, x₁)/Var(x₁) from the auxiliary regression of the omitted variable on x₁. The sign of the bias depends on the product of β₂ and δ̃₁.</div>
+<div class="answer-exp"><strong>【中文题目 & 参考答案】</strong><br>定义遗漏变量偏误并给出偏误公式（假设真实模型有两个变量但只估计了一个）。<br><br>遗漏变量偏误发生在相关变量被遗漏且遗漏变量与已包含变量相关时。x₁的OLS估计量偏误为：Bias(β̂₁) = β₂·δ̃₁。其中β₂是遗漏变量在总体的系数，δ̃₁是将遗漏变量对x₁回归得到的斜率。偏误方向取决于β₂和δ̃₁的符号乘积。</div>
+<div class="answer-topic">📌 考点：<span>遗漏变量偏误公式 / Omitted Variable Bias Formula</span> | 章节：<span>CH03</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q48">
+<div class="q-num">Question 48 <span class="ch-tag">CH13</span></div>
+<div class="q-text">Compare first-difference (FD) and fixed effects (FE) estimation for panel data. What is their relationship when only two periods are available?</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(48)" id="btn48">👁 Show Answer</button>
+<div class="answer-content" id="ans48">
+<div class="answer-en"><strong>Reference Answer (EN):</strong><br>Both FD and FE eliminate the unobserved individual fixed effect αᵢ. FD subtracts the previous period's observation from the current period; FE subtracts the individual's time-average (within transformation). For T=2 periods, the FD estimator and the FE estimator are numerically identical. For T>2, they generally differ but both are consistent under the same assumptions.</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Both FD and FE are methods for eliminating time-invariant unobserved heterogeneity αᵢ from panel data models. FD works by subtraction: Δyᵢₜ = yᵢₜ − yᵢ,ₜ₋₁, removing αᵢ. FE (within estimator) works by demeaning: ÿᵢₜ = yᵢₜ − ȳᵢ, also removing αᵢ. Key properties: (1) When T=2, FD and FE are numerically identical. (2) When T>2, FD is efficient if Δuᵢₜ is serially uncorrelated; FE is efficient if uᵢₜ is serially uncorrelated. (3) Both are consistent under the strict exogeneity assumption.</div>
+<div class="answer-exp"><strong>【中文题目 & 参考答案】</strong><br>比较面板数据的一阶差分（FD）估计和固定效应（FE）估计。当只有两期数据时它们有什么关系？<br><br>FD和FE都能消除不可观测的个体效应αᵢ。FD用当期减上期（差分）；FE用原始值减个体均值（组内变换）。当T=2时，FD和FE在数值上完全相同。当T>2时两者一般不同，但在相同假设下都一致。选择取决于误差Δuᵢₜ的序列相关结构。</div>
+<div class="answer-topic">📌 考点：<span>FD与FE的关系 / FD vs FE Comparison</span> | 章节：<span>CH13</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q49">
+<div class="q-num">Question 49 <span class="ch-tag">CH08</span></div>
+<div class="q-text">What are heteroskedasticity-robust standard errors? Why are they often recommended in practice?</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(49)" id="btn49">👁 Show Answer</button>
+<div class="answer-content" id="ans49">
+<div class="answer-en"><strong>Reference Answer (EN):</strong><br>Heteroskedasticity-robust standard errors (e.g., White standard errors) provide valid standard errors for OLS estimates even when the error variance is not constant (heteroskedasticity). They do not require knowing the form of heteroskedasticity and are asymptotically valid. Because economic data frequently exhibit heteroskedasticity, using robust standard errors avoids invalid t-tests and confidence intervals (i.e., incorrect Type I error rates).</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Heteroskedasticity-robust standard errors (also called White, Huber-White, or Eicker-Huber-White standard errors) are computed using the sandwich estimator: Var(β̂) = (X'X)⁻¹[Σᵢ û²ᵢ xᵢxᵢ'](X'X)⁻¹. Unlike the classical formula σ²(X'X)⁻¹, this estimator is consistent for the true variance-covariance matrix even when errors are heteroskedastic. They are 'asymptotically valid' — they work well in large samples without requiring the researcher to model the form of heteroskedasticity. This is why robust standard errors are now standard practice in applied work.</div>
+<div class="answer-exp"><strong>【中文题目 & 参考答案】</strong><br>什么是异方差稳健标准误？为什么在实践中常被推荐使用？<br><br>异方差稳健标准误（如White标准误）即使在误差方差不恒定（异方差）的情况下也能提供有效的OLS标准误。它们不需要知道异方差的具体形式，且在大样本下有效。由于经济数据常存在异方差，使用稳健标准误可避免t检验和置信区间失效（即第一类错误率不正确）。</div>
+<div class="answer-topic">📌 考点：<span>稳健标准误 / Heteroskedasticity-Robust Standard Errors</span> | 章节：<span>CH08</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q50">
+<div class="q-num">Question 50 <span class="ch-tag">CH07</span></div>
+<div class="q-text">List three drawbacks of using the linear probability model (LPM) with OLS.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(50)" id="btn50">👁 Show Answer</button>
+<div class="answer-content" id="ans50">
+<div class="answer-en"><strong>Reference Answer (EN):</strong><br>(1) Predicted probabilities can fall outside the [0,1] interval. (2) The error term is inherently heteroskedastic because Var(y|x) = p(x)(1−p(x)) depends on x. (3) The marginal effect of a variable is constant, whereas actual probabilities often change nonlinearly. (Also, standard errors must be corrected.)</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Three main drawbacks of the LPM: (1) Predicted probabilities ŷ = β̂₀ + β̂₁x can be negative or exceed 1, which is nonsensical for a probability model. (2) The error variance is Var(u|x) = p(x)(1−p(x)), which depends on x — so heteroskedasticity is built into the model. Robust standard errors are always needed. (3) The partial effect is constant (β₁), implying that a one-unit change in x has the same effect on P(y=1) regardless of the baseline probability, which is often unrealistic. Logistic/probit models address these issues.</div>
+<div class="answer-exp"><strong>【中文题目 & 参考答案】</strong><br>列出使用OLS估计线性概率模型（LPM）的三个缺点。<br><br>（1）预测概率可能超出[0,1]区间。（2）误差项天生异方差，因为Var(y|x)=p(x)(1-p(x))依赖于x。（3）变量的边际效应恒定，而实际概率变化往往是非线性的。（还需使用稳健标准误进行修正。）</div>
+<div class="answer-topic">📌 考点：<span>线性概率模型的缺陷 / LPM Drawbacks</span> | 章节：<span>CH07</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q51">
+<div class="q-num">Question 51 <span class="ch-tag">CH07</span></div>
+<div class="q-text">Explain how to use an F-test to determine whether a qualitative variable (e.g., region with 4 categories) is jointly significant in a regression.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(51)" id="btn51">👁 Show Answer</button>
+<div class="answer-content" id="ans51">
+<div class="answer-en"><strong>Reference Answer (EN):</strong><br>Create g−1 = 3 dummy variables (e.g., South, North, West), leaving one category (East) as the base group. Estimate the unrestricted model including the 3 dummies and all other variables. Estimate the restricted model without the 3 dummies. Compute the F-statistic: F = [(R²_ur − R²_r)/q] / [(1−R²_ur)/(n−k−1)] with q = 3. Compare to the critical value from an F_{q,n−k−1} distribution. Rejection indicates the region dummies are jointly significant.</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Steps for testing joint significance of a qualitative variable with g categories: (1) Choose a base category and create g−1 dummy variables. (2) Estimate the unrestricted model including all dummies and other regressors; record SSRᵤᵣ. (3) Estimate the restricted model excluding all g−1 dummies; record SSRᵣ. (4) Compute F = [(SSRᵣ − SSRᵤᵣ)/(g−1)] / [SSRᵤᵣ/(n−k−1)]. (5) Under H₀ (all dummy coefficients = 0), this F-statistic follows an F distribution with (g−1, n−k−1) degrees of freedom. (6) Reject H₀ if F > critical value.</div>
+<div class="answer-exp"><strong>【中文题目 & 参考答案】</strong><br>解释如何使用F检验判断一个定性变量（如4类区域）在回归中是否联合显著。<br><br>创建g-1=3个虚拟变量（如南部、北部、西部），保留一类（东部）作为基准组。估计包含3个虚拟变量和所有其他变量的无约束模型。估计不含3个虚拟变量的约束模型。计算F统计量：F = [(R²_ur − R²_r)/q] / [(1−R²_ur)/(n−k−1)]，其中q=3。与F_{q,n−k−1}临界值比较。拒绝H₀表明区域虚拟变量联合显著。</div>
+<div class="answer-topic">📌 考点：<span>F检验用于定性变量 / F-test for Qualitative Variables</span> | 章节：<span>CH07</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q52">
+<div class="q-num">Question 52 <span class="ch-tag">CH13</span></div>
+<div class="q-text">In a difference-in-differences regression, why is it important to include both a time dummy and a treatment-group dummy? What would go wrong if one of them were omitted?</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(52)" id="btn52">👁 Show Answer</button>
+<div class="answer-content" id="ans52">
+<div class="answer-en"><strong>Reference Answer (EN):</strong><br>The time dummy Tₜ captures common time trends affecting both groups (e.g., macroeconomic shocks). The group dummy Dᵢ captures permanent differences between treatment and control groups. Omitting Tₜ would cause the DID coefficient β₃ to absorb the common time effect, biasing the estimate. Omitting Dᵢ would allow permanent group differences to be wrongly attributed to the policy. Both are needed to isolate the causal effect of the policy.</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>In the DID regression Yᵢₜ = β₀ + β₁Tₜ + β₂Dᵢ + β₃(Tₜ·Dᵢ) + uᵢₜ, each component plays a specific role. Tₜ (time dummy) captures common shocks affecting both groups over time — without it, β₃ would absorb the time trend. Dᵢ (group dummy) captures permanent differences between treatment and control groups — without it, pre-existing level differences would contaminate β₃. β₃ (interaction) isolates the treatment effect by netting out both common time trends and permanent group differences: DID = (ȳ_T,post − ȳ_T,pre) − (ȳ_C,post − ȳ_C,pre).</div>
+<div class="answer-exp"><strong>【中文题目 & 参考答案】</strong><br>在双重差分回归中，为什么需要同时包含时间虚拟变量和处理组虚拟变量？如果省略其中之一会出现什么问题？<br><br>时间虚拟变量Tₜ捕捉影响两组的共同时间趋势（如宏观经济冲击）。组别虚拟变量Dᵢ捕捉处理组和对照组之间永久性的差异。省略Tₜ会使DID系数β₃吸收共同时间效应，产生偏误。省略Dᵢ会使永久性组间差异被错误地归因于政策。两者都是必要的，以分离政策的因果效应。</div>
+<div class="answer-topic">📌 考点：<span>DID回归中的虚拟变量 / DID Regression Dummies</span> | 章节：<span>CH13</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q53">
+<div class="q-num">Question 53 <span class="ch-tag">CH03</span></div>
+<div class="q-text">Explain why including an irrelevant variable (uncorrelated with the dependent variable) generally does not cause bias but reduces efficiency.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(53)" id="btn53">👁 Show Answer</button>
+<div class="answer-content" id="ans53">
+<div class="answer-en"><strong>Reference Answer (EN):</strong><br>Under the classical linear model assumptions, an irrelevant variable has a population coefficient of zero. Including it does not affect the unbiasedness of the other coefficients because the zero conditional mean assumption still holds. However, it increases multicollinearity (even if only slightly), which raises the sampling variances (standard errors) of the OLS estimators, making them less precise (lower efficiency).</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Including an irrelevant variable (one with βⱼ = 0 in the population) does not bias the estimates of the other coefficients — OLS remains unbiased because the zero conditional mean assumption still holds (the true model is nested in the estimated model). However, including an irrelevant variable does increase the sampling variances of all coefficients because it reduces the degrees of freedom (n−k−1 gets smaller) and increases the R²ⱼ values. The consequence is larger standard errors and lower t-statistics — a loss of efficiency (precision), not a loss of unbiasedness.</div>
+<div class="answer-exp"><strong>【中文题目 & 参考答案】</strong><br>解释为什么包含无关变量（与因变量不相关）一般不会导致偏误但会降低有效性。<br><br>在经典线性模型假设下，无关变量的总体系数为零。包含它不影响其他系数的无偏性（零条件均值假设仍然成立）。但它会增加多重共线性（即使很轻微），从而增大OLS估计量的抽样方差（标准误），使估计变得不精确（有效性降低）。</div>
+<div class="answer-topic">📌 考点：<span>无关变量的影响 / Irrelevant Variable (Overspecification)</span> | 章节：<span>CH03</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q54">
+<div class="q-num">Question 54 <span class="ch-tag">CH07</span></div>
+<div class="q-text">What is the dummy variable trap? Provide an example and explain how to avoid it.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(54)" id="btn54">👁 Show Answer</button>
+<div class="answer-content" id="ans54">
+<div class="answer-en"><strong>Reference Answer (EN):</strong><br>The dummy variable trap occurs when a constant (intercept) is included together with dummy variables for all categories of a qualitative variable, creating perfect multicollinearity. Example: For seasons (Spring, Summer, Fall, Winter), including an intercept and four seasonal dummies makes the sum of the dummies equal to 1, which is perfectly collinear with the intercept. To avoid it, include only g−1 dummies (e.g., Spring, Summer, Fall) and treat Winter as the base category.</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>The dummy variable trap is a perfect multicollinearity problem. Example: Suppose we have 4 seasons and include: Spring, Summer, Fall, Winter as dummies, plus an intercept. For any observation, Spring + Summer + Fall + Winter = 1, which is perfectly collinear with the intercept (a vector of ones). This violates MLR.3. The fix: drop one category (Winter) and use it as the base group. The coefficients on the remaining 3 dummies then measure the difference relative to Winter. The rule is always: g categories → g−1 dummy variables.</div>
+<div class="answer-exp"><strong>【中文题目 & 参考答案】</strong><br>什么是虚拟变量陷阱？举例说明并解释如何避免。<br><br>虚拟变量陷阱发生在同时包含截距项和所有类别的虚拟变量时，导致完全多重共线性。例：四季（春夏秋冬），包含截距和4个季节虚拟变量时，四个虚拟变量之和恒等于1，与截距完全共线。解决方案：只包含g-1个虚拟变量（如春夏秋），以冬季为基准组。</div>
+<div class="answer-topic">📌 考点：<span>虚拟变量陷阱 / Dummy Variable Trap</span> | 章节：<span>CH07</span></div>
+</div>
+</div>
+</div><div class="q-block" id="q55">
+<div class="q-num">Question 55 <span class="ch-tag">CH08</span></div>
+<div class="q-text">Outline the steps of the Breusch-Pagan test for heteroskedasticity.</div>
+<div class="answer-area">
+<button class="show-btn" onclick="reveal(55)" id="btn55">👁 Show Answer</button>
+<div class="answer-content" id="ans55">
+<div class="answer-en"><strong>Reference Answer (EN):</strong><br>(a) Estimate the original regression by OLS and obtain the residuals ûᵢ. (b) Compute the squared residuals û²ᵢ. (c) Regress û²ᵢ on all explanatory variables from the original model (or a set of variables suspected to cause heteroskedasticity). (d) Obtain the R² from this auxiliary regression, say R²_aux. (e) Compute the LM statistic: LM = n×R²_aux, which under homoskedasticity follows a χ²_q distribution, where q is the number of regressors in the auxiliary regression. (f) Reject homoskedasticity if LM exceeds the critical value.</div>
+<div class="answer-exp"><strong>【Explanation (EN)】</strong><br>Steps of the Breusch-Pagan (BP) test: (1) Estimate the original model y = Xβ + u by OLS; obtain residuals ûᵢ. (2) Compute squared residuals û²ᵢ. (3) Estimate the auxiliary regression: û²ᵢ = α₀ + α₁z₁ᵢ + … + αq zqᵢ + vᵢ, where the z's are the variables suspected to be related to heteroskedasticity (often the original x's). (4) Obtain R² from this auxiliary regression. (5) Compute LM = n · R²_aux. Under H₀ (homoskedasticity), LM ~ χ²_q. (6) Reject H₀ if LM > χ² critical value. The BP test assumes the error term is normally distributed; the Koenker (studentized) version relaxes this.</div>
+<div class="answer-exp"><strong>【中文题目 & 参考答案】</strong><br>概述Breusch-Pagan异方差检验的步骤。<br><br>(a) 用OLS估计原回归，获得残差ûᵢ。(b) 计算残差平方û²ᵢ。(c) 将û²ᵢ对所有原模型解释变量（或怀疑导致异方差的变量）回归。(d) 获取辅助回归的R²，记作R²_aux。(e) 计算LM统计量：LM = n×R²_aux，在同方差下服从χ²_q分布，q为辅助回归中解释变量个数。(f) 若LM超过临界值，拒绝同方差原假设。</div>
+<div class="answer-topic">📌 考点：<span>Breusch-Pagan检验步骤 / BP Test Steps</span> | 章节：<span>CH08</span></div>
+</div>
+</div>
+</div></div>
+<div class="footer">Econometrics Practice Questions | Based on Wooldridge 7e, Chapters 1-9, 13 | 55 Questions Total</div>
+</div>
+<script>
+function reveal(id){
+document.getElementById('ans'+id).classList.toggle('open');
+var b=document.getElementById('btn'+id);
+if(document.getElementById('ans'+id).classList.contains('open')){b.textContent='🔽 Hide Answer';b.classList.add('revealed');}else{b.textContent='👁 Show Answer';b.classList.remove('revealed');}
+}
+function switchSection(sid){
+document.querySelectorAll('.section').forEach(function(s){s.classList.remove('show');});
+document.getElementById(sid).classList.add('show');
+document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+event.target.classList.add('active');
+}
+</script></body></html>
